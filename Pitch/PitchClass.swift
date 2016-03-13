@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Modulo 12.0 representation of `NoteNumber` representation of `Pitch`.
+/// Modulo 12 representation of `NoteNumber` representation of `Pitch`.
 public typealias PitchClass = Float
 
 extension PitchClass {

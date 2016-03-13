@@ -13,7 +13,7 @@ import Foundation
  */
 public struct Pitch: PitchType {
     
-    /// Middle C
+    /// Middle C.
     public static let MiddleC = Pitch(noteNumber: 60)
     
     /// `NoteNumber` representation of `Pitch`.
@@ -22,7 +22,7 @@ public struct Pitch: PitchType {
     /// `Frequency` representation of `Pitch`.
     public let frequency: Frequency
     
-    /// Modulo 12.0 representation of `NoteNumber` representation of `Pitch`.
+    /// Modulo 12 representation of `NoteNumber` representation of `Pitch`.
     public var pitchClass: PitchClass { return PitchClass(self) }
     
     /**

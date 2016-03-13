@@ -22,7 +22,7 @@ public typealias NoteNumber = Float
 extension NoteNumber {
     
     /**
-     Create a `NoteNumber` with `Frequency` value
+     Create a `NoteNumber` with `Frequency` value.
     */
     public init(frequency: Frequency) {
         self = 69.0 + (12.0 * (log(frequency / 440.0)/log(2.0)))
