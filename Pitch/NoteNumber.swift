@@ -8,7 +8,11 @@
 
 import Foundation
 
-public struct NoteNumber {
+public typealias NoteNumber = Float
+
+extension NoteNumber {
     
-    let value: Float
+    public init(frequency: Frequency) {
+        self = frequency // update
+    }
 }

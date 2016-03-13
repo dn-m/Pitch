@@ -10,5 +10,6 @@ import Foundation
 
 public struct Pitch {
     
-    public let value: Int
+    public let noteNumber: NoteNumber
+    public let frequency: Frequency
 }

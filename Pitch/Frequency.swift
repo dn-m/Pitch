@@ -8,16 +8,11 @@
 
 import Foundation
 
-public struct Frequency {
+public typealias Frequency = Float
 
-    public let value: Float
-}
-
-extension Frequency: FloatLiteralConvertible {
+extension Frequency {
     
-    public typealias FloatLiteralType = Float
-    
-    public init(floatLiteral value: FloatLiteralType) {
-        self.value = value
+    public init(noteNumber: NoteNumber) {
+        self = 440.0 * pow(2.0, (noteNumber - 69.0) / 12.0)
     }
 }
