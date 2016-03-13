@@ -11,5 +11,6 @@ import XCTest
 
 class PitchTests: XCTestCase {
     
+    let d = Pitch.Dyad(lower: Pitch(noteNumber: 60), higher: Pitch(frequency: 440))
     
 }

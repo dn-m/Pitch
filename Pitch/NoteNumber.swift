@@ -15,4 +15,8 @@ extension NoteNumber {
     public init(frequency: Frequency) {
         self = frequency // update
     }
+    
+    public func quantize(to resolution: Float) {
+        fatalError()
+    }
 }
