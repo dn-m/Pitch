@@ -8,33 +8,48 @@
 
 import Foundation
 
+/**
+ Subjective psychoacoustical attribute of sound allowing ordering on a frequency-related scale.
+ */
 public struct Pitch: PitchType {
     
-    public struct Dyad {
-        public let lower: Pitch
-        public let higher: Pitch
-    }
+    /// Middle C
+    public static let MiddleC = Pitch(noteNumber: 60)
     
-    public struct Verticality {
-        public var pitches: [Pitch]
-    }
-    
-    public var interval: PitchType
-    
+    /// `NoteNumber` representation of `Pitch`.
     public let noteNumber: NoteNumber
+    
+    /// `Frequency` representation of `Pitch`.
     public let frequency: Frequency
     
-    public let pitchClass: PitchType
+    /// Modulo 12.0 representation of `NoteNumber` representation of `Pitch`.
+    public var pitchClass: PitchClass { return PitchClass(self) }
     
+    /**
+     Create a `Pitch` with a `NoteNumber` value.
+     */
     public init(noteNumber: NoteNumber) {
         self.noteNumber = noteNumber
-        // TODO: calculate freq
-        fatalError()
+        self.frequency = Frequency(noteNumber: noteNumber)
     }
     
+    /**
+     Create a `Pitch` with a `Frequency` value.
+     */
     public init(frequency: Frequency) {
         self.frequency = frequency
-        // TODO: calculate notenumber
-        fatalError()
+        self.noteNumber = NoteNumber(frequency: frequency)
     }
+}
+
+extension Pitch: Equatable { }
+
+public func == (lhs: Pitch, rhs: Pitch) -> Bool {
+    return lhs.noteNumber == rhs.noteNumber
+}
+
+extension Pitch: Comparable { }
+
+public func < (lhs: Pitch, rhs: Pitch) -> Bool {
+    return lhs.noteNumber < rhs.noteNumber
 }

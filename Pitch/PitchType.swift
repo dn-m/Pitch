@@ -8,8 +8,14 @@
 
 import Foundation
 
+/**
+ Protocol defining types representable with `NoteNumber` and `Frequency` values.
+ */
 public protocol PitchType {
     
+    /// `NoteNumber` representation of `PitchType`.
     var noteNumber: NoteNumber { get }
+    
+    /// `Frequency` representation of `PitchType`.
     var frequency: Frequency { get }
 }
