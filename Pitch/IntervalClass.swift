@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Modulo 12 representation of an `Interval` value
+/// Modulo 12 representation of an `Interval` value.
 public typealias IntervalClass = Float
 
 public extension IntervalClass {
