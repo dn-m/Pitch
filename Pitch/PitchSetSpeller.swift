@@ -1,5 +1,5 @@
 //
-//  VerticalitySpeller.swift
+//  PitchSetSpeller.swift
 //  Pitch
 //
 //  Created by James Bean on 3/17/16.
@@ -11,7 +11,6 @@ import Foundation
 /**
  - warning: Not yet implemented!
  */
-public struct VerticalitySpeller: PitchSetSpeller {
-    
+public protocol PitchSetSpeller: PitchSpeller {
     
 }

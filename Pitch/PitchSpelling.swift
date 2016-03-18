@@ -84,7 +84,7 @@ public struct PitchSpelling {
     /// LetterName of a `PitchSpelling`.
     public let letterName: LetterName
     
-    /// Fine resolution of a `PitchSpelling`
+    /// Fine resolution of a `PitchSpelling`.
     public let fine: Fine
     
     /// Coarse resolution of a `PitchSpelling`.

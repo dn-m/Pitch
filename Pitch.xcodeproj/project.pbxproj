@@ -23,6 +23,12 @@
 		075DBB5D1C9B97D400E2D3FD /* VerticalitySpeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DBB5B1C9B97D400E2D3FD /* VerticalitySpeller.swift */; };
 		075DBB5F1C9B980000E2D3FD /* MonadSpeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DBB5E1C9B980000E2D3FD /* MonadSpeller.swift */; };
 		075DBB601C9B980000E2D3FD /* MonadSpeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DBB5E1C9B980000E2D3FD /* MonadSpeller.swift */; };
+		075DBB621C9B9D3A00E2D3FD /* PitchSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DBB611C9B9D3A00E2D3FD /* PitchSet.swift */; };
+		075DBB631C9B9D3A00E2D3FD /* PitchSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DBB611C9B9D3A00E2D3FD /* PitchSet.swift */; };
+		075DBB651C9B9E3000E2D3FD /* PitchSetSpeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DBB641C9B9E3000E2D3FD /* PitchSetSpeller.swift */; };
+		075DBB661C9B9E3000E2D3FD /* PitchSetSpeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DBB641C9B9E3000E2D3FD /* PitchSetSpeller.swift */; };
+		075DBB681C9B9E4E00E2D3FD /* HorizontalitySpeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DBB671C9B9E4E00E2D3FD /* HorizontalitySpeller.swift */; };
+		075DBB691C9B9E4E00E2D3FD /* HorizontalitySpeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DBB671C9B9E4E00E2D3FD /* HorizontalitySpeller.swift */; };
 		07A1E98C1C9B24F70037AFBB /* PitchSpelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1E98B1C9B24F70037AFBB /* PitchSpelling.swift */; };
 		07A1E98D1C9B24F70037AFBB /* PitchSpelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1E98B1C9B24F70037AFBB /* PitchSpelling.swift */; };
 		07AD1D3F1C95D2B8003225B2 /* Dyad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AD1D3E1C95D2B8003225B2 /* Dyad.swift */; };
@@ -110,6 +116,9 @@
 		075DBB581C9B962E00E2D3FD /* DyadSpeller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DyadSpeller.swift; sourceTree = "<group>"; };
 		075DBB5B1C9B97D400E2D3FD /* VerticalitySpeller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalitySpeller.swift; sourceTree = "<group>"; };
 		075DBB5E1C9B980000E2D3FD /* MonadSpeller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonadSpeller.swift; sourceTree = "<group>"; };
+		075DBB611C9B9D3A00E2D3FD /* PitchSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchSet.swift; sourceTree = "<group>"; };
+		075DBB641C9B9E3000E2D3FD /* PitchSetSpeller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchSetSpeller.swift; sourceTree = "<group>"; };
+		075DBB671C9B9E4E00E2D3FD /* HorizontalitySpeller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalitySpeller.swift; sourceTree = "<group>"; };
 		07A1E98B1C9B24F70037AFBB /* PitchSpelling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchSpelling.swift; sourceTree = "<group>"; };
 		07AD1D3E1C95D2B8003225B2 /* Dyad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dyad.swift; sourceTree = "<group>"; };
 		07AD1D411C95D320003225B2 /* Verticality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Verticality.swift; sourceTree = "<group>"; };
@@ -182,7 +191,9 @@
 				075DBB551C9B960500E2D3FD /* PitchSpeller.swift */,
 				075DBB5E1C9B980000E2D3FD /* MonadSpeller.swift */,
 				075DBB581C9B962E00E2D3FD /* DyadSpeller.swift */,
+				075DBB641C9B9E3000E2D3FD /* PitchSetSpeller.swift */,
 				075DBB5B1C9B97D400E2D3FD /* VerticalitySpeller.swift */,
+				075DBB671C9B9E4E00E2D3FD /* HorizontalitySpeller.swift */,
 			);
 			name = PitchSpelling;
 			sourceTree = "<group>";
@@ -219,6 +230,7 @@
 				07CC26981C94E4910099C21C /* Pitch.swift */,
 				07AD1D471C95D402003225B2 /* PitchClass.swift */,
 				07AD1D3E1C95D2B8003225B2 /* Dyad.swift */,
+				075DBB611C9B9D3A00E2D3FD /* PitchSet.swift */,
 				07AD1D441C95D3B0003225B2 /* Interval.swift */,
 				07AD1D4A1C95DE71003225B2 /* IntervalClass.swift */,
 				07AD1D411C95D320003225B2 /* Verticality.swift */,
@@ -494,13 +506,16 @@
 				07AD1D3F1C95D2B8003225B2 /* Dyad.swift in Sources */,
 				075DBB5C1C9B97D400E2D3FD /* VerticalitySpeller.swift in Sources */,
 				075DBB591C9B962E00E2D3FD /* DyadSpeller.swift in Sources */,
+				075DBB681C9B9E4E00E2D3FD /* HorizontalitySpeller.swift in Sources */,
 				075DBB561C9B960500E2D3FD /* PitchSpeller.swift in Sources */,
 				070192FF1C94F79B00266260 /* PitchType.swift in Sources */,
 				07A1E98C1C9B24F70037AFBB /* PitchSpelling.swift in Sources */,
 				07AD1D4B1C95DE71003225B2 /* IntervalClass.swift in Sources */,
 				075DBB5F1C9B980000E2D3FD /* MonadSpeller.swift in Sources */,
 				07AD1D421C95D320003225B2 /* Verticality.swift in Sources */,
+				075DBB621C9B9D3A00E2D3FD /* PitchSet.swift in Sources */,
 				07CC26A31C94E5630099C21C /* Frequency.swift in Sources */,
+				075DBB651C9B9E3000E2D3FD /* PitchSetSpeller.swift in Sources */,
 				07AD1D481C95D402003225B2 /* PitchClass.swift in Sources */,
 				07CC26991C94E4910099C21C /* Pitch.swift in Sources */,
 				07AD1D451C95D3B0003225B2 /* Interval.swift in Sources */,
@@ -524,13 +539,16 @@
 				07AD1D401C95D2B8003225B2 /* Dyad.swift in Sources */,
 				075DBB5D1C9B97D400E2D3FD /* VerticalitySpeller.swift in Sources */,
 				075DBB5A1C9B962E00E2D3FD /* DyadSpeller.swift in Sources */,
+				075DBB691C9B9E4E00E2D3FD /* HorizontalitySpeller.swift in Sources */,
 				075DBB571C9B960500E2D3FD /* PitchSpeller.swift in Sources */,
 				070193001C94F79B00266260 /* PitchType.swift in Sources */,
 				07A1E98D1C9B24F70037AFBB /* PitchSpelling.swift in Sources */,
 				07AD1D4C1C95DE71003225B2 /* IntervalClass.swift in Sources */,
 				075DBB601C9B980000E2D3FD /* MonadSpeller.swift in Sources */,
 				07AD1D431C95D320003225B2 /* Verticality.swift in Sources */,
+				075DBB631C9B9D3A00E2D3FD /* PitchSet.swift in Sources */,
 				07CC26A41C94E5630099C21C /* Frequency.swift in Sources */,
+				075DBB661C9B9E3000E2D3FD /* PitchSetSpeller.swift in Sources */,
 				07AD1D491C95D402003225B2 /* PitchClass.swift in Sources */,
 				07CC269A1C94E4910099C21C /* Pitch.swift in Sources */,
 				07AD1D461C95D3B0003225B2 /* Interval.swift in Sources */,
