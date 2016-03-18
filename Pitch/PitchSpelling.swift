@@ -10,8 +10,6 @@ import Foundation
 
 public struct PitchSpelling {
     
-    public typealias Octave = Int
-    
     public enum LetterName {
         case A, B, C, D, E, F, G
     }
