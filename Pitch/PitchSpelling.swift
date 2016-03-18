@@ -12,6 +12,10 @@ public struct PitchSpelling {
     
     public typealias Octave = Int
     
+    public enum LetterName {
+        case A, B, C, D, E, F, G
+    }
+    
     public enum Fine: Float {
         case None = 0
         case Up = 1
@@ -26,13 +30,13 @@ public struct PitchSpelling {
         case Flat = -1
     }
     
+    public let letterName: LetterName
     public let fine: Fine
     public let coarse: Coarse
-    public let octave: Int?
     
-    public init(fine: Fine, coarse: Coarse, octave: Octave? = nil) {
-        self.fine = fine
-        self.coarse = coarse
-        self.octave = octave
+    public init(letterName: LetterName, coarse: Coarse? = nil, fine: Fine? = nil) {
+        self.letterName = letterName
+        self.coarse = coarse ?? .Natural
+        self.fine = fine ?? .None
     }
 }
