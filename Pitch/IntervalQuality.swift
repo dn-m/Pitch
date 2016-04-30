@@ -15,31 +15,72 @@ public struct IntervalQuality: EnumTree {
     public typealias EnumFamily = IntervalQuality
     
     public struct Unison {
+        public static let Diminished: IntervalQualityKind = .DiminishedUnison
+        public static let Perfect: IntervalQualityKind = .PerfectUnison
+        public static let Augmented: IntervalQualityKind = .AugmentedUnison
         
+        public static var members: [IntervalQualityKind] { return [Perfect, Augmented] }
     }
     
     public struct Second {
+        public static let Minor: IntervalQualityKind = .MinorSecond
+        public static let Major: IntervalQualityKind = .MajorSecond
+        public static let Augmented: IntervalQualityKind = .AugmentedSecond
         
+        public static var members: [IntervalQualityKind] { return [Minor, Major, Augmented] }
     }
     
     public struct Third {
+        public static let Diminished: IntervalQualityKind = .DiminishedThird
+        public static let Minor: IntervalQualityKind = .MinorThird
+        public static let Major: IntervalQualityKind = .MajorThird
+        public static let Augmented: IntervalQualityKind = .AugmentedThird
         
+        public static var members: [IntervalQualityKind] {
+            return [Diminished, Minor, Major, Augmented]
+        }
     }
     
     public struct Fourth {
+        public static let Diminished: IntervalQualityKind = .DiminishedFourth
+        public static let Perfect: IntervalQualityKind = .PerfectFourth
+        public static let Augmented: IntervalQualityKind = .AugmentedFourth
         
+        public static var members: [IntervalQualityKind] {
+            return [Diminished, Perfect, Augmented]
+        }
     }
     
     public struct Fifth {
+        public static let Diminished: IntervalQualityKind = .DiminishedFifth
+        public static let Perfect: IntervalQualityKind = .PerfectFifth
+        public static let Augmented: IntervalQualityKind = .AugmentedFifth
         
+        public static var members: [IntervalQualityKind] {
+            return [Diminished, Perfect, Augmented]
+        }
     }
     
     public struct Sixth {
+        public static let Diminished: IntervalQualityKind = .DiminishedSixth
+        public static let Minor: IntervalQualityKind = .MinorSixth
+        public static let Major: IntervalQualityKind = .MajorSixth
+        public static let Augmented: IntervalQualityKind = .AugmentedSixth
         
+        public static var members: [IntervalQualityKind] {
+            return [Diminished, Minor, Major, Augmented]
+        }
     }
     
     public struct Seventh {
+        public static let Diminished: IntervalQualityKind = .DiminishedSeventh
+        public static let Minor: IntervalQualityKind = .MinorSeventh
+        public static let Major: IntervalQualityKind = .MajorSeventh
+        public static let Augmented: IntervalQualityKind = .AugmentedSeventh
         
+        public static var members: [IntervalQualityKind] {
+            return [Diminished, Minor, Major, Augmented]
+        }
     }
     
     private static let intervalQualityKindByIntervalClass:
@@ -56,12 +97,19 @@ public struct IntervalQuality: EnumTree {
         08: [.MinorSixth, .AugmentedFifth],
         09: [.MajorSixth, .DiminishedSeventh],
         10: [.MinorSeventh, .AugmentedSixth],
-        11: [.MajorSeventh, .DiminishedOctave],
+        11: [.MajorSeventh, .DiminishedUnison],
     ]
+    
+    public func intervalQualityKinds(withIntervalClass intervalClass: IntervalClass)
+        -> [IntervalQualityKind]
+    {
+        return []
+    }
 }
 
 public enum IntervalQualityKind: String {
     
+    case DiminishedUnison = "d1"
     case PerfectUnison = "P1"
     case AugmentedUnison = "A1"
     
@@ -79,7 +127,6 @@ public enum IntervalQualityKind: String {
     case AugmentedFourth = "A4"
     
     case DiminishedFifth = "d5"
-    
     case PerfectFifth = "P5"
     case AugmentedFifth = "A5"
     
@@ -92,7 +139,4 @@ public enum IntervalQualityKind: String {
     case MinorSeventh = "m7"
     case MajorSeventh = "M7"
     case AugmentedSeventh = "A7"
-    
-    case DiminishedOctave = "d8"
-    case PerfectOctave = "P8"
 }
