@@ -47,7 +47,7 @@ public struct PitchSpelling {
      - note: In 48-EDO, represents 1/8th-tone adjustment. 
         May be useful for other cases (e.g., -14c adjustment for 5th partial, etc.).
      */
-    public enum Fine: Float {
+    public enum FineAdjustment: Float {
         
         /// None.
         case None = 0
@@ -63,7 +63,7 @@ public struct PitchSpelling {
      Coarse resolution component of a `PitchSpelling`.
         Analogous to the body of an accidental.
      */
-    public enum Coarse: Float {
+    public enum CoarseAdjustment: Float {
         
         /// Natural.
         case Natural
@@ -85,17 +85,22 @@ public struct PitchSpelling {
     public let letterName: LetterName
     
     /// Fine resolution of a `PitchSpelling`.
-    public let fine: Fine
+    public let fine: FineAdjustment
     
     /// Coarse resolution of a `PitchSpelling`.
-    public let coarse: Coarse
+    public let coarse: CoarseAdjustment
     
     /**
      Create a `PitchSpelling`.
      */
-    public init(letterName: LetterName, coarse: Coarse? = nil, fine: Fine? = nil) {
+    public init(
+        letterName: LetterName,
+        coarse: CoarseAdjustment = .Natural,
+        fine: FineAdjustment = .None
+    )
+    {
         self.letterName = letterName
-        self.coarse = coarse ?? .Natural
-        self.fine = fine ?? .None
+        self.coarse = coarse
+        self.fine = fine
     }
 }

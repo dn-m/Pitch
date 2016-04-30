@@ -23,10 +23,14 @@ public struct Dyad {
     /// `Interval` between two `Pitch` values.
     public var interval: Interval { return Interval(self) }
     
+    public var intervalQuality: IntervalQualityKind {
+        return IntervalQualityKind.PerfectUnison
+    }
+    
     /**
      Create a `Dyad` with two `Pitch` values.
      */
-    public init(a: Pitch, _ b: Pitch) {
+    public init(_ a: Pitch, _ b: Pitch) {
         let (lower, higher) = ordered(a,b)
         self.lower = lower
         self.higher = higher

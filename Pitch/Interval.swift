@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Interval between two `Pitch` values
+/// Interval between two `Pitch` values.
 public typealias Interval = Float
 
 extension Interval {
@@ -16,11 +16,11 @@ extension Interval {
     /**
      Complexity of an `Interval`.
      
-     - warning: Not yet implemented
+     - warning: Not yet implemented.
     */
     public var complexity: Float { return 0 }
     
-    /// `IntervalClass` representation of `Interval`
+    /// `IntervalClass` representation of `Interval`.
     public var intervalClass: IntervalClass { return IntervalClass(self) }
     
     /**
