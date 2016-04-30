@@ -9,78 +9,92 @@
 import Foundation
 import EnumTools
 
-public struct IntervalQuality: EnumTree {
+public class IntervalQuality: EnumTree {
     
     public typealias EnumKind = IntervalQualityKind
     public typealias EnumFamily = IntervalQuality
     
-    public struct Unison {
+    public class Unison: EnumFamily {
         public static let Diminished: IntervalQualityKind = .DiminishedUnison
         public static let Perfect: IntervalQualityKind = .PerfectUnison
         public static let Augmented: IntervalQualityKind = .AugmentedUnison
         
-        public static var members: [IntervalQualityKind] { return [Perfect, Augmented] }
+        public override class var members: [EnumKind] { return [Perfect, Augmented] }
     }
     
-    public struct Second {
+    public class Second: EnumFamily {
         public static let Minor: IntervalQualityKind = .MinorSecond
         public static let Major: IntervalQualityKind = .MajorSecond
         public static let Augmented: IntervalQualityKind = .AugmentedSecond
         
-        public static var members: [IntervalQualityKind] { return [Minor, Major, Augmented] }
+        public override class var members: [EnumKind] { return [Minor, Major, Augmented] }
     }
     
-    public struct Third {
+    public class Third: EnumFamily {
         public static let Diminished: IntervalQualityKind = .DiminishedThird
         public static let Minor: IntervalQualityKind = .MinorThird
         public static let Major: IntervalQualityKind = .MajorThird
         public static let Augmented: IntervalQualityKind = .AugmentedThird
         
-        public static var members: [IntervalQualityKind] {
+        public override class var members: [EnumKind] {
             return [Diminished, Minor, Major, Augmented]
         }
     }
     
-    public struct Fourth {
+    public class Fourth: EnumFamily {
         public static let Diminished: IntervalQualityKind = .DiminishedFourth
         public static let Perfect: IntervalQualityKind = .PerfectFourth
         public static let Augmented: IntervalQualityKind = .AugmentedFourth
         
-        public static var members: [IntervalQualityKind] {
+        public override class var members: [EnumKind] {
             return [Diminished, Perfect, Augmented]
         }
     }
     
-    public struct Fifth {
+    public class Fifth: EnumFamily {
         public static let Diminished: IntervalQualityKind = .DiminishedFifth
         public static let Perfect: IntervalQualityKind = .PerfectFifth
         public static let Augmented: IntervalQualityKind = .AugmentedFifth
         
-        public static var members: [IntervalQualityKind] {
+        public override class var members: [EnumKind] {
             return [Diminished, Perfect, Augmented]
         }
     }
     
-    public struct Sixth {
+    public class Sixth: EnumFamily {
         public static let Diminished: IntervalQualityKind = .DiminishedSixth
         public static let Minor: IntervalQualityKind = .MinorSixth
         public static let Major: IntervalQualityKind = .MajorSixth
         public static let Augmented: IntervalQualityKind = .AugmentedSixth
         
-        public static var members: [IntervalQualityKind] {
+        public override class var members: [EnumKind] {
             return [Diminished, Minor, Major, Augmented]
         }
     }
     
-    public struct Seventh {
+    public class Seventh: EnumFamily {
         public static let Diminished: IntervalQualityKind = .DiminishedSeventh
         public static let Minor: IntervalQualityKind = .MinorSeventh
         public static let Major: IntervalQualityKind = .MajorSeventh
         public static let Augmented: IntervalQualityKind = .AugmentedSeventh
         
-        public static var members: [IntervalQualityKind] {
+        public override class var members: [EnumKind] {
             return [Diminished, Minor, Major, Augmented]
         }
+    }
+    
+    public class var members: [IntervalQualityKind] { return [] }
+    
+    public class var subFamilies: [IntervalQuality.Type] {
+        return [
+            Unison.self,
+            Second.self,
+            Third.self,
+            Fourth.self,
+            Fifth.self,
+            Sixth.self,
+            Seventh.self
+        ]
     }
     
     private static let intervalQualityKindByIntervalClass:
@@ -103,7 +117,7 @@ public struct IntervalQuality: EnumTree {
     public func intervalQualityKinds(withIntervalClass intervalClass: IntervalClass)
         -> [IntervalQualityKind]
     {
-        return []
+        return intervalQualityKinds(withIntervalClass: intervalClass) ?? []
     }
 }
 
