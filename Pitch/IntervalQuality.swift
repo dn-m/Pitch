@@ -41,9 +41,27 @@ public struct IntervalQuality: EnumTree {
     public struct Seventh {
         
     }
+    
+    private static let intervalQualityKindByIntervalClass:
+        [IntervalClass: [IntervalQualityKind]] =
+    [
+        00: [.PerfectUnison, .AugmentedSeventh],
+        01: [.MinorSecond, .AugmentedUnison],
+        02: [.MajorSecond, .DiminishedThird],
+        03: [.MinorThird, .AugmentedSecond],
+        04: [.MajorThird, .DiminishedFourth],
+        05: [.PerfectFourth, .AugmentedThird],
+        06: [.DiminishedFifth, .AugmentedFourth],
+        07: [.PerfectFifth, .DiminishedFifth],
+        08: [.MinorSixth, .AugmentedFifth],
+        09: [.MajorSixth, .DiminishedSeventh],
+        10: [.MinorSeventh, .AugmentedSixth],
+        11: [.MajorSeventh, .DiminishedOctave],
+    ]
 }
 
 public enum IntervalQualityKind: String {
+    
     case PerfectUnison = "P1"
     case AugmentedUnison = "A1"
     
