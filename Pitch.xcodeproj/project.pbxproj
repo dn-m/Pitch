@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		070192FA1C94EA3200266260 /* ArrayTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07CC26A81C94E8620099C21C /* ArrayTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		070192FB1C94EA3200266260 /* ArithmeticTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07CC26A91C94E8620099C21C /* ArithmeticTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		070192FC1C94EA3700266260 /* ArrayTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07CC26AC1C94E8710099C21C /* ArrayTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		070192FD1C94EA3700266260 /* ArithmeticTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07CC26AD1C94E8710099C21C /* ArithmeticTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		070192FF1C94F79B00266260 /* PitchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070192FE1C94F79B00266260 /* PitchType.swift */; };
 		070193001C94F79B00266260 /* PitchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070192FE1C94F79B00266260 /* PitchType.swift */; };
+		074E0FF61CD5046300937F1C /* IntervalQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E0FF51CD5046300937F1C /* IntervalQuality.swift */; };
+		074E0FF71CD5046300937F1C /* IntervalQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E0FF51CD5046300937F1C /* IntervalQuality.swift */; };
 		075DBB521C9B952B00E2D3FD /* PitchSpellingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DBB511C9B952B00E2D3FD /* PitchSpellingTests.swift */; };
 		075DBB531C9B952B00E2D3FD /* PitchSpellingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DBB511C9B952B00E2D3FD /* PitchSpellingTests.swift */; };
 		075DBB561C9B960500E2D3FD /* PitchSpeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075DBB551C9B960500E2D3FD /* PitchSpeller.swift */; };
@@ -57,12 +57,12 @@
 		07CC26A71C94E6A00099C21C /* NoteNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC26A51C94E6A00099C21C /* NoteNumber.swift */; };
 		07CC26AA1C94E8620099C21C /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CC26A81C94E8620099C21C /* ArrayTools.framework */; };
 		07CC26AB1C94E8620099C21C /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CC26A91C94E8620099C21C /* ArithmeticTools.framework */; };
-		07CC26AE1C94E8710099C21C /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CC26AC1C94E8710099C21C /* ArrayTools.framework */; };
-		07CC26AF1C94E8710099C21C /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CC26AD1C94E8710099C21C /* ArithmeticTools.framework */; };
 		07CC26B31C94E89E0099C21C /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CC26A81C94E8620099C21C /* ArrayTools.framework */; };
 		07CC26B41C94E89E0099C21C /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CC26A91C94E8620099C21C /* ArithmeticTools.framework */; };
-		07CC26B51C94E8A20099C21C /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CC26AC1C94E8710099C21C /* ArrayTools.framework */; };
-		07CC26B61C94E8A20099C21C /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CC26AD1C94E8710099C21C /* ArithmeticTools.framework */; };
+		A8D7132CC49299D7A21F159D /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2FB7073AC462C303F41B42F /* ArrayTools.framework */; };
+		B1C31B27763F03CEE0F613E0 /* EnumTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A5F6CBC5DDEE46563901FA8 /* EnumTools.framework */; };
+		C7A52FAB101C14743D800007 /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E0E20452242D0350AA49DC4 /* ArithmeticTools.framework */; };
+		F3EEEC68D56EBBD0C782C9DC /* EnumTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 246C689217A6E5C782338DAA /* EnumTools.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,8 +102,6 @@
 			dstSubfolderSpec = 7;
 			files = (
 				07CC269E1C94E4C90099C21C /* Pitch.framework in CopyFiles */,
-				070192FC1C94EA3700266260 /* ArrayTools.framework in CopyFiles */,
-				070192FD1C94EA3700266260 /* ArithmeticTools.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +109,7 @@
 
 /* Begin PBXFileReference section */
 		070192FE1C94F79B00266260 /* PitchType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchType.swift; sourceTree = "<group>"; };
+		074E0FF51CD5046300937F1C /* IntervalQuality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalQuality.swift; sourceTree = "<group>"; };
 		075DBB511C9B952B00E2D3FD /* PitchSpellingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchSpellingTests.swift; sourceTree = "<group>"; };
 		075DBB551C9B960500E2D3FD /* PitchSpeller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchSpeller.swift; sourceTree = "<group>"; };
 		075DBB581C9B962E00E2D3FD /* DyadSpeller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DyadSpeller.swift; sourceTree = "<group>"; };
@@ -138,8 +137,10 @@
 		07CC26A51C94E6A00099C21C /* NoteNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteNumber.swift; sourceTree = "<group>"; };
 		07CC26A81C94E8620099C21C /* ArrayTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArrayTools.framework; path = Carthage/Build/iOS/ArrayTools.framework; sourceTree = "<group>"; };
 		07CC26A91C94E8620099C21C /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = Carthage/Build/iOS/ArithmeticTools.framework; sourceTree = "<group>"; };
-		07CC26AC1C94E8710099C21C /* ArrayTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArrayTools.framework; path = Carthage/Build/Mac/ArrayTools.framework; sourceTree = "<group>"; };
-		07CC26AD1C94E8710099C21C /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = Carthage/Build/Mac/ArithmeticTools.framework; sourceTree = "<group>"; };
+		0E0E20452242D0350AA49DC4 /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = Carthage/Build/Mac/ArithmeticTools.framework; sourceTree = "<group>"; };
+		246C689217A6E5C782338DAA /* EnumTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EnumTools.framework; path = Carthage/Build/Mac/EnumTools.framework; sourceTree = "<group>"; };
+		3A5F6CBC5DDEE46563901FA8 /* EnumTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EnumTools.framework; path = Carthage/Build/iOS/EnumTools.framework; sourceTree = "<group>"; };
+		E2FB7073AC462C303F41B42F /* ArrayTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArrayTools.framework; path = Carthage/Build/Mac/ArrayTools.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +150,7 @@
 			files = (
 				07CC26AA1C94E8620099C21C /* ArrayTools.framework in Frameworks */,
 				07CC26AB1C94E8620099C21C /* ArithmeticTools.framework in Frameworks */,
+				B1C31B27763F03CEE0F613E0 /* EnumTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,8 +168,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07CC26AE1C94E8710099C21C /* ArrayTools.framework in Frameworks */,
-				07CC26AF1C94E8710099C21C /* ArithmeticTools.framework in Frameworks */,
+				C7A52FAB101C14743D800007 /* ArithmeticTools.framework in Frameworks */,
+				A8D7132CC49299D7A21F159D /* ArrayTools.framework in Frameworks */,
+				F3EEEC68D56EBBD0C782C9DC /* EnumTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,8 +178,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07CC26B51C94E8A20099C21C /* ArrayTools.framework in Frameworks */,
-				07CC26B61C94E8A20099C21C /* ArithmeticTools.framework in Frameworks */,
 				07CC268A1C94E0A00099C21C /* Pitch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +233,7 @@
 				07AD1D3E1C95D2B8003225B2 /* Dyad.swift */,
 				075DBB611C9B9D3A00E2D3FD /* PitchSet.swift */,
 				07AD1D441C95D3B0003225B2 /* Interval.swift */,
+				074E0FF51CD5046300937F1C /* IntervalQuality.swift */,
 				07AD1D4A1C95DE71003225B2 /* IntervalClass.swift */,
 				07AD1D411C95D320003225B2 /* Verticality.swift */,
 				07CC26791C94E08C0099C21C /* Supporting Files */,
@@ -268,8 +270,8 @@
 		07CC26B01C94E8780099C21C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				07CC26B21C94E8840099C21C /* Mac */,
 				07CC26B11C94E8810099C21C /* iOS */,
+				33389F6DF33D5BB9CA3AA3B8 /* OS X */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -279,17 +281,19 @@
 			children = (
 				07CC26A81C94E8620099C21C /* ArrayTools.framework */,
 				07CC26A91C94E8620099C21C /* ArithmeticTools.framework */,
+				3A5F6CBC5DDEE46563901FA8 /* EnumTools.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		07CC26B21C94E8840099C21C /* Mac */ = {
+		33389F6DF33D5BB9CA3AA3B8 /* OS X */ = {
 			isa = PBXGroup;
 			children = (
-				07CC26AC1C94E8710099C21C /* ArrayTools.framework */,
-				07CC26AD1C94E8710099C21C /* ArithmeticTools.framework */,
+				0E0E20452242D0350AA49DC4 /* ArithmeticTools.framework */,
+				E2FB7073AC462C303F41B42F /* ArrayTools.framework */,
+				246C689217A6E5C782338DAA /* EnumTools.framework */,
 			);
-			name = Mac;
+			name = "OS X";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,7 +326,7 @@
 				07CC265B1C94E0850099C21C /* Frameworks */,
 				07CC265C1C94E0850099C21C /* Headers */,
 				07CC265D1C94E0850099C21C /* Resources */,
-				07CC26B81C94E8BC0099C21C /* ShellScript */,
+				37EC79CB8A78C17D4C1F8C61 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -361,6 +365,7 @@
 				07CC267D1C94E0A00099C21C /* Headers */,
 				07CC267E1C94E0A00099C21C /* Resources */,
 				07CC26B91C94E8FA0099C21C /* ShellScript */,
+				6633A6744FCE4874A1ABEFF8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -466,21 +471,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07CC26B81C94E8BC0099C21C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/ArrayTools.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ArithmeticTools.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		07CC26B91C94E8FA0099C21C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -489,6 +479,38 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/Mac/ArrayTools.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/ArithmeticTools.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		37EC79CB8A78C17D4C1F8C61 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/ArithmeticTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ArrayTools.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/EnumTools.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		6633A6744FCE4874A1ABEFF8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/ArithmeticTools.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/ArrayTools.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/EnumTools.framework",
 			);
 			outputPaths = (
 			);
@@ -517,6 +539,7 @@
 				07CC26A31C94E5630099C21C /* Frequency.swift in Sources */,
 				075DBB651C9B9E3000E2D3FD /* PitchSetSpeller.swift in Sources */,
 				07AD1D481C95D402003225B2 /* PitchClass.swift in Sources */,
+				074E0FF61CD5046300937F1C /* IntervalQuality.swift in Sources */,
 				07CC26991C94E4910099C21C /* Pitch.swift in Sources */,
 				07AD1D451C95D3B0003225B2 /* Interval.swift in Sources */,
 				07CC26A61C94E6A00099C21C /* NoteNumber.swift in Sources */,
@@ -550,6 +573,7 @@
 				07CC26A41C94E5630099C21C /* Frequency.swift in Sources */,
 				075DBB661C9B9E3000E2D3FD /* PitchSetSpeller.swift in Sources */,
 				07AD1D491C95D402003225B2 /* PitchClass.swift in Sources */,
+				074E0FF71CD5046300937F1C /* IntervalQuality.swift in Sources */,
 				07CC269A1C94E4910099C21C /* Pitch.swift in Sources */,
 				07AD1D461C95D3B0003225B2 /* Interval.swift in Sources */,
 				07CC26A71C94E6A00099C21C /* NoteNumber.swift in Sources */,
@@ -678,10 +702,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = Pitch/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -700,10 +721,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
 				INFOPLIST_FILE = Pitch/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -754,10 +772,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Pitch/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -781,10 +796,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/Mac";
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Pitch/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

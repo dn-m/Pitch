@@ -12,13 +12,25 @@ extension Array {
     
     // MARK: - List Processing
     
+    /// First `Element` of a list.
+    public var head: Element? {
+        return self.first
+    }
+    
+    /// Remaining `Elements` of a list.
+    public var tail: [Element]? {
+        guard self.count > 0 else { return nil }
+        return Array(self[1..<self.count])
+    }
+    
     /**
      2-tuple containing the `head` `Element` and `tail` `[Element]` of `Self`
-
+     
      -  note: From Chris Eidhof: http://chris.eidhof.nl/posts/swift-tricks.html
-    */
+     */
     public var destructured: (Element, [Element])? {
-        return count == 0 ? nil : (self.first!, Array(self[1..<self.count]))
+        guard let head = head, tail = tail else { return nil }
+        return (head, tail)
     }
 }
 
