@@ -50,8 +50,9 @@ public class Pitch {
     /**
      Create a `Pitch` with another `Pitch`.
      */
-    public convenience init(pitch: Pitch) {
-        self.init(frequency: pitch.frequency)
+    public init(pitch: Pitch) {
+        self.frequency = pitch.frequency
+        self.noteNumber = NoteNumber(pitch.frequency)
     }
 }
 
