@@ -15,26 +15,26 @@ public class IntervalQuality: EnumTree {
     public typealias EnumFamily = IntervalQuality
     
     public class Unison: EnumFamily {
-        public static let Diminished: IntervalQualityKind = .DiminishedUnison
-        public static let Perfect: IntervalQualityKind = .PerfectUnison
-        public static let Augmented: IntervalQualityKind = .AugmentedUnison
+        public static let Diminished: EnumKind = .DiminishedUnison
+        public static let Perfect: EnumKind = .PerfectUnison
+        public static let Augmented: EnumKind = .AugmentedUnison
         
         public override class var members: [EnumKind] { return [Perfect, Augmented] }
     }
     
     public class Second: EnumFamily {
-        public static let Minor: IntervalQualityKind = .MinorSecond
-        public static let Major: IntervalQualityKind = .MajorSecond
-        public static let Augmented: IntervalQualityKind = .AugmentedSecond
+        public static let Minor: EnumKind = .MinorSecond
+        public static let Major: EnumKind = .MajorSecond
+        public static let Augmented: EnumKind = .AugmentedSecond
         
         public override class var members: [EnumKind] { return [Minor, Major, Augmented] }
     }
     
     public class Third: EnumFamily {
-        public static let Diminished: IntervalQualityKind = .DiminishedThird
-        public static let Minor: IntervalQualityKind = .MinorThird
-        public static let Major: IntervalQualityKind = .MajorThird
-        public static let Augmented: IntervalQualityKind = .AugmentedThird
+        public static let Diminished: EnumKind = .DiminishedThird
+        public static let Minor: EnumKind = .MinorThird
+        public static let Major: EnumKind = .MajorThird
+        public static let Augmented: EnumKind = .AugmentedThird
         
         public override class var members: [EnumKind] {
             return [Diminished, Minor, Major, Augmented]
@@ -42,9 +42,9 @@ public class IntervalQuality: EnumTree {
     }
     
     public class Fourth: EnumFamily {
-        public static let Diminished: IntervalQualityKind = .DiminishedFourth
-        public static let Perfect: IntervalQualityKind = .PerfectFourth
-        public static let Augmented: IntervalQualityKind = .AugmentedFourth
+        public static let Diminished: EnumKind = .DiminishedFourth
+        public static let Perfect: EnumKind = .PerfectFourth
+        public static let Augmented: EnumKind = .AugmentedFourth
         
         public override class var members: [EnumKind] {
             return [Diminished, Perfect, Augmented]
@@ -52,9 +52,9 @@ public class IntervalQuality: EnumTree {
     }
     
     public class Fifth: EnumFamily {
-        public static let Diminished: IntervalQualityKind = .DiminishedFifth
-        public static let Perfect: IntervalQualityKind = .PerfectFifth
-        public static let Augmented: IntervalQualityKind = .AugmentedFifth
+        public static let Diminished: EnumKind = .DiminishedFifth
+        public static let Perfect: EnumKind = .PerfectFifth
+        public static let Augmented: EnumKind = .AugmentedFifth
         
         public override class var members: [EnumKind] {
             return [Diminished, Perfect, Augmented]
@@ -62,10 +62,10 @@ public class IntervalQuality: EnumTree {
     }
     
     public class Sixth: EnumFamily {
-        public static let Diminished: IntervalQualityKind = .DiminishedSixth
-        public static let Minor: IntervalQualityKind = .MinorSixth
-        public static let Major: IntervalQualityKind = .MajorSixth
-        public static let Augmented: IntervalQualityKind = .AugmentedSixth
+        public static let Diminished: EnumKind = .DiminishedSixth
+        public static let Minor: EnumKind = .MinorSixth
+        public static let Major: EnumKind = .MajorSixth
+        public static let Augmented: EnumKind = .AugmentedSixth
         
         public override class var members: [EnumKind] {
             return [Diminished, Minor, Major, Augmented]
@@ -73,19 +73,19 @@ public class IntervalQuality: EnumTree {
     }
     
     public class Seventh: EnumFamily {
-        public static let Diminished: IntervalQualityKind = .DiminishedSeventh
-        public static let Minor: IntervalQualityKind = .MinorSeventh
-        public static let Major: IntervalQualityKind = .MajorSeventh
-        public static let Augmented: IntervalQualityKind = .AugmentedSeventh
+        public static let Diminished: EnumKind = .DiminishedSeventh
+        public static let Minor: EnumKind = .MinorSeventh
+        public static let Major: EnumKind = .MajorSeventh
+        public static let Augmented: EnumKind = .AugmentedSeventh
         
         public override class var members: [EnumKind] {
             return [Diminished, Minor, Major, Augmented]
         }
     }
     
-    public class var members: [IntervalQualityKind] { return [] }
+    public class var members: [EnumKind] { return [] }
     
-    public class var subFamilies: [IntervalQuality.Type] {
+    public class var subFamilies: [EnumFamily.Type] {
         return [
             Unison.self,
             Second.self,
@@ -121,6 +121,10 @@ public class IntervalQuality: EnumTree {
     }
 }
 
+/**
+ All interval qualities with a half-step resolution. 
+ Flat resource which is wrapped hierarchically by `IntervalQuality`.
+ */
 public enum IntervalQualityKind: String {
     
     case DiminishedUnison = "d1"

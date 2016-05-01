@@ -23,6 +23,9 @@ public struct Dyad {
     /// `Interval` between two `Pitch` values.
     public var interval: Interval { return Interval(self) }
     
+    /**
+     - warning: Not yet implemented!
+     */
     public var intervalQuality: IntervalQualityKind {
         return IntervalQualityKind.PerfectUnison
     }
