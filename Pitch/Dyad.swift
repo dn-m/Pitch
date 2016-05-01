@@ -24,13 +24,6 @@ public struct Dyad {
     public var interval: Interval { return Interval(self) }
     
     /**
-     - warning: Not yet implemented!
-     */
-    public var intervalQuality: IntervalQualityKind {
-        return IntervalQualityKind.PerfectUnison
-    }
-    
-    /**
      Create a `Dyad` with two `Pitch` values.
      */
     public init(_ a: Pitch, _ b: Pitch) {
