@@ -13,8 +13,12 @@ import Foundation
  */
 public class Pitch {
     
+    // MARK - Type Properties
+    
     /// Middle C.
     public static let MiddleC = Pitch(noteNumber: 60)
+    
+    // MARK: - Instance Properties
     
     /// `NoteNumber` representation of `Pitch`.
     public let noteNumber: NoteNumber
@@ -24,6 +28,8 @@ public class Pitch {
     
     /// Modulo 12 representation of `NoteNumber` representation of `Pitch`.
     public var pitchClass: PitchClass { return PitchClass(self) }
+    
+    // MARK: - Initializers
     
     /**
      Create a `Pitch` with a `NoteNumber` value.
@@ -39,6 +45,13 @@ public class Pitch {
     public init(frequency: Frequency) {
         self.frequency = frequency
         self.noteNumber = NoteNumber(frequency: frequency)
+    }
+    
+    /**
+     Create a `Pitch` with another `Pitch`.
+     */
+    public convenience init(pitch: Pitch) {
+        self.init(frequency: pitch.frequency)
     }
 }
 
