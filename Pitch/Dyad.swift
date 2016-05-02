@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import ArithmeticTools
+import func ArithmeticTools.ordered
 
 /**
  Collection of two pitches.
