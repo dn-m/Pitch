@@ -20,6 +20,8 @@ public class Pitch {
     
     // MARK: - Instance Properties
     
+    public var description: String { return "\(noteNumber)" }
+    
     /// `NoteNumber` representation of `Pitch`.
     public let noteNumber: NoteNumber
     
