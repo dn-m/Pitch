@@ -11,7 +11,7 @@ import Foundation
 /**
  Subjective psychoacoustical attribute of sound allowing ordering on a frequency-related scale.
  */
-public class Pitch {
+public class Pitch: CustomStringConvertible {
     
     // MARK - Type Properties
     
