@@ -34,3 +34,9 @@ public struct Dyad: CustomStringConvertible {
     
     public var description: String { return "\(lower), \(higher)" }
 }
+
+extension Dyad: Equatable { }
+
+public func == (lhs: Dyad, rhs: Dyad) -> Bool {
+    return lhs.lower == rhs.lower && lhs.higher == rhs.higher
+}
