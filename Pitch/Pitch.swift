@@ -58,13 +58,11 @@ public class Pitch: CustomStringConvertible {
     }
 }
 
-extension Pitch: Equatable { }
+extension Pitch: Comparable { }
 
 public func == (lhs: Pitch, rhs: Pitch) -> Bool {
     return lhs.noteNumber == rhs.noteNumber
 }
-
-extension Pitch: Comparable { }
 
 public func < (lhs: Pitch, rhs: Pitch) -> Bool {
     return lhs.noteNumber < rhs.noteNumber
