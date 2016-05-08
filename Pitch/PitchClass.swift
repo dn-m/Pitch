@@ -22,3 +22,13 @@ public struct PitchClass: FloatLiteralConvertible {
         self.value = pitch.noteNumber % 12.0
     }
 }
+
+extension PitchClass: Comparable { }
+
+public func == (lhs: PitchClass, rhs: PitchClass) -> Bool {
+    return lhs.value == rhs.value
+}
+
+public func < (lhs: PitchClass, rhs: PitchClass) -> Bool {
+    return lhs.value < rhs.value
+}
