@@ -9,14 +9,20 @@
 import Foundation
 
 /// Modulo 12 representation of an `Interval` value.
-public typealias IntervalClass = Float
-
-public extension IntervalClass {
-
+public struct IntervalClass: FloatLiteralConvertible {
+    
+    public typealias FloatLiteralType = Float
+    
+    internal let value: Float
+    
+    public init(floatLiteral value: Float) {
+        self.value = value
+    }
+    
     /**
      Create an `IntervalClass` with an `Interval`
      */
     public init(_ interval: Interval) {
-        self = interval.value % 12.0
+        self.value = interval.value % 12.0
     }
 }
