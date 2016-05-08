@@ -8,15 +8,17 @@
 
 import Foundation
 
-/// Modulo 12 representation of `NoteNumber` representation of `Pitch`.
-public typealias PitchClass = Float
-
-extension PitchClass {
+public struct PitchClass: FloatLiteralConvertible {
     
-    /**
-     Create a `PitchClass` with a `Pitch`.
-     */
+    public typealias FloatLiteralType = Float
+    
+    private let value: Float
+    
+    public init(floatLiteral: Float) {
+        self.value = floatLiteral
+    }
+    
     public init(_ pitch: Pitch) {
-        self = pitch.noteNumber % 12.0
+        self.value = pitch.noteNumber % 12.0
     }
 }
