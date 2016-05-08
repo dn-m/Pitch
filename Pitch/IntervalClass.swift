@@ -17,6 +17,6 @@ public extension IntervalClass {
      Create an `IntervalClass` with an `Interval`
      */
     public init(_ interval: Interval) {
-        self = interval % 12.0
+        self = interval.value % 12.0
     }
 }

@@ -15,8 +15,8 @@ public struct Frequency: FloatLiteralConvertible {
     
     internal let value: Float
     
-    public init(floatLiteral: Float) {
-        self.value = floatLiteral
+    public init(floatLiteral value: Float) {
+        self.value = value
     }
     
     /**
