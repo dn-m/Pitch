@@ -22,7 +22,7 @@ public struct NoteNumber: FloatLiteralConvertible {
      Create a `NoteNumber` with `Frequency` value.
      */
     public init(frequency: Frequency) {
-        self.value = 69.0 + (12.0 * (log(frequency / 440.0)/log(2.0)))
+        self.value = 69.0 + (12.0 * (log(frequency.value / 440.0)/log(2.0)))
     }
  
     /**
