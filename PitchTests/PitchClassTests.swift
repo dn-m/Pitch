@@ -12,7 +12,7 @@ import XCTest
 class PitchClassTests: XCTestCase {
 
     func testPitchClass() {
-        let pitch = Pitch(noteNumber: 60)
+        let pitch = Pitch(noteNumber: 60.0)
         XCTAssert(pitch.pitchClass == PitchClass(floatLiteral: 0.0))
     }
 }

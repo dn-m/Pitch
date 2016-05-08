@@ -19,7 +19,7 @@ public struct PitchClass: FloatLiteralConvertible {
     }
     
     public init(_ pitch: Pitch) {
-        self.value = pitch.noteNumber % 12.0
+        self.value = pitch.noteNumber.value % 12.0
     }
 }
 

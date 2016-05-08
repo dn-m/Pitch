@@ -17,6 +17,6 @@ extension Frequency {
      Create a `Frequency` with a `NoteNumber` value.
      */
     public init(noteNumber: NoteNumber) {
-        self = 440.0 * pow(2.0, (noteNumber - 69.0) / 12.0)
+        self = 440.0 * pow(2.0, (noteNumber.value - 69.0) / 12.0)
     }
 }

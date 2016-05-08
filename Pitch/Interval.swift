@@ -27,6 +27,6 @@ extension Interval {
      Create an `Interval` with a `Dyad` of `Pitch` values.
      */
     public init(_ dyad: Dyad) {
-        self = dyad.higher.noteNumber - dyad.lower.noteNumber
+        self = dyad.higher.noteNumber.value - dyad.lower.noteNumber.value
     }
 }

@@ -16,7 +16,7 @@ public class Pitch: CustomStringConvertible {
     // MARK - Type Properties
     
     /// Middle C.
-    public static let MiddleC = Pitch(noteNumber: 60)
+    public static let MiddleC = Pitch(noteNumber: 60.0)
     
     // MARK: - Instance Properties
     
