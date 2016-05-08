@@ -26,3 +26,13 @@ public struct IntervalClass: FloatLiteralConvertible {
         self.value = interval.value % 12.0
     }
 }
+
+extension IntervalClass: Comparable { }
+
+public func == (lhs: IntervalClass, rhs: IntervalClass) -> Bool {
+    return lhs.value == rhs.value
+}
+
+public func < (lhs: IntervalClass, rhs: IntervalClass) -> Bool {
+    return lhs.value < rhs.value
+}

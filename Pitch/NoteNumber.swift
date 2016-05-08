@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ MIDI equivalent nn. 60.0 = middle-c.
+ */
 public struct NoteNumber: FloatLiteralConvertible {
     
     public typealias FloatLiteralType = Float
