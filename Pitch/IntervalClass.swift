@@ -36,3 +36,8 @@ public func == (lhs: IntervalClass, rhs: IntervalClass) -> Bool {
 public func < (lhs: IntervalClass, rhs: IntervalClass) -> Bool {
     return lhs.value < rhs.value
 }
+
+extension IntervalClass: Hashable {
+    
+    public var hashValue: Int { return value.hashValue }
+}
