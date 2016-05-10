@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import Foundation
+import ArithmeticTools
 
 /// Interval between two `Pitch` values.
 public struct Interval: FloatWrapping {
@@ -22,6 +22,10 @@ public struct Interval: FloatWrapping {
     
     public init(floatLiteral value: Float) {
         self.value = value
+    }
+    
+    public init(integerLiteral value: Int) {
+        self.value = Float(value)
     }
     
     /**

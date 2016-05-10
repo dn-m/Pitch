@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import Foundation
+import ArithmeticTools
 
 public struct PitchClass: FloatWrapping {
     
@@ -14,6 +14,10 @@ public struct PitchClass: FloatWrapping {
     
     public init(floatLiteral: Float) {
         self.value = floatLiteral
+    }
+    
+    public init(integerLiteral value: Int) {
+        self.value = Float(value)
     }
     
     public init(_ pitch: Pitch) {

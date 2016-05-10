@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ArithmeticTools
 
 /// Periodic vibration in Hertz.
 public struct Frequency: FloatWrapping {
@@ -17,10 +18,14 @@ public struct Frequency: FloatWrapping {
         self.value = value
     }
     
+    public init(integerLiteral value: Int) {
+        self.value = Float(value)
+    }
+    
     /**
      Create a `Frequency` with a `NoteNumber` value.
      */
-    public init(noteNumber: NoteNumber) {
+    public init(_ noteNumber: NoteNumber) {
         self.value = 440.0 * pow(2.0, (noteNumber.value - 69.0) / 12.0)
     }
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import Foundation
+import ArithmeticTools
 
 /**
  Subjective psychoacoustical attribute of sound allowing ordering on a frequency-related scale.
@@ -38,7 +38,8 @@ public class Pitch: CustomStringConvertible {
      */
     public init(noteNumber: NoteNumber) {
         self.noteNumber = noteNumber
-        self.frequency = Frequency(noteNumber: noteNumber)
+        self.frequency = Frequency(noteNumber)
+        
     }
     
     /**
@@ -46,7 +47,7 @@ public class Pitch: CustomStringConvertible {
      */
     public init(frequency: Frequency) {
         self.frequency = frequency
-        self.noteNumber = NoteNumber(frequency: frequency)
+        self.noteNumber = NoteNumber(frequency)
     }
     
     /**
@@ -54,7 +55,7 @@ public class Pitch: CustomStringConvertible {
      */
     public init(pitch: Pitch) {
         self.frequency = pitch.frequency
-        self.noteNumber = NoteNumber(frequency: pitch.frequency)
+        self.noteNumber = NoteNumber(pitch.frequency)
     }
 }
 

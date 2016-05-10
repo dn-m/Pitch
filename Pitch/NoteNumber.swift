@@ -7,13 +7,12 @@
 //
 
 import Foundation
+import ArithmeticTools
 
 /**
  MIDI equivalent nn. 60.0 = middle-c.
  */
 public struct NoteNumber: FloatWrapping {
-    
-    public typealias FloatLiteralType = Float
     
     public let value: Float
 
@@ -21,10 +20,14 @@ public struct NoteNumber: FloatWrapping {
         self.value = value
     }
     
+    public init(integerLiteral value: Int) {
+        self.value = Float(value)
+    }
+    
     /**
      Create a `NoteNumber` with `Frequency` value.
      */
-    public init(frequency: Frequency) {
+    public init(_ frequency: Frequency) {
         self.value = 69.0 + (12.0 * (log(frequency.value / 440.0)/log(2.0)))
     }
  

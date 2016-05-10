@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import Foundation
+import ArithmeticTools
 
 /// Modulo 12 representation of an `Interval` value.
 public struct IntervalClass: FloatWrapping {
@@ -15,6 +15,10 @@ public struct IntervalClass: FloatWrapping {
     
     public init(floatLiteral value: Float) {
         self.value = value
+    }
+    
+    public init(integerLiteral value: Int) {
+        self.value = Float(value)
     }
     
     /// Create an `IntervalClass` with an `Interval`.

@@ -14,6 +14,6 @@ class NoteNumberTests: XCTestCase {
     func testNoteNumberInit() {
         let _: NoteNumber = 60.0
         let _ = NoteNumber(floatLiteral: 60.0)
-        let _ = NoteNumber(frequency: 440.0)
+        let _ = NoteNumber(440.0)
     }
 }
