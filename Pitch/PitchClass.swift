@@ -8,11 +8,9 @@
 
 import Foundation
 
-public struct PitchClass: FloatLiteralConvertible {
+public struct PitchClass: FloatWrapping {
     
-    public typealias FloatLiteralType = Float
-    
-    private let value: Float
+    public let value: Float
     
     public init(floatLiteral: Float) {
         self.value = floatLiteral
@@ -21,14 +19,4 @@ public struct PitchClass: FloatLiteralConvertible {
     public init(_ pitch: Pitch) {
         self.value = pitch.noteNumber.value % 12.0
     }
-}
-
-extension PitchClass: Comparable { }
-
-public func == (lhs: PitchClass, rhs: PitchClass) -> Bool {
-    return lhs.value == rhs.value
-}
-
-public func < (lhs: PitchClass, rhs: PitchClass) -> Bool {
-    return lhs.value < rhs.value
 }

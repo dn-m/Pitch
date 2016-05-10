@@ -11,11 +11,11 @@ import Foundation
 /**
  MIDI equivalent nn. 60.0 = middle-c.
  */
-public struct NoteNumber: FloatLiteralConvertible {
+public struct NoteNumber: FloatWrapping {
     
     public typealias FloatLiteralType = Float
     
-    internal let value: Float
+    public let value: Float
 
     public init(floatLiteral value: Float) {
         self.value = value
@@ -38,14 +38,4 @@ public struct NoteNumber: FloatLiteralConvertible {
     public func quantized(to resolution: Float) -> NoteNumber {
         return NoteNumber(floatLiteral: round(value / resolution) * resolution)
     }
-}
-
-extension NoteNumber: Comparable { }
-
-public func == (lhs: NoteNumber, rhs: NoteNumber) -> Bool {
-    return lhs.value == rhs.value
-}
-
-public func < (lhs: NoteNumber, rhs: NoteNumber) -> Bool {
-    return lhs.value < rhs.value
 }

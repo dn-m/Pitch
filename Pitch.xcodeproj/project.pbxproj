@@ -25,6 +25,8 @@
 		07AD1D491C95D402003225B2 /* PitchClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AD1D471C95D402003225B2 /* PitchClass.swift */; };
 		07AD1D4B1C95DE71003225B2 /* IntervalClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AD1D4A1C95DE71003225B2 /* IntervalClass.swift */; };
 		07AD1D4C1C95DE71003225B2 /* IntervalClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AD1D4A1C95DE71003225B2 /* IntervalClass.swift */; };
+		07BE3C1A1CE156070000A1AF /* FloatWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE3C191CE156070000A1AF /* FloatWrapping.swift */; };
+		07BE3C1B1CE156070000A1AF /* FloatWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE3C191CE156070000A1AF /* FloatWrapping.swift */; };
 		07CC26631C94E0850099C21C /* Pitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 07CC26621C94E0850099C21C /* Pitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07CC266A1C94E0850099C21C /* Pitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CC265F1C94E0850099C21C /* Pitch.framework */; };
 		07CC268A1C94E0A00099C21C /* Pitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CC26801C94E0A00099C21C /* Pitch.framework */; };
@@ -100,6 +102,7 @@
 		07AD1D441C95D3B0003225B2 /* Interval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 		07AD1D471C95D402003225B2 /* PitchClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchClass.swift; sourceTree = "<group>"; };
 		07AD1D4A1C95DE71003225B2 /* IntervalClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalClass.swift; sourceTree = "<group>"; };
+		07BE3C191CE156070000A1AF /* FloatWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatWrapping.swift; sourceTree = "<group>"; };
 		07CC265F1C94E0850099C21C /* Pitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CC26621C94E0850099C21C /* Pitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Pitch.h; path = Pitch/Pitch.h; sourceTree = "<group>"; };
 		07CC26641C94E0850099C21C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -198,6 +201,7 @@
 				07CC26791C94E08C0099C21C /* Supporting Files */,
 				0752A51F1CD699C0007C25AB /* Interval */,
 				07CC26A21C94E5630099C21C /* Frequency.swift */,
+				07BE3C191CE156070000A1AF /* FloatWrapping.swift */,
 				07CC26A51C94E6A00099C21C /* NoteNumber.swift */,
 				07CC26981C94E4910099C21C /* Pitch.swift */,
 				07AD1D471C95D402003225B2 /* PitchClass.swift */,
@@ -499,6 +503,7 @@
 				075DBB621C9B9D3A00E2D3FD /* PitchSet.swift in Sources */,
 				07CC26A31C94E5630099C21C /* Frequency.swift in Sources */,
 				07AD1D481C95D402003225B2 /* PitchClass.swift in Sources */,
+				07BE3C1A1CE156070000A1AF /* FloatWrapping.swift in Sources */,
 				07CC26991C94E4910099C21C /* Pitch.swift in Sources */,
 				07AD1D451C95D3B0003225B2 /* Interval.swift in Sources */,
 				07CC26A61C94E6A00099C21C /* NoteNumber.swift in Sources */,
@@ -525,6 +530,7 @@
 				075DBB631C9B9D3A00E2D3FD /* PitchSet.swift in Sources */,
 				07CC26A41C94E5630099C21C /* Frequency.swift in Sources */,
 				07AD1D491C95D402003225B2 /* PitchClass.swift in Sources */,
+				07BE3C1B1CE156070000A1AF /* FloatWrapping.swift in Sources */,
 				07CC269A1C94E4910099C21C /* Pitch.swift in Sources */,
 				07AD1D461C95D3B0003225B2 /* Interval.swift in Sources */,
 				07CC26A71C94E6A00099C21C /* NoteNumber.swift in Sources */,

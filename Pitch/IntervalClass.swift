@@ -9,35 +9,16 @@
 import Foundation
 
 /// Modulo 12 representation of an `Interval` value.
-public struct IntervalClass: FloatLiteralConvertible {
+public struct IntervalClass: FloatWrapping {
     
-    public typealias FloatLiteralType = Float
-    
-    internal let value: Float
+    public let value: Float
     
     public init(floatLiteral value: Float) {
         self.value = value
     }
     
-    /**
-     Create an `IntervalClass` with an `Interval`
-     */
+    /// Create an `IntervalClass` with an `Interval`.
     public init(_ interval: Interval) {
         self.value = interval.value % 12.0
     }
-}
-
-extension IntervalClass: Comparable { }
-
-public func == (lhs: IntervalClass, rhs: IntervalClass) -> Bool {
-    return lhs.value == rhs.value
-}
-
-public func < (lhs: IntervalClass, rhs: IntervalClass) -> Bool {
-    return lhs.value < rhs.value
-}
-
-extension IntervalClass: Hashable {
-    
-    public var hashValue: Int { return value.hashValue }
 }

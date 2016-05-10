@@ -9,9 +9,7 @@
 import Foundation
 
 /// Interval between two `Pitch` values.
-public struct Interval: FloatLiteralConvertible {
-    
-    public typealias FloatLiteralType = Float
+public struct Interval: FloatWrapping {
 
     /**
      Complexity of an `Interval`.
@@ -20,7 +18,7 @@ public struct Interval: FloatLiteralConvertible {
      */
     public var complexity: Float { return 0 }
     
-    internal let value: Float
+    public let value: Float
     
     public init(floatLiteral value: Float) {
         self.value = value
@@ -35,14 +33,4 @@ public struct Interval: FloatLiteralConvertible {
     
     /// `IntervalClass` representation of `Interval`.
     public var intervalClass: IntervalClass { return IntervalClass(self) }
-}
-
-extension Interval: Comparable { }
-
-public func == (lhs: Interval, rhs: Interval) -> Bool {
-    return lhs.value == rhs.value
-}
-
-public func < (lhs: Interval, rhs: Interval) -> Bool {
-    return lhs.value < rhs.value
 }
