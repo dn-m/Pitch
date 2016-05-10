@@ -8,16 +8,19 @@
 
 import ArithmeticTools
 
+/**
+ <#Description#>
+ */
 public struct PitchClass: FloatWrapping {
     
     public let value: Float
     
     public init(floatLiteral: Float) {
-        self.value = floatLiteral
+        self.value = floatLiteral % 12.0
     }
     
     public init(integerLiteral value: Int) {
-        self.value = Float(value)
+        self.value = Float(value) % 12.0
     }
     
     public init(_ pitch: Pitch) {
