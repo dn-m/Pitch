@@ -9,7 +9,7 @@
 import ArrayTools
 
 /**
- Unordered collection of pitches.
+ Unordered collection of unique pitches.
  */
 public struct PitchSet: SequenceType {
     
