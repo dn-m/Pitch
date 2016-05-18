@@ -75,7 +75,14 @@ extension PitchSet: ArrayLiteralConvertible {
     
     // MARK: - ArrayLiteralConvertible
     
-    /// Create a `PitchSet` with an `ArrayLiteral` of `Pitch` objects.
+    /**
+     Create a `PitchSet` with an `ArrayLiteral` of `Pitch` objects.
+    
+     ```
+     let pitchSet: PitchSet = [Pitch(noteNumber: 60), Pitch(noteNumber: 67)]
+     ```
+     
+     */
     public init(arrayLiteral pitches: Pitch...) {
         self.pitches = Set(pitches)
     }
