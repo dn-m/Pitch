@@ -78,6 +78,8 @@ extension PitchSet: ArrayLiteralConvertible {
     /**
      Create a `PitchSet` with an `ArrayLiteral` of `Pitch` objects.
     
+     **Example:**
+     
      ```
      let pitchSet: PitchSet = [Pitch(noteNumber: 60), Pitch(noteNumber: 67)]
      ```
