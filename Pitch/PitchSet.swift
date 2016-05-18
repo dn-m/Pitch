@@ -10,10 +10,6 @@ import ArrayTools
 
 /**
  Unordered collection of pitches.
- 
- - TODO: `var pitches`
- - TODO: `var dyads`
- - TODO: `var class set`
  */
 public struct PitchSet: SequenceType {
     
