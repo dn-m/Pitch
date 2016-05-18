@@ -15,7 +15,7 @@ import ArrayTools
  - TODO: `var dyads`
  - TODO: `var class set`
  */
-public struct PitchSet: SequenceType {
+public struct PitchSet: SequenceType, ArrayLiteralConvertible {
     
     private var pitches: Set<Pitch>
     
@@ -34,7 +34,11 @@ public struct PitchSet: SequenceType {
         return result
     }
     
-    public init(pitches: Pitch...) {
+    public init(_ pitches: Pitch...) {
+        self.pitches = Set(pitches)
+    }
+    
+    public init(_ pitches: [Pitch]) {
         self.pitches = Set(pitches)
     }
     
@@ -42,12 +46,12 @@ public struct PitchSet: SequenceType {
         self.pitches = pitches
     }
     
-    public init(pitches: [Pitch]) {
-        self.pitches = Set(pitches)
-    }
-    
     public init(orderedPitchSet: OrderedPitchSet) {
         self.pitches = Set(orderedPitchSet.map { $0} )
+    }
+    
+    public init(arrayLiteral pitches: Pitch...) {
+        self.pitches = Set(pitches)
     }
     
     public func generate() -> AnyGenerator<Pitch> {
