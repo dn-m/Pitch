@@ -15,17 +15,25 @@ import ArrayTools
  - TODO: `var dyads`
  - TODO: `var class set`
  */
-public struct PitchSet: SequenceType, ArrayLiteralConvertible {
+public struct PitchSet: SequenceType {
     
     private var pitches: Set<Pitch>
     
+    // MARK: - Instance Properties
+    
+    /// Set of `PitchClass` representations of `PitchSet`.
     public var pitchClassSet: Set<PitchClass> {
         return Set(pitches.lazy.map { $0.pitchClass })
     }
     
+    /// All dyads that comprise a `PitchSet`.
     public var dyads: [Dyad] {
-        var result: [Dyad] = []
+        
         var pitchesArray = Array(pitches)
+        
+        guard pitchesArray.count >= 2 else { return [] }
+        
+        var result: [Dyad] = []
         for a in 0 ..< pitchesArray.count {
             for b in a + 1 ..< pitchesArray.count {
                 result.append(Dyad(pitchesArray[a], pitchesArray[b]))
@@ -34,28 +42,41 @@ public struct PitchSet: SequenceType, ArrayLiteralConvertible {
         return result
     }
     
+    // MARK: - Initializers
+
+    /// Create a `PitchSet` variadically with 0..n `Pitch` objects.
     public init(_ pitches: Pitch...) {
         self.pitches = Set(pitches)
     }
     
+    /// Create a `PitchSet` with an `Array` of `Pitch` objects.
     public init(_ pitches: [Pitch]) {
         self.pitches = Set(pitches)
     }
     
+    /// Create a `PitchSet` with a `Set` of `Pitch` objects.
     public init(pitches: Set<Pitch>) {
         self.pitches = pitches
     }
     
+    /// Create a `PitchSet` with an `OrderedPitchSet`.
     public init(orderedPitchSet: OrderedPitchSet) {
         self.pitches = Set(orderedPitchSet.map { $0} )
     }
     
-    public init(arrayLiteral pitches: Pitch...) {
-        self.pitches = Set(pitches)
-    }
-    
+    /// Generate `Pitches` for iteration.
     public func generate() -> AnyGenerator<Pitch> {
         var generator = pitches.generate()
         return AnyGenerator { return generator.next() }
+    }
+}
+
+extension PitchSet: ArrayLiteralConvertible {
+    
+    // MARK: - ArrayLiteralConvertible
+    
+    /// Create a `PitchSet` with an `ArrayLiteral` of `Pitch` objects.
+    public init(arrayLiteral pitches: Pitch...) {
+        self.pitches = Set(pitches)
     }
 }
