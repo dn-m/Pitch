@@ -23,7 +23,8 @@ public struct PitchSet: SequenceType {
     }
     
     /** 
-     All dyads that comprise a `PitchSet`.
+     All unique dyads that comprise a `PitchSet`.
+     
      In the case that there are less than two `Pitch` objects in a `PitchSet`, 
      the `dyads` property is an empty array.
  
@@ -31,13 +32,12 @@ public struct PitchSet: SequenceType {
      
      ```
      let triad: PitchSet = [
-        Pitch(noteNumber: 60), Pitch(noteNumber: 61), Pitch(noteNumber: 62)
+        Pitch(noteNumber: 60), 
+        Pitch(noteNumber: 61), 
+        Pitch(noteNumber: 62)
      ]
      
-     60,61; 60:62, 61:62
-     
-     pitchSet.dyads // => 
-     //
+     triad.dyads // =>
      //    [
      //       Dyad(Pitch(noteNumber: 60), Pitch(noteNumber: 61)),
      //       Dyad(Pitch(noteNumber: 60), Pitch(noteNumber: 62)),
