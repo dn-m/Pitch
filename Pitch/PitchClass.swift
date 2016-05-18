@@ -9,7 +9,7 @@
 import ArithmeticTools
 
 /**
- <#Description#>
+ Modulo 12 representation of `noteNumber` of `Pitch`.
  */
 public struct PitchClass: FloatWrapping {
     

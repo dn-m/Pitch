@@ -17,7 +17,18 @@ public struct PitchSet: SequenceType {
     
     // MARK: - Instance Properties
     
-    /// Set of `PitchClass` representations of `PitchSet`.
+    /**
+     Set of `PitchClass` representations of `PitchSet`.
+ 
+     **Example:**
+     
+     ```
+     let pitchSet: PitchSet = [Pitch(noteNumber: 63.5), Pitch(noteNumber: 69.25)]
+     
+     pitchSet.pitchClassSet // => [3.5, 69.25]
+     ```
+     P
+     */
     public var pitchClassSet: Set<PitchClass> {
         return Set(pitches.lazy.map { $0.pitchClass })
     }
