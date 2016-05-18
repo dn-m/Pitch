@@ -22,7 +22,29 @@ public struct PitchSet: SequenceType {
         return Set(pitches.lazy.map { $0.pitchClass })
     }
     
-    /// All dyads that comprise a `PitchSet`.
+    /** 
+     All dyads that comprise a `PitchSet`.
+     In the case that there are less than two `Pitch` objects in a `PitchSet`, 
+     the `dyads` property is an empty array.
+ 
+     **Example:**
+     
+     ```
+     let triad: PitchSet = [
+        Pitch(noteNumber: 60), Pitch(noteNumber: 61), Pitch(noteNumber: 62)
+     ]
+     
+     60,61; 60:62, 61:62
+     
+     pitchSet.dyads // => 
+     //
+     //    [
+     //       Dyad(Pitch(noteNumber: 60), Pitch(noteNumber: 61)),
+     //       Dyad(Pitch(noteNumber: 60), Pitch(noteNumber: 62)),
+     //       Dyad(Pitch(noteNumber: 61), Pitch(noteNumber: 62))
+     //    ]
+     ```
+     */
     public var dyads: [Dyad] {
         
         var pitchesArray = Array(pitches)
@@ -30,7 +52,7 @@ public struct PitchSet: SequenceType {
         guard pitchesArray.count >= 2 else { return [] }
         
         var result: [Dyad] = []
-        for a in 0 ..< pitchesArray.count {
+        for a in 0 ..< pitchesArray.count - 1 {
             for b in a + 1 ..< pitchesArray.count {
                 result.append(Dyad(pitchesArray[a], pitchesArray[b]))
             }
