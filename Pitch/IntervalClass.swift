@@ -66,9 +66,9 @@ public struct IntervalClass: FloatWrapping {
     
     public let value: Float
     
-    public lazy var complexity: Complexity? = {
-       IntervalClass.intervalClassOrderedBySpellingComplexity.indexOf(self)
-    }()
+    public var complexity: Complexity? {
+        return IntervalClass.intervalClassOrderedBySpellingComplexity.indexOf(self)
+    }
     
     public init(floatLiteral value: Float) {
         self.value = value
