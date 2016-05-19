@@ -20,6 +20,7 @@ public struct NoteNumber: FloatWrapping {
      Create a `NoteNumber` with a `FloatLiteralType`.
      
      **Example:**
+     
      ```
      let nn: NoteNumber = 65.5 // => F quarter sharp above middle C
      ```
@@ -32,6 +33,7 @@ public struct NoteNumber: FloatWrapping {
      Create a `NoteNumber` with an `IntegerLiteralType`.
      
      **Example:**
+     
      ```
      let nn: NoteNumber = 65 => F above middle C
      ```
@@ -44,6 +46,7 @@ public struct NoteNumber: FloatWrapping {
      Create a `NoteNumber` with `Frequency` value.
      
      **Example:**
+     
      ```
      let nn = NoteNumber(440) => A below middle c
      ```
