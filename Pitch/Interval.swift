@@ -11,13 +11,6 @@ import ArithmeticTools
 /// Interval between two `Pitch` values.
 public struct Interval: FloatWrapping {
 
-    /**
-     Complexity of an `Interval`.
-     
-     - warning: Not yet implemented.
-     */
-    public var complexity: Float { return 0 }
-    
     public let value: Float
     
     public init(floatLiteral value: Float) {
@@ -34,7 +27,4 @@ public struct Interval: FloatWrapping {
     public init(dyad: Dyad) {
         self.value = dyad.higher.noteNumber.value - dyad.lower.noteNumber.value
     }
-    
-    /// `IntervalClass` representation of `Interval`.
-    public var intervalClass: IntervalClass { return IntervalClass(self) }
 }
