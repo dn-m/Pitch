@@ -11,11 +11,6 @@ import ArithmeticTools
 
 /**
  MIDI NoteNumber.
- 
- ** Example:**
- ```
- let nn: NoteNumber = 60 // => middle C
- ```
  */
 public struct NoteNumber: FloatWrapping {
     
