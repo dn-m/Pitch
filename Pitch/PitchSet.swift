@@ -13,7 +13,7 @@ import ArrayTools
  */
 public struct PitchSet: SequenceType {
     
-    private var pitches: Set<Pitch>
+    private let pitches: Set<Pitch>
     
     // MARK: - Instance Properties
     
@@ -29,6 +29,14 @@ public struct PitchSet: SequenceType {
      */
     public var pitchClassSet: Set<PitchClass> {
         return Set(pitches.lazy.map { $0.pitchClass })
+    }
+    
+    public var isEmpty: Bool {
+        return Array(pitches).count == 0
+    }
+    
+    public var isMonadic: Bool {
+        return Array(pitches).count == 1
     }
     
     /** 
