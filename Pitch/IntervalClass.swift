@@ -15,7 +15,9 @@ import ArithmeticTools
  */
 public struct IntervalClass: FloatWrapping {
     
-    public let value: Float
+    public typealias FloatLiteralType = Float
+    
+    public var value: Float
     
     public init(floatLiteral value: Float) {
         self.value = value

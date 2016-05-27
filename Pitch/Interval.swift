@@ -1,3 +1,4 @@
+
 //
 //  Interval.swift
 //  Pitch
@@ -10,8 +11,8 @@ import ArithmeticTools
 
 /// Interval between two `Pitch` values.
 public struct Interval: FloatWrapping {
-
-    public let value: Float
+    
+    public var value: Float
     
     public init(floatLiteral value: Float) {
         self.value = value
