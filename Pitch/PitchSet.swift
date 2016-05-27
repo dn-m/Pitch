@@ -31,10 +31,12 @@ public struct PitchSet: SequenceType {
         return Set(pitches.lazy.map { $0.pitchClass })
     }
     
+    /// - returns: `true` if there are no `Pitch` objects herein. Otherwsie `false`.
     public var isEmpty: Bool {
         return Array(pitches).count == 0
     }
     
+    /// - returns: `true` if there is one `Pitch` object herein. Otherwsie `false`.
     public var isMonadic: Bool {
         return Array(pitches).count == 1
     }
