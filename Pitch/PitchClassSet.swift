@@ -13,7 +13,7 @@ import ArrayTools
  */
 public struct PitchClassSet: PitchConvertibleSetType {
     
-    // MARK: - Associatd Types
+    // MARK: - Associated Types
     
     /// `PitchConvertible` type contained herein.
     public typealias Element = PitchClass
