@@ -17,13 +17,18 @@ import ArrayTools
 public struct PitchSequence {
     
     private let pitches: Array<Pitch>
+    
+    // TODO: prime form
+    // TODO: inverse
+    // TODO: retrograde
+    // TODO: optional : retrograde inverse
+    // TODO: trasposedBy()
+    public var retrograde: PitchSequence { return PitchSequence(pitches.reverse()) }
 }
 
 extension PitchSequence: ArrayLiteralConvertible {
     
     // MARK: - ArrayLiteralConvertible
-    
-    // MARK: - Initializers
     
     /**
      Create a `PitchSequence` with an array literal.
@@ -37,20 +42,16 @@ extension PitchSequence: PitchSequenceType {
     
     // MARK: - PitchSequenceType
     
-    // MARK: - Instance Properties
-    
     /// Iterable sequence of `Pitch` values contained herein.
     public var sequence: AnySequence<Pitch> { return AnySequence(pitches) }
     
     /// - returns: `true` if there is one `Pitch` object herein. Otherwsie `false`.
     public var isMonadic: Bool { return count == 1 }
     
-    // MARK: - Initializers
-    
     /**
      Create a `PitchSet` with `SequenceType` containing `Pitch` values.
      */
-    public init<S: SequenceType where S.Generator.Element == Pitch>(sequence: S) {
+    public init<S: SequenceType where S.Generator.Element == Pitch>(_ sequence: S) {
         self.pitches = Array(sequence)
     }
 }

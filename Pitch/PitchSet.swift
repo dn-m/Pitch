@@ -82,7 +82,7 @@ public struct PitchSet: PitchSequenceType {
     /**
      Create a `PitchSet` with `SequenceType` containing `Pitch` values.
      */
-    public init<S: SequenceType where S.Generator.Element == Pitch>(sequence: S) {
+    public init<S: SequenceType where S.Generator.Element == Pitch>(_ sequence: S) {
         self.pitches = Set(sequence)
     }
 }
