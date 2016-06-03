@@ -104,3 +104,10 @@ extension PitchSet: ArrayLiteralConvertible {
         self.pitches = Set(pitches)
     }
 }
+
+extension PitchSet: CustomStringConvertible {
+    
+    public var description: String {
+        return "{ \(map{ "\($0)" }.joinWithSeparator(",")) }"
+    }
+}

@@ -10,6 +10,9 @@ import ArrayTools
 
 /**
  Ordered collection of non-unique `Pitch` values.
+ 
+ - TODO: prime form, inverse, retrograde, retrograde inverse, transposition at ...,
+ 
  */
 public struct PitchSequence {
     
