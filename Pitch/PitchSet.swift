@@ -13,8 +13,12 @@ import ArrayTools
  */
 public struct PitchSet: PitchConvertibleSetType {
     
+    // MARK: - Associated Types
+    
     /// `PitchConvertible` type contained herein.
     public typealias Element = Pitch
+    
+    // MARK: - Instance Properties
     
     /// `Set` holding `Pitch` values.
     public let set: Set<Element>
@@ -70,6 +74,8 @@ public struct PitchSet: PitchConvertibleSetType {
 }
 
 extension PitchSet: AnySequenceType {
+    
+    // MARK: - AnySequenceType
     
     /**
      Create a `PitchSet` with a sequence of `Pitch` values.
