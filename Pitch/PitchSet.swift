@@ -35,14 +35,12 @@ public struct PitchSet: PitchSequenceType {
     }
     
     /// - returns: `true` if there are no `Pitch` objects herein. Otherwsie `false`.
-    public var isEmpty: Bool {
-        return Array(pitches).count == 0
-    }
+    /// - TODO: refactor this up to `PitchSequenceType`
+    public var isEmpty: Bool { return Array(pitches).count == 0 }
     
     /// - returns: `true` if there is one `Pitch` object herein. Otherwsie `false`.
-    public var isMonadic: Bool {
-        return Array(pitches).count == 1
-    }
+    /// - TODO: refactor this up to `PitchSequenceType`
+    public var isMonadic: Bool { return Array(pitches).count == 1 }
     
     /** 
      All unique dyads that comprise a `PitchSet`.
@@ -59,12 +57,11 @@ public struct PitchSet: PitchSequenceType {
         Pitch(noteNumber: 62)
      ]
      
-     triad.dyads // =>
-     //    [
-     //       Dyad(Pitch(noteNumber: 60), Pitch(noteNumber: 61)),
-     //       Dyad(Pitch(noteNumber: 60), Pitch(noteNumber: 62)),
-     //       Dyad(Pitch(noteNumber: 61), Pitch(noteNumber: 62))
-     //    ]
+     triad.dyads == [
+        Dyad(Pitch(noteNumber: 60), Pitch(noteNumber: 61)),
+        Dyad(Pitch(noteNumber: 60), Pitch(noteNumber: 62)),
+        Dyad(Pitch(noteNumber: 61), Pitch(noteNumber: 62))
+     ]
      ```
      */
     public var dyads: [Dyad] {
