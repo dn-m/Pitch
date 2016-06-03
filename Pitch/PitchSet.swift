@@ -15,13 +15,10 @@ public struct PitchSet: PitchSequenceType {
     
     private let pitches: Set<Pitch>
     
-    public var sequence: AnySequence<Pitch> { return AnySequence(pitches) }
-    
-    public init<S: SequenceType where S.Generator.Element == Pitch>(sequence: S) {
-        self.pitches = Set(sequence)
-    }
-    
     // MARK: - Instance Properties
+    
+    /// Iterable sequence of `Pitch` values contained herein.
+    public var sequence: AnySequence<Pitch> { return AnySequence(pitches) }
     
     /**
      Set of `PitchClass` representations of `PitchSet`.
@@ -87,25 +84,12 @@ public struct PitchSet: PitchSequenceType {
     
     // MARK: - Initializers
 
-    /// Create a `PitchSet` variadically with 0..n `Pitch` objects.
-    public init(_ pitches: Pitch...) {
-        self.pitches = Set(pitches)
+    /**
+     Create a `PitchSet` with `SequenceType` containing `Pitch` values.
+     */
+    public init<S: SequenceType where S.Generator.Element == Pitch>(sequence: S) {
+        self.pitches = Set(sequence)
     }
-    
-    /// Create a `PitchSet` with an `Array` of `Pitch` objects.
-    public init(_ pitches: [Pitch]) {
-        self.pitches = Set(pitches)
-    }
-    
-    /// Create a `PitchSet` with a `Set` of `Pitch` objects.
-    public init(pitches: Set<Pitch>) {
-        self.pitches = pitches
-    }
-    
-//    /// Create a `PitchSet` with an `OrderedPitchSet`.
-//    public init(orderedPitchSet: OrderedPitchSet) {
-//        self.pitches = Set(orderedPitchSet.map { $0} )
-//    }
 }
 
 extension PitchSet: ArrayLiteralConvertible {
