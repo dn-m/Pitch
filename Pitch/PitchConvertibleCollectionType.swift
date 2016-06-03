@@ -26,7 +26,7 @@ public protocol PitchConvertibleCollectionType: PitchConvertibleContaining, Coll
 
 extension PitchConvertibleCollectionType {
     
-    // MARK: - PitchConvertibleCollectionType
+    // MARK: - AnySequenceType
 
     /// Iterable sequence of `Pitch` values contained herein.
     public var sequence: AnySequence<Element> { return AnySequence(array) }
@@ -34,7 +34,7 @@ extension PitchConvertibleCollectionType {
 
 extension PitchConvertibleCollectionType {
     
-    // MARK: - PitchConvertibleCollectionType
+    // MARK: - PitchConvertibleContaining
     
     /// - returns `true` if there are no `Pitch` values contained herein. Otherwise, `false`.
     public var isEmpty: Bool { return array.isEmpty }
