@@ -11,9 +11,15 @@ import ArrayTools
 /**
  Unordered collection of unique pitches.
  */
-public struct PitchSet: SequenceType {
+public struct PitchSet: PitchSequenceType {
     
     private let pitches: Set<Pitch>
+    
+    public var sequence: AnySequence<Pitch> { return AnySequence(pitches) }
+    
+    public init<S: SequenceType where S.Generator.Element == Pitch>(sequence: S) {
+        self.pitches = Set(sequence)
+    }
     
     // MARK: - Instance Properties
     
@@ -96,16 +102,10 @@ public struct PitchSet: SequenceType {
         self.pitches = pitches
     }
     
-    /// Create a `PitchSet` with an `OrderedPitchSet`.
-    public init(orderedPitchSet: OrderedPitchSet) {
-        self.pitches = Set(orderedPitchSet.map { $0} )
-    }
-    
-    /// Generate `Pitches` for iteration.
-    public func generate() -> AnyGenerator<Pitch> {
-        var generator = pitches.generate()
-        return AnyGenerator { return generator.next() }
-    }
+//    /// Create a `PitchSet` with an `OrderedPitchSet`.
+//    public init(orderedPitchSet: OrderedPitchSet) {
+//        self.pitches = Set(orderedPitchSet.map { $0} )
+//    }
 }
 
 extension PitchSet: ArrayLiteralConvertible {
