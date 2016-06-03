@@ -18,6 +18,8 @@ public protocol PitchConvertibleCollectionType: PitchConvertibleContaining, Coll
     /// `PitchConvertible`-conforming type of values contained herein.
     associatedtype Element: PitchConvertible
     
+    // MARK: - Instance Properties
+    
     /// `Array` holding `PitchConvertible` values
     var array: Array<Element> { get }
 }
