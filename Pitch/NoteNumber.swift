@@ -14,7 +14,7 @@ import ArithmeticTools
  */
 public struct NoteNumber: FloatWrapping {
     
-    // Instance Properties
+    // MARK: - Instance Properties
     
     /// Value of this `NoteNumber`.
     public var value: Float
