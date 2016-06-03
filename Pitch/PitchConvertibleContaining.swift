@@ -9,15 +9,7 @@
 import ArrayTools
 
 /**
- The highest level protocol for any PitchConvertible containing structure.
- 
- Currently for things like:
- - PitchSequence
- - PitchSet
- - PitchClassSequence
- - PitchClassSet
- - IntervalSequence
- - IntervalSet
+ Conforming types can hold `PitchConvertible`-conforming types.
  */
 public protocol PitchConvertibleContaining: AnySequenceType {
  
