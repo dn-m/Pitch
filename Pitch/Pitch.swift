@@ -63,6 +63,8 @@ public struct Pitch: CustomStringConvertible {
 
 extension Pitch: PitchConvertible {
     
+    // MARK: - PitchConvertible
+    
     /**
      Create a `Pitch` with another `Pitch`.
      */
@@ -74,6 +76,8 @@ extension Pitch: PitchConvertible {
 
 extension Pitch: FloatLiteralConvertible {
     
+    // MARK: - FloatLiteralConvertible
+    
     /**
      Create a `Pitch` with a `FloatLiteral`. This value is the `NoteNumber` value.
      */
@@ -84,10 +88,16 @@ extension Pitch: FloatLiteralConvertible {
 
 extension Pitch: IntegerLiteralConvertible {
     
+    // MARK: - IntegerLiteralConvertible
+    
+    /**
+     Create a `Pitch` with an `IntegerLiteral`. This value is the `NoteNumber` value.
+     */
     public init(integerLiteral value: Int) {
         self.init(noteNumber: NoteNumber(Float(value)))
     }
 }
+
 
 extension Pitch: Comparable { }
 
@@ -100,6 +110,9 @@ public func < (lhs: Pitch, rhs: Pitch) -> Bool {
 }
 
 extension Pitch: Hashable {
+    
+    // MARK: - Hashable
 
+    /// Hash value.
     public var hashValue: Int { return noteNumber.hashValue }
 }
