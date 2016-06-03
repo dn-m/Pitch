@@ -13,7 +13,7 @@ import ArithmeticTools
  */
 public struct Pitch: CustomStringConvertible {
     
-    // MARK - Type Properties
+    // MARK: - Type Properties
     
     /// Middle C.
     public static let middleC = Pitch(noteNumber: 60.0)
