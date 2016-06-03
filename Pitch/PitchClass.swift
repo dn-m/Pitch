@@ -13,20 +13,13 @@ import ArithmeticTools
  */
 public struct PitchClass: FloatWrapping {
     
+    /// Value of this `PitchClass`.
     public var value: Float
+}
+
+extension PitchClass: IntegerLiteralConvertible {
     
-    /**
-     Create a `PitchClass` with a `FloatLiteralType`.
-     
-     **Example:**
-     
-     ```
-     let pitchClass = 49.5 // => 1.5
-     ```
-     */
-    public init(floatLiteral: Float) {
-        self.value = floatLiteral % 12.0
-    }
+    // MARK: - IntegerLiteralConvertible
     
     /**
      Create a `PitchClass` with an `IntegerLiteralType`.
@@ -39,6 +32,24 @@ public struct PitchClass: FloatWrapping {
      */
     public init(integerLiteral value: Int) {
         self.value = Float(value) % 12.0
+    }
+}
+
+extension PitchClass: FloatLiteralConvertible {
+    
+    // MARK: - IntegerLiterlConvertible
+    
+    /**
+     Create a `PitchClass` with a `FloatLiteralType`.
+     
+     **Example:**
+     
+     ```
+     let pitchClass = 49.5 // => 1.5
+     ```
+     */
+    public init(floatLiteral: Float) {
+        self.value = floatLiteral % 12.0
     }
 }
 

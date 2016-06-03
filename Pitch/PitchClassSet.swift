@@ -24,6 +24,8 @@ public struct PitchClassSet: PitchConvertibleSetType {
 
 extension PitchClassSet: AnySequenceType {
     
+    // MARK: - AnySequenceType
+    
     /**
      Create an `AnySequenceType` with a `Sequence` of any type.
      
