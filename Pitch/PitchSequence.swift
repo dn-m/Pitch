@@ -75,3 +75,13 @@ extension PitchSequence: CollectionType {
      */
     public subscript(index: Int) -> Element { return pitches[index] }
 }
+
+extension PitchSequence: CustomStringConvertible {
+    
+    // MARK: - CustomStringConvertible
+    
+    /// Printed description of `PitchSequence`.
+    public var description: String {
+        return "(\(map{ "\($0)" }.joinWithSeparator(",")))"
+    }
+}

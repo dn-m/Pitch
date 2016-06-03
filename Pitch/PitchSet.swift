@@ -107,7 +107,10 @@ extension PitchSet: ArrayLiteralConvertible {
 
 extension PitchSet: CustomStringConvertible {
     
+    // MARK: - CustomStringConvertible
+    
+    /// Printed description of `PitchSet`.
     public var description: String {
-        return "{ \(map{ "\($0)" }.joinWithSeparator(",")) }"
+        return "{\(map{ "\($0)" }.joinWithSeparator(","))}"
     }
 }
