@@ -185,25 +185,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0752A51F1CD699C0007C25AB /* Interval */ = {
-			isa = PBXGroup;
-			children = (
-				07AD1D441C95D3B0003225B2 /* Interval.swift */,
-				07AD1D4A1C95DE71003225B2 /* IntervalClass.swift */,
-			);
-			name = Interval;
-			sourceTree = "<group>";
-		};
-		078DAE0F1CF911CF0095AFC9 /* PitchSequenceType */ = {
-			isa = PBXGroup;
-			children = (
-				075DBB611C9B9D3A00E2D3FD /* PitchSet.swift */,
-				070EA9591D01C364000EAEFB /* PitchSequence.swift */,
-				07514DB31D01BF16009A72BE /* PitchSequenceType.swift */,
-			);
-			name = PitchSequenceType;
-			sourceTree = "<group>";
-		};
 		07CC26551C94E0850099C21C = {
 			isa = PBXGroup;
 			children = (
@@ -230,8 +211,9 @@
 			isa = PBXGroup;
 			children = (
 				07CC26791C94E08C0099C21C /* Supporting Files */,
-				0752A51F1CD699C0007C25AB /* Interval */,
 				07CC26A21C94E5630099C21C /* Frequency.swift */,
+				07AD1D441C95D3B0003225B2 /* Interval.swift */,
+				07AD1D4A1C95DE71003225B2 /* IntervalClass.swift */,
 				07A4A8051D01D9B100ED5EA9 /* PitchConvertible.swift */,
 				07A4A8171D01DCCA00ED5EA9 /* PitchConvertibleContaining.swift */,
 				07A4A8141D01DC1E00ED5EA9 /* PitchConvertibleSetType.swift */,
@@ -242,7 +224,9 @@
 				07CC26981C94E4910099C21C /* Pitch.swift */,
 				07AD1D471C95D402003225B2 /* PitchClass.swift */,
 				07AD1D3E1C95D2B8003225B2 /* Dyad.swift */,
-				078DAE0F1CF911CF0095AFC9 /* PitchSequenceType */,
+				075DBB611C9B9D3A00E2D3FD /* PitchSet.swift */,
+				070EA9591D01C364000EAEFB /* PitchSequence.swift */,
+				07514DB31D01BF16009A72BE /* PitchSequenceType.swift */,
 			);
 			path = Pitch;
 			sourceTree = "<group>";
