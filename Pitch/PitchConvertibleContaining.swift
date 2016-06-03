@@ -18,6 +18,8 @@ public protocol PitchConvertibleContaining: AnySequenceType {
     /// The `PitchConvertible` type element contained herein.
     associatedtype Element = PitchConvertible
     
+    // MARK: - Instance Properties
+    
     /// Iterable sequence of `Pitch` values contained herein.
     var sequence: AnySequence<Element> { get }
     
