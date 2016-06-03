@@ -30,6 +30,8 @@ public struct IntervalClass: FloatWrapping {
 
 extension IntervalClass: IntegerLiteralConvertible {
     
+    // MARK: - IntegerLiteralConvertible
+    
     /**
      Create an `IntervalClass` with an `IntegerLiteral`.
      */
@@ -39,6 +41,8 @@ extension IntervalClass: IntegerLiteralConvertible {
 }
 
 extension IntervalClass: FloatLiteralConvertible {
+    
+    // MARK: - FloatLiteralConvertible
     
     /**
      Create an `IntervalClass` with a `FloatLiteral`.
