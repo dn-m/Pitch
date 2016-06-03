@@ -12,9 +12,8 @@ import ArrayTools
  Ordered collection of non-unique `Pitch` values.
  */
 public struct PitchSequence: PitchConvertibleCollectionType {
-    
-    
-    
+
+    /// Array of the `Pitch` values contained herein.
     public let array: Array<Pitch>
     
     // TODO: prime form
@@ -22,13 +21,16 @@ public struct PitchSequence: PitchConvertibleCollectionType {
     // TODO: optional : retrograde inverse
     // TODO: trasposedBy()
     
-    public var retrograde: PitchSequence { return PitchSequence(array.reverse()) }
+    public var retrograde: PitchSequence { return PitchSequence(reverse()) }
 }
 
 extension PitchSequence: AnySequenceType {
     
     // MARK: - PitchSequenceType
     
+    // MARK: - Associated Types
+    
+    /// `PitchConvertible` values contained herein.
     public typealias Element = Pitch
     
     /**
