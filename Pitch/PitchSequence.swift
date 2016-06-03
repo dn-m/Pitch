@@ -25,6 +25,9 @@ extension PitchSequence: PitchSequenceType {
     /// Iterable sequence of `Pitch` values contained herein.
     public var sequence: AnySequence<Pitch> { return AnySequence(pitches) }
     
+    /// - returns: `true` if there is one `Pitch` object herein. Otherwsie `false`.
+    public var isMonadic: Bool { return count == 1 }
+    
     // MARK: - Initializers
     
     /**

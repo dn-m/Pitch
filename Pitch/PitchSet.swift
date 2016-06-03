@@ -20,6 +20,12 @@ public struct PitchSet: PitchSequenceType {
     /// Iterable sequence of `Pitch` values contained herein.
     public var sequence: AnySequence<Pitch> { return AnySequence(pitches) }
     
+    /// - returns: `true` if there are no `Pitch` objects herein. Otherwsie `false`.
+    public var isEmpty: Bool { return Array(sequence).count == 0 }
+    
+    /// - returns: `true` if there is one `Pitch` object herein. Otherwsie `false`.
+    public var isMonadic: Bool { return Array(sequence).count == 1 }
+    
     /**
      Set of `PitchClass` representations of `PitchSet`.
  

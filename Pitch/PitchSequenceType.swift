@@ -21,14 +21,6 @@ public protocol PitchSequenceType: AnySequenceType {
 
 extension PitchSequenceType {
     
-    typealias Element = Pitch
-    
-    /// - returns: `true` if there are no `Pitch` objects herein. Otherwsie `false`.
-    /// - TODO: refactor this up to `PitchSequenceType`
-    public var isEmpty: Bool { return Array(sequence).count == 0 }
-    
-    /// - returns: `true` if there is one `Pitch` object herein. Otherwsie `false`.
-    /// - TODO: refactor this up to `PitchSequenceType`
-    public var isMonadic: Bool { return Array(sequence).count == 1 }
+    public typealias Element = Pitch
 }
 
