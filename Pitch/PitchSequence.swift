@@ -16,6 +16,20 @@ public struct PitchSequence {
     private let pitches: Array<Pitch>
 }
 
+extension PitchSequence: ArrayLiteralConvertible {
+    
+    // MARK: - ArrayLiteralConvertible
+    
+    // MARK: - Initializers
+    
+    /**
+     Create a `PitchSequence` with an array literal.
+     */
+    public init(arrayLiteral elements: Pitch...) {
+        self.pitches = elements
+    }
+}
+
 extension PitchSequence: PitchSequenceType {
     
     // MARK: - PitchSequenceType

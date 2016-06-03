@@ -25,7 +25,7 @@ import Foundation
  
  In the case of both `Pitch` and `PitchSet`, these are named `storage`.
  */
-public protocol AnySequenceType: SequenceType {
+public protocol AnySequenceType: SequenceType, ArrayLiteralConvertible {
     
     // MARK: Associated Types
     
@@ -45,6 +45,8 @@ public protocol AnySequenceType: SequenceType {
 }
 
 extension AnySequenceType {
+
+    // MARK: - SequenceType
     
     /**
      Returns a generator over the elements of this sequence.

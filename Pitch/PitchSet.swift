@@ -99,7 +99,6 @@ extension PitchSet: ArrayLiteralConvertible {
      ```
      let pitchSet: PitchSet = [Pitch(noteNumber: 60), Pitch(noteNumber: 67)]
      ```
-     
      */
     public init(arrayLiteral pitches: Pitch...) {
         self.pitches = Set(pitches)
