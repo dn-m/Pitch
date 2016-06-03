@@ -27,9 +27,12 @@ public struct PitchClassSequence: PitchConvertibleCollectionType {
         return PitchClassSequence(map { return $0.inversion })
     }
     
-    /// Array of `IntervalClass` values between each adjacent `PitchClass` herein.
-    /// - TODO: Refactor up the `PitchConvertibleCollectionType` protocol hierarchy
-    /// - TODO: Implement `IntervalClassSeqeuence`
+    /**
+     Array of `IntervalClass` values between each adjacent `PitchClass` herein.
+
+     - TODO: Refactor up the `PitchConvertibleCollectionType` protocol hierarchy
+     - TODO: Implement `IntervalClassSeqeuence`
+     */
     public var intervals: [IntervalClass] {
         guard array.count > 1 else { return [] }
         var result: [IntervalClass] = []
@@ -39,9 +42,12 @@ public struct PitchClassSequence: PitchConvertibleCollectionType {
         return result
     }
     
-    /// Array of `PitchClassDyad` values between each combination (choose 2) herein.
-    /// TODO: Refactor up the `PitchConvertibleContaining` protocol hierarchy
-    /// TODO: Implement generic Dyad and Interval
+    /** 
+     Array of `PitchClassDyad` values between each combination (choose 2) herein.
+    
+     - TODO: Refactor up the `PitchConvertibleContaining` protocol hierarchy
+     - TODO: Implement generic Dyad and Interval
+     */
     public var dyads: [PitchClassDyad] {
         
         guard array.count >= 2 else { return [] }
