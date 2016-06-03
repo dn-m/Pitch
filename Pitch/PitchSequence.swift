@@ -25,7 +25,7 @@ public struct PitchSequence: PitchConvertibleCollectionType {
     public var retrograde: PitchSequence { return PitchSequence(array.reverse()) }
 }
 
-extension PitchSequence: PitchSequenceType {
+extension PitchSequence: AnySequenceType {
     
     // MARK: - PitchSequenceType
     
