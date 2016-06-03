@@ -19,6 +19,9 @@ public struct PitchClassSequence: PitchConvertibleCollectionType {
 
 extension PitchClassSequence: AnySequenceType {
     
+    // MARK: - AnySequenceType
+    
+    /// `PitchConvertible`-conforming type contained herein.
     public typealias Element = PitchClass
     
     /// Iterable sequence of `Pitch` values contained herein.

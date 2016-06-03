@@ -23,12 +23,16 @@ public protocol PitchConvertibleCollectionType: PitchConvertibleContaining, Coll
 }
 
 extension PitchConvertibleCollectionType {
+    
+    // MARK: - PitchConvertibleCollectionType
 
     /// Iterable sequence of `Pitch` values contained herein.
     public var sequence: AnySequence<Element> { return AnySequence(array) }
 }
 
 extension PitchConvertibleCollectionType {
+    
+    // MARK: - PitchConvertibleCollectionType
     
     /// - returns `true` if there are no `Pitch` values contained herein. Otherwise, `false`.
     public var isEmpty: Bool { return array.isEmpty }
@@ -39,7 +43,7 @@ extension PitchConvertibleCollectionType {
 
 extension PitchConvertibleCollectionType {
     
-    // MARK: CollectionType
+    // MARK: - CollectionType
     
     /// Start index
     public var startIndex: Int { return 0 }
@@ -54,6 +58,8 @@ extension PitchConvertibleCollectionType {
 }
 
 extension PitchConvertibleCollectionType {
+    
+    // MARK: - CustomStringConvertible
     
     /// Printed description of `PitchConvertibleCollectionType`.
     public var description: String {
