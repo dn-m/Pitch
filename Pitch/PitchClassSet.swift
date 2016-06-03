@@ -18,6 +18,8 @@ public struct PitchClassSet: PitchConvertibleSetType {
     /// `PitchConvertible` type contained herein.
     public typealias Element = PitchClass
     
+    // MARK: - Instance Properties
+    
     /// `Set` holding `PitchClass` values.
     public let set: Set<Element>
 }
