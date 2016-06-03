@@ -34,14 +34,6 @@ public struct PitchSet: PitchSequenceType {
         return Set(pitches.lazy.map { $0.pitchClass })
     }
     
-    /// - returns: `true` if there are no `Pitch` objects herein. Otherwsie `false`.
-    /// - TODO: refactor this up to `PitchSequenceType`
-    public var isEmpty: Bool { return Array(pitches).count == 0 }
-    
-    /// - returns: `true` if there is one `Pitch` object herein. Otherwsie `false`.
-    /// - TODO: refactor this up to `PitchSequenceType`
-    public var isMonadic: Bool { return Array(pitches).count == 1 }
-    
     /** 
      All unique dyads that comprise a `PitchSet`.
      

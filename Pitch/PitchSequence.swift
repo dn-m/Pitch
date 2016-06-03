@@ -11,12 +11,21 @@ import ArrayTools
 /**
  Ordered collection of non-unique `Pitch` values.
  */
-public struct PitchSequence: PitchSequenceType {
+public struct PitchSequence {
     
     private let pitches: Array<Pitch>
+}
+
+extension PitchSequence: PitchSequenceType {
+    
+    // MARK: - PitchSequenceType
+    
+    // MARK: - Instance Properties
     
     /// Iterable sequence of `Pitch` values contained herein.
     public var sequence: AnySequence<Pitch> { return AnySequence(pitches) }
+    
+    // MARK: - Initializers
     
     /**
      Create a `PitchSet` with `SequenceType` containing `Pitch` values.
@@ -24,4 +33,25 @@ public struct PitchSequence: PitchSequenceType {
     public init<S: SequenceType where S.Generator.Element == Pitch>(sequence: S) {
         self.pitches = Array(sequence)
     }
+}
+
+extension PitchSequence: CollectionType {
+    
+    // MARK: CollectionType
+    
+    // MARK: - Associated Types
+    
+    /// Pitch type contained here
+    public typealias Element = Pitch
+    
+    /// Start index
+    public var startIndex: Int { return 0 }
+    
+    /// End index
+    public var endIndex: Int { return pitches.count }
+    
+    /**
+     - returns: `Pitch` value at the given `index`.
+     */
+    public subscript(index: Int) -> Element { return pitches[index] }
 }
