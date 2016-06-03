@@ -8,10 +8,15 @@
 
 import ArrayTools
 
+/**
+ Protocol definining an unordered set of unique `PitchConvterible`-conforming values.
+ */
 public protocol PitchConvertibleSetType: PitchConvertibleContaining {
     
+    /// The `PitchConvertible` type contained herein.
     associatedtype Element: PitchConvertible
     
+    /// `Set` holding `PitchConvertible`-conforming values.
     var set: Set<Element> { get }
 }
 
