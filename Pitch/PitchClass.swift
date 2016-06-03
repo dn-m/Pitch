@@ -13,6 +13,8 @@ import ArithmeticTools
  */
 public struct PitchClass: FloatWrapping {
     
+    // MARK: - Instance Properties
+    
     /// Value of this `PitchClass`.
     public var value: Float
 }
