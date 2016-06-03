@@ -13,7 +13,7 @@ import ArrayTools
  */
 public struct PitchSequence: PitchConvertibleCollectionType {
     
-    public typealias Element = Pitch
+    
     
     public let array: Array<Pitch>
     
@@ -24,6 +24,21 @@ public struct PitchSequence: PitchConvertibleCollectionType {
     
     public var retrograde: PitchSequence { return PitchSequence(array.reverse()) }
 }
+
+extension PitchSequence: PitchSequenceType {
+    
+    // MARK: - PitchSequenceType
+    
+    public typealias Element = Pitch
+    
+    /**
+     Create a `PitchSet` with `SequenceType` containing `Pitch` values.
+     */
+    public init<S: SequenceType where S.Generator.Element == Pitch>(_ sequence: S) {
+        self.array = Array(sequence)
+    }
+}
+
 
 extension PitchSequence: ArrayLiteralConvertible {
     
@@ -37,15 +52,4 @@ extension PitchSequence: ArrayLiteralConvertible {
     }
 }
 
-extension PitchSequence: PitchSequenceType {
-    
-    // MARK: - PitchSequenceType
-    
-    /**
-     Create a `PitchSet` with `SequenceType` containing `Pitch` values.
-     */
-    public init<S: SequenceType where S.Generator.Element == Pitch>(_ sequence: S) {
-        self.array = Array(sequence)
-    }
-}
 

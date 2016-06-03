@@ -12,6 +12,8 @@ import ArithmeticTools
 /// Periodic vibration in Hertz.
 public struct Frequency: FloatWrapping {
 
+    // MARK: - Instance Properties
+    
     /// Value of this `Frequency` in Hertz.
     public var value: Float
     

@@ -13,8 +13,12 @@ import ArithmeticTools
  */
 public struct IntervalClass: FloatWrapping {
     
+    // MARK: - Instance Properties
+    
     /// Value of this `IntervalClass`.
     public var value: Float
+    
+    // MARK: - Initializers
     
     /**
      Create an `IntervalClass` with an `Interval`.

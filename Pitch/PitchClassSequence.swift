@@ -8,6 +8,9 @@
 
 import ArrayTools
 
+/**
+ Ordered collection of non-unique `PitchClass` values.
+ */
 public struct PitchClassSequence: PitchConvertibleCollectionType {
 
     /// Array of the `PitchClass` values contained herein.

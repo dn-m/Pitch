@@ -12,6 +12,8 @@ import ArithmeticTools
 /// Interval between two `Pitch` values.
 public struct Interval: FloatWrapping {
     
+    // MARK: - Instance Properties
+    
     /// Value of this `Interval`.
     public var value: Float
     
