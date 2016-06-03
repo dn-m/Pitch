@@ -41,7 +41,6 @@ extension PitchSequence: AnySequenceType {
     }
 }
 
-
 extension PitchSequence: ArrayLiteralConvertible {
     
     // MARK: - ArrayLiteralConvertible

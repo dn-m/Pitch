@@ -26,9 +26,6 @@ extension PitchClassSequence: AnySequenceType {
     /// `PitchConvertible`-conforming type contained herein.
     public typealias Element = PitchClass
     
-    /// Iterable sequence of `Pitch` values contained herein.
-    public var sequence: AnySequence<Element> { return AnySequence(array) }
-    
     /**
      Create a `PitchSet` with `SequenceType` containing `Pitch` values.
      */
