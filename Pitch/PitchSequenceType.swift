@@ -8,19 +8,19 @@
 
 import ArrayTools
 
+// for now, AnySequenceType, inherit after
 public protocol PitchSequenceType: AnySequenceType {
     
+    /// Iterable sequence of `Pitch` values contained herein.
     var sequence: AnySequence<Pitch> { get }
-    
-    /// - returns `true` if there are no `Pitch` values contained herein. Otherwise, `false`.
-    var isEmpty: Bool { get }
-    
-    /// - returns `true` if there is a single `Pitch` value contained herein. Otherwise `false`.
-    var isMonadic: Bool { get }
 }
 
 extension PitchSequenceType {
     
     public typealias Element = Pitch
+    
+    /// Normal form of a `PitchSequenceType`.
+    public var normalForm: PitchSequence { return PitchSequence(sequence.sort(<)) }
 }
+
 

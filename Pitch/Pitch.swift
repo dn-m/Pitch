@@ -59,11 +59,14 @@ public struct Pitch: CustomStringConvertible {
         self.frequency = frequency
         self.noteNumber = NoteNumber(frequency)
     }
+}
+
+extension Pitch: PitchConvertible {
     
     /**
      Create a `Pitch` with another `Pitch`.
      */
-    public init(pitch: Pitch) {
+    public init(_ pitch: Pitch) {
         self.frequency = pitch.frequency
         self.noteNumber = NoteNumber(pitch.frequency)
     }

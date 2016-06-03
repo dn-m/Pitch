@@ -11,7 +11,7 @@ import ArrayTools
 /**
  Ordered collection of non-unique `Pitch` values.
  
- - TODO: prime form, inverse, retrograde, retrograde inverse, transposition at ...,
+ - TODO: inverse, retrograde, retrograde inverse, transposition at ...,
  
  */
 public struct PitchSequence {
@@ -20,9 +20,9 @@ public struct PitchSequence {
     
     // TODO: prime form
     // TODO: inverse
-    // TODO: retrograde
     // TODO: optional : retrograde inverse
     // TODO: trasposedBy()
+    
     public var retrograde: PitchSequence { return PitchSequence(pitches.reverse()) }
 }
 

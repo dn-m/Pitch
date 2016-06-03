@@ -40,6 +40,11 @@ public struct PitchClass: FloatWrapping {
     public init(integerLiteral value: Int) {
         self.value = Float(value) % 12.0
     }
+}
+
+extension PitchClass: PitchConvertible {
+    
+    // MARK: - PitchConvertible
     
     /**
      Create a `PitchClass` with a `Pitch` object.
