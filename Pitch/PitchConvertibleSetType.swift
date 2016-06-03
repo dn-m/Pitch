@@ -9,7 +9,7 @@
 import ArrayTools
 
 /**
- Protocol definining an unordered set of unique `PitchConvterible`-conforming values.
+ Protocol definining an unordered set of unique `PitchConvertible`-conforming values.
  */
 public protocol PitchConvertibleSetType: PitchConvertibleContaining {
     
