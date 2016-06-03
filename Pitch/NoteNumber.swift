@@ -14,23 +14,12 @@ import ArithmeticTools
  */
 public struct NoteNumber: FloatWrapping {
     
+    // Instance Properties
+    
     /// Value of this `NoteNumber`.
     public var value: Float
-
-    /**
-     Create a `NoteNumber` with a `FloatLiteralType`.
-     
-     **Example:**
-     
-     ```
-     let nn: NoteNumber = 65.5 // => F quarter sharp above middle C
-     ```
-     */
-    public init(floatLiteral value: Float) {
-        self.value = value
-    }
     
-
+    // MARK: - Initializers
     
     /**
      Create a `NoteNumber` with `Frequency` value.
@@ -59,7 +48,7 @@ public struct NoteNumber: FloatWrapping {
 
 extension NoteNumber: IntegerLiteralConvertible {
     
-    // MARK: 
+    // MARK: IntegerLiteralConvertible
     
     /**
      Create a `NoteNumber` with an `IntegerLiteralType`.
@@ -77,4 +66,18 @@ extension NoteNumber: IntegerLiteralConvertible {
 
 extension NoteNumber: FloatLiteralConvertible {
     
+    // MARK: FloatLiteralConvertible
+    
+    /**
+     Create a `NoteNumber` with a `FloatLiteralType`.
+     
+     **Example:**
+     
+     ```
+     let nn: NoteNumber = 65.5 // => F quarter sharp above middle C
+     ```
+     */
+    public init(floatLiteral value: Float) {
+        self.value = value
+    }
 }
