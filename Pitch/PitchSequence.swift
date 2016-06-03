@@ -82,6 +82,6 @@ extension PitchSequence: CustomStringConvertible {
     
     /// Printed description of `PitchSequence`.
     public var description: String {
-        return "(\(map{ "\($0)" }.joinWithSeparator(",")))"
+        return "〈\(map{ "\($0)" }.joinWithSeparator(","))〉"
     }
 }
