@@ -11,6 +11,8 @@
  */
 public protocol PitchConvertible: Hashable {
     
+    // MARK: - Initializers
+    
     /**
      Initialize conforming type with a `Pitch` value.
      */
