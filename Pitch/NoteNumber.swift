@@ -14,6 +14,7 @@ import ArithmeticTools
  */
 public struct NoteNumber: FloatWrapping {
     
+    /// Value of this `NoteNumber`.
     public var value: Float
 
     /**
@@ -29,18 +30,7 @@ public struct NoteNumber: FloatWrapping {
         self.value = value
     }
     
-    /**
-     Create a `NoteNumber` with an `IntegerLiteralType`.
-     
-     **Example:**
-     
-     ```
-     let nn: NoteNumber = 65 => F above middle C
-     ```
-     */
-    public init(integerLiteral value: Int) {
-        self.value = Float(value)
-    }
+
     
     /**
      Create a `NoteNumber` with `Frequency` value.
@@ -65,4 +55,26 @@ public struct NoteNumber: FloatWrapping {
     public func quantized(to resolution: Float) -> NoteNumber {
         return NoteNumber(floatLiteral: round(value / resolution) * resolution)
     }
+}
+
+extension NoteNumber: IntegerLiteralConvertible {
+    
+    // MARK: 
+    
+    /**
+     Create a `NoteNumber` with an `IntegerLiteralType`.
+     
+     **Example:**
+     
+     ```
+     let nn: NoteNumber = 65 => F above middle C
+     ```
+     */
+    public init(integerLiteral value: Int) {
+        self.value = Float(value)
+    }
+}
+
+extension NoteNumber: FloatLiteralConvertible {
+    
 }
