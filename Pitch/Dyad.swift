@@ -11,8 +11,12 @@ import func ArithmeticTools.ordered
 
 /**
  Collection of two pitches.
+ 
+ - TODO: make generic
  */
 public struct Dyad {
+    
+    public typealias Element = Pitch
     
     // MARK: - Instance properties
     

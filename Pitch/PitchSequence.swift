@@ -15,13 +15,8 @@ public struct PitchSequence: PitchConvertibleCollectionType {
 
     /// Array of the `Pitch` values contained herein.
     public let array: Array<Pitch>
-    
-    // TODO: prime form
-    // TODO: inverse
-    // TODO: optional : retrograde inverse
-    // TODO: trasposedBy()
-    
-    public var retrograde: PitchSequence { return PitchSequence(reverse()) }
+
+    public var intervals: [Interval] { return [] }
 }
 
 extension PitchSequence: AnySequenceType {

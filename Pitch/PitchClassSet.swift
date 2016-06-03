@@ -22,6 +22,23 @@ public struct PitchClassSet: PitchConvertibleSetType {
     
     /// `Set` holding `PitchClass` values.
     public let set: Set<Element>
+    
+    public var dyads: [PitchClassDyad] {
+        var pitchesArray = Array(set)
+        
+        guard pitchesArray.count >= 2 else { return [] }
+        
+        var result: [PitchClassDyad] = []
+        for a in 0 ..< pitchesArray.count - 1 {
+            for b in a + 1 ..< pitchesArray.count {
+                result.append(PitchClassDyad(pitchesArray[a], pitchesArray[b]))
+            }
+        }
+        return result
+    }
+    
+    // TODO: normal form
+    // TODO: prime form
 }
 
 extension PitchClassSet: AnySequenceType {

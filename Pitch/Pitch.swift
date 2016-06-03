@@ -44,7 +44,6 @@ public struct Pitch: CustomStringConvertible {
     public init(noteNumber: NoteNumber) {
         self.noteNumber = noteNumber
         self.frequency = Frequency(noteNumber)
-        
     }
     
     /**
@@ -97,7 +96,6 @@ extension Pitch: IntegerLiteralConvertible {
         self.init(noteNumber: NoteNumber(Float(value)))
     }
 }
-
 
 extension Pitch: Comparable { }
 

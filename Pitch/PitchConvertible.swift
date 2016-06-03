@@ -6,6 +6,8 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
+import ArithmeticTools
+
 /**
  Conforming types can be initialized with a `Pitch` value.
  */

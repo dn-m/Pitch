@@ -7,6 +7,7 @@
 //
 
 import ArrayTools
+import ArithmeticTools
 
 /**
  Ordered collection of non-unique `PitchClass` values.
@@ -17,6 +18,42 @@ public struct PitchClassSequence: PitchConvertibleCollectionType {
     
     /// Array of the `PitchClass` values contained herein.
     public let array: Array<PitchClass>
+    
+    /// `PitchClassSequence` with `PitchClass` values in reverse order.
+    public var retrograde: PitchClassSequence { return PitchClassSequence(reverse()) }
+    
+    /// `PitchClassSequence` with `PitchClass` values inverted around `0`.
+    public var inversion: PitchClassSequence {
+        return PitchClassSequence(map { return $0.inversion })
+    }
+    
+    /// Array of `IntervalClass` values between each adjacent `PitchClass` herein.
+    /// - TODO: Refactor up the `PitchConvertibleCollectionType` protocol hierarchy
+    /// - TODO: Implement `IntervalClassSeqeuence`
+    public var intervals: [IntervalClass] {
+        guard array.count > 1 else { return [] }
+        var result: [IntervalClass] = []
+        for a in 0 ..< array.count - 1 {
+            result.append(IntervalClass(array[a + 1].value - array[a].value))
+        }
+        return result
+    }
+    
+    /// Array of `PitchClassDyad` values between each combination (choose 2) herein.
+    /// TODO: Refactor up the `PitchConvertibleContaining` protocol hierarchy
+    /// TODO: Implement generic Dyad and Interval
+    public var dyads: [PitchClassDyad] {
+        
+        guard array.count >= 2 else { return [] }
+        
+        var result: [PitchClassDyad] = []
+        for a in 0 ..< array.count - 1 {
+            for b in a + 1 ..< array.count {
+                result.append(PitchClassDyad(array[a], array[b]))
+            }
+        }
+        return result
+    }
 }
 
 extension PitchClassSequence: AnySequenceType {
