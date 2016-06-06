@@ -31,7 +31,8 @@ public struct Dyad {
     
     /**
      Create a `Dyad` with two `Pitch` values. 
-     These pitches need not be ordered; they are ordered upon initialization.
+     
+     - note: These pitches need not be ordered; they are ordered upon initialization.
      */
     public init(_ a: Pitch, _ b: Pitch) {
         let (lower, higher) = ordered(a,b)
