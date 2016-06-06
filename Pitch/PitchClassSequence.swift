@@ -48,17 +48,8 @@ public struct PitchClassSequence: PitchConvertibleCollectionType {
      - TODO: Refactor up the `PitchConvertibleContaining` protocol hierarchy
      - TODO: Implement generic Dyad and Interval
      */
-    public var dyads: [PitchClassDyad] {
-        
-        guard array.count >= 2 else { return [] }
-        
-        var result: [PitchClassDyad] = []
-        for a in 0 ..< array.count - 1 {
-            for b in a + 1 ..< array.count {
-                result.append(PitchClassDyad(array[a], array[b]))
-            }
-        }
-        return result
+    public var dyads: [PitchClassDyad]? {
+        return array.subsets(withCardinality: 2)?.map { PitchClassDyad($0[0], $0[1]) }
     }
 }
 
