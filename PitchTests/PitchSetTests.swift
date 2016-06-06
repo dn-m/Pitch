@@ -11,10 +11,6 @@ import XCTest
 
 class PitchSetTests: XCTestCase {
 
-    func testInitWithNothing() {
-        let _ = PitchSet([])
-    }
-
     func testDyads() {
         var set = PitchSet(
             [

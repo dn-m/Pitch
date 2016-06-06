@@ -66,10 +66,10 @@ public struct PitchSet: PitchConvertibleSetType {
     }
     
     /**
-     Create a `PitchSet` with an array of `PitchSet` values.
+     Create a `PitchSet` with a sequence of `PitchSet` values.
      */
-    public init(_ pitchSets: [PitchSet]) {
-        if let (head, tail) = pitchSets.destructured {
+    public init<S: SequenceType where S.Generator.Element == PitchSet>(_ pitchSets: S) {
+        if let (head, tail) = Array(pitchSets).destructured {
             self.set = tail.reduce(head.set) { $0.union($1.set) }
         } else {
             self.set = []
