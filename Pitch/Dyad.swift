@@ -10,7 +10,7 @@ import Foundation
 import func ArithmeticTools.ordered
 
 /**
- Collection of two pitches.
+ Collection of two `Pitch` values.
  
  - TODO: Make generic
  */
