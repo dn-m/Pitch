@@ -13,6 +13,8 @@ import ArrayTools
  */
 public struct PitchSequence: PitchConvertibleCollectionType {
 
+    // MARK: - Instance Properties
+    
     /// Array of the `Pitch` values contained herein.
     public let array: Array<Pitch>
 
