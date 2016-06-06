@@ -20,7 +20,9 @@ public struct PitchClassSequence: PitchConvertibleCollectionType {
     public let array: Array<PitchClass>
     
     /// `PitchClassSequence` with `PitchClass` values in reverse order.
-    public var retrograde: PitchClassSequence { return PitchClassSequence(reverse()) }
+    public var retrograde: PitchClassSequence {
+        return PitchClassSequence(reverse())
+    }
     
     /// `PitchClassSequence` with `PitchClass` values inverted around `0`.
     public var inversion: PitchClassSequence {
@@ -33,14 +35,14 @@ public struct PitchClassSequence: PitchConvertibleCollectionType {
      - TODO: Refactor up the `PitchConvertibleCollectionType` protocol hierarchy
      - TODO: Implement `IntervalClassSeqeuence`
      */
-    public var intervals: [IntervalClass] {
-        guard array.count > 1 else { return [] }
+    public lazy var intervals: [IntervalClass] = {
+        guard self.array.count > 1 else { return [] }
         var result: [IntervalClass] = []
-        for a in 0 ..< array.count - 1 {
-            result.append(IntervalClass(array[a + 1].value - array[a].value))
+        for a in 0 ..< self.array.count - 1 {
+            result.append(IntervalClass(self.array[a + 1].value - self.array[a].value))
         }
         return result
-    }
+    }()
     
     /** 
      Array of `PitchClassDyad` values between each combination (choose 2) herein.
@@ -48,9 +50,9 @@ public struct PitchClassSequence: PitchConvertibleCollectionType {
      - TODO: Refactor up the `PitchConvertibleContaining` protocol hierarchy
      - TODO: Implement generic Dyad and Interval
      */
-    public var dyads: [PitchClassDyad]? {
-        return array.subsets(withCardinality: 2)?.map { PitchClassDyad($0[0], $0[1]) }
-    }
+    public lazy var dyads: [PitchClassDyad]? = {
+        self.array.subsets(withCardinality: 2)?.map { PitchClassDyad($0[0], $0[1]) }
+    }()
 }
 
 extension PitchClassSequence: AnySequenceType {
