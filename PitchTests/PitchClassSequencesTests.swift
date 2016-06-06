@@ -17,7 +17,7 @@ class PitchClassSequencesTests: XCTestCase {
     
     func testIntervals() {
         var seq: PitchClassSequence = [0,1,6]
-        XCTAssertEqual(seq.intervals, [1,5])
+        XCTAssertEqual(seq.intervals!, [1,5])
     }
     
     func testRetrograde() {

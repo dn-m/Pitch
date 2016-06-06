@@ -16,7 +16,8 @@ public struct PitchSequence: PitchConvertibleCollectionType {
     /// Array of the `Pitch` values contained herein.
     public let array: Array<Pitch>
 
-    public var intervals: [Interval] { return [] }
+    /// - warning: Not yet implemented!
+    public var intervals: [Interval] { fatalError() }
 }
 
 extension PitchSequence: AnySequenceType {

@@ -35,13 +35,8 @@ public struct PitchClassSequence: PitchConvertibleCollectionType {
      - TODO: Refactor up the `PitchConvertibleCollectionType` protocol hierarchy
      - TODO: Implement `IntervalClassSeqeuence`
      */
-    public lazy var intervals: [IntervalClass] = {
-        guard self.array.count > 1 else { return [] }
-        var result: [IntervalClass] = []
-        for a in 0 ..< self.array.count - 1 {
-            result.append(IntervalClass(self.array[a + 1].value - self.array[a].value))
-        }
-        return result
+    public lazy var intervals: [IntervalClass]? = {
+        return self.array.adjacentPairs?.map { IntervalClass($0.1 - $0.0) }
     }()
     
     /** 
