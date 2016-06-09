@@ -13,28 +13,27 @@ import ArrayTools
  */
 public struct PitchSetSequence {
     
-     /// `Array` holding `PitchSet` values.
+    public typealias Element = PitchSet
+    
+    /// `Array` holding `PitchSet` values.
     public let array: Array<PitchSet>
 }
 
-extension PitchSetSequence: AnySequenceType {
+extension PitchSetSequence: CollectionType {
     
-    // MARK: - AnySequenceType
+    public var startIndex: Int { return 0 }
+    public var endIndex: Int { return array.count }
     
-    public typealias Element = PitchSet
-    
-    /// Interable sequence of `PitchSet` values contained herein.
-    public var sequence: AnySequence<Element> { return AnySequence(array) }
-    
-    
-    /**
-     Create a `PitchSetSequence` with a sequence of `PitchSet` values.
-     */
-    public init<S: SequenceType where S.Generator.Element == Element>(_ sequence: S) {
-        self.array = Array(sequence)
-    }
+    public subscript(index: Int) -> Element { return array[index] }
 }
 
+extension PitchSetSequence: SequenceType {
+   
+    public func generate() -> AnyGenerator<PitchSet> {
+        var generator = array.generate()
+        return AnyGenerator { return generator.next() }
+    }
+}
 
 extension PitchSetSequence: ArrayLiteralConvertible {
     
