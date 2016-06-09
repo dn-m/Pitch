@@ -17,6 +17,10 @@ public struct PitchSetSequence {
     
     /// `Array` holding `PitchSet` values.
     public let array: Array<PitchSet>
+    
+    public init<S: SequenceType where S.Generator.Element == PitchSet>(_ sequence: S) {
+        self.array = Array(sequence)
+    }
 }
 
 extension PitchSetSequence: CollectionType {
