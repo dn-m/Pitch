@@ -1,28 +1,49 @@
 # Pitch
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/dn-m/Pitch.svg?branch=master)](https://travis-ci.org/dn-m/Pitch)
 
-[![Build Status](https://travis-ci.org/dn-m/Pitch.svg?branch=master)](https://travis-ci.org/dn-m/Pitch)
+Basic structures definining pitches. Compatible with macOS and iOS.
 
-## Create a `Pitch`
+***
 
-You can create a `Pitch` value in a variety of ways:
+## Usage
 
-### MIDI NoteNumber or Frequency
-```Swift
-let pitchWithNoteNumber = Pitch(noteNumber: 60) // middle c
-let pitchWithFrequency = Pitch(frequency: 440) // a below middle c
-```
-In either case, you can retrieve the MIDI NoteNumber or frequency:
+This framework has several dependencies, though they all originate from the [dn-m](https://github.com/dn-m) project.  
 
-```Swift
-let nn = pitchWithFrequency.noteNumber
-let freq = pitchWithNoteNumber.frequency
-```
+Use [Carthage](https://github.com/Carthage/Carthage) to keep these dependencies up-to-date. Follow [these instructions](https://github.com/Carthage/Carthage#installing-carthage) to install Carthage, if necessary.
 
-### FloatLiteral or IntegerLiteral
+### Clone
 
-You can create a `Pitch` with only a `FloatLiteral` or an `IntegerLiteral`. In this case, the `Pitch` value is instaniated using the given literal as the MIDI `NoteNumber`.
+To work on this framework on its own:
 
-```Swift
-let pitchWithInt: Pitch = 60 // middle c
-let pitchWithFloat: Pitch = 72.25 // eighth-tone above the octave above middle c
-```
+1. **Clone this repo:**
+>```Bash
+>git clone https://github.com/dn-m/Pitch
+>cd Pitch
+>```
+
+2. **Call upon Carthage to manage the dependencies herein:**
+>```Bash
+>carthage update
+>```
+
+3. **Open the Xcodeproj:**
+>```Bash
+>open Pitch.xcodeproj
+>```
+
+4. **Run the tests** by hitting `⌘ + u`.
+
+<a name="integration"></a>
+### Integrate
+
+To integrate **Pitch** into your macOS or iOS project, follow these steps: 
+
+1. Add `github "dn-m/Pitch"` to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) 
+2. Follow [these instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) to integrate **Pitch** into your macOS or iOS project.
+
+***
+
+
+
+
+ 
