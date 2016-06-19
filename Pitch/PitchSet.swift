@@ -115,3 +115,10 @@ extension PitchSet: Equatable { }
 public func == (lhs: PitchSet, rhs: PitchSet) -> Bool {
     return lhs.set == rhs.set
 }
+
+extension PitchSet: CustomStringConvertible {
+    
+    public var description: String {
+        return "\(set.map { "\($0)" })"
+    }
+}

@@ -128,6 +128,6 @@ extension Pitch: CustomStringConvertible {
     // MARK: - CustomStringConvertible
     
     /// Printed description.
-    public var description: String { return "\(noteNumber)" }
+    public var description: String { return "\(noteNumber.value)" }
     
 }
