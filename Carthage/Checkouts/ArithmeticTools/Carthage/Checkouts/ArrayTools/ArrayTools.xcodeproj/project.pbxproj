@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07098BA71D20121F001E9DD6 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07098BA61D20121F001E9DD6 /* SortedArray.swift */; };
+		07098BA81D20121F001E9DD6 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07098BA61D20121F001E9DD6 /* SortedArray.swift */; };
+		07098BAA1D201503001E9DD6 /* SortedArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07098BA91D201503001E9DD6 /* SortedArrayTests.swift */; };
+		07098BAB1D201503001E9DD6 /* SortedArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07098BA91D201503001E9DD6 /* SortedArrayTests.swift */; };
+		071DD4131CF894C10054695D /* Predicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071DD4121CF894C10054695D /* Predicates.swift */; };
+		071DD4141CF894C10054695D /* Predicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071DD4121CF894C10054695D /* Predicates.swift */; };
+		071DD4161CF895250054695D /* PredicatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071DD4151CF895250054695D /* PredicatesTests.swift */; };
+		071DD4171CF895250054695D /* PredicatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071DD4151CF895250054695D /* PredicatesTests.swift */; };
+		07514DB11D01BC37009A72BE /* AnySequenceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07514DB01D01BC37009A72BE /* AnySequenceType.swift */; };
+		07514DB21D01BC37009A72BE /* AnySequenceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07514DB01D01BC37009A72BE /* AnySequenceType.swift */; };
+		0757D4BF1CD1B401003D2C8C /* EquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0757D4BE1CD1B401003D2C8C /* EquatableTests.swift */; };
+		0757D4C01CD1B401003D2C8C /* EquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0757D4BE1CD1B401003D2C8C /* EquatableTests.swift */; };
 		078141A31C7CBCE4004B68D3 /* ArrayTools.h in Headers */ = {isa = PBXBuildFile; fileRef = 078141A21C7CBCE4004B68D3 /* ArrayTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		078141AA1C7CBCE5004B68D3 /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0781419F1C7CBCE4004B68D3 /* ArrayTools.framework */; };
 		078141C81C7CBCF8004B68D3 /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078141BE1C7CBCF8004B68D3 /* ArrayTools.framework */; };
@@ -25,6 +37,14 @@
 		078141EC1C7CBDC6004B68D3 /* ReplaceElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078141E21C7CBDC6004B68D3 /* ReplaceElements.swift */; };
 		078141EE1C7CBDFB004B68D3 /* ListProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078141ED1C7CBDFB004B68D3 /* ListProcessing.swift */; };
 		078141EF1C7CBDFB004B68D3 /* ListProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078141ED1C7CBDFB004B68D3 /* ListProcessing.swift */; };
+		078881831D00A4AE00A3ADD4 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078881821D00A4AE00A3ADD4 /* Comparable.swift */; };
+		078881841D00A4AE00A3ADD4 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078881821D00A4AE00A3ADD4 /* Comparable.swift */; };
+		078881861D00A70600A3ADD4 /* StableSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078881851D00A70600A3ADD4 /* StableSortTests.swift */; };
+		078881871D00A70600A3ADD4 /* StableSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078881851D00A70600A3ADD4 /* StableSortTests.swift */; };
+		079261401CDBAA2F004949D1 /* Combinations+Permutations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0792613F1CDBAA2F004949D1 /* Combinations+Permutations.swift */; };
+		079261411CDBAA2F004949D1 /* Combinations+Permutations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0792613F1CDBAA2F004949D1 /* Combinations+Permutations.swift */; };
+		079261431CDBAA42004949D1 /* CombinationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079261421CDBAA42004949D1 /* CombinationsTests.swift */; };
+		079261441CDBAA42004949D1 /* CombinationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079261421CDBAA42004949D1 /* CombinationsTests.swift */; };
 		07994EA11C7E379900296896 /* ElementsAtIndicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994E9E1C7E379900296896 /* ElementsAtIndicesTests.swift */; };
 		07994EA21C7E379900296896 /* ElementsAtIndicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994E9E1C7E379900296896 /* ElementsAtIndicesTests.swift */; };
 		07994EA31C7E379900296896 /* RemoveElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994E9F1C7E379900296896 /* RemoveElementsTests.swift */; };
@@ -35,6 +55,8 @@
 		07994F891C7EA0A700296896 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994F871C7EA0A700296896 /* Stack.swift */; };
 		07994F8B1C7EA10F00296896 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994F8A1C7EA10F00296896 /* StackTests.swift */; };
 		07994F8C1C7EA10F00296896 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07994F8A1C7EA10F00296896 /* StackTests.swift */; };
+		07DC49411D09E1B7008D22BF /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DC49401D09E1B7008D22BF /* CollectionType.swift */; };
+		07DC49421D09E1B7008D22BF /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DC49401D09E1B7008D22BF /* CollectionType.swift */; };
 		07E00A711C85F12E008478C7 /* AnyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E00A701C85F12E008478C7 /* AnyObject.swift */; };
 		07E00A721C85F12E008478C7 /* AnyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E00A701C85F12E008478C7 /* AnyObject.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +102,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07098BA61D20121F001E9DD6 /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArray.swift; sourceTree = "<group>"; };
+		07098BA91D201503001E9DD6 /* SortedArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortedArrayTests.swift; sourceTree = "<group>"; };
+		071DD4121CF894C10054695D /* Predicates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predicates.swift; sourceTree = "<group>"; };
+		071DD4151CF895250054695D /* PredicatesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredicatesTests.swift; sourceTree = "<group>"; };
+		07514DB01D01BC37009A72BE /* AnySequenceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnySequenceType.swift; sourceTree = "<group>"; };
+		0757D4BE1CD1B401003D2C8C /* EquatableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquatableTests.swift; sourceTree = "<group>"; };
 		0781419F1C7CBCE4004B68D3 /* ArrayTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ArrayTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		078141A21C7CBCE4004B68D3 /* ArrayTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ArrayTools.h; path = ArrayTools/ArrayTools.h; sourceTree = "<group>"; };
 		078141A41C7CBCE4004B68D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,11 +121,16 @@
 		078141E11C7CBDC6004B68D3 /* RemoveElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveElements.swift; sourceTree = "<group>"; };
 		078141E21C7CBDC6004B68D3 /* ReplaceElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceElements.swift; sourceTree = "<group>"; };
 		078141ED1C7CBDFB004B68D3 /* ListProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListProcessing.swift; sourceTree = "<group>"; };
+		078881821D00A4AE00A3ADD4 /* Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comparable.swift; sourceTree = "<group>"; };
+		078881851D00A70600A3ADD4 /* StableSortTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StableSortTests.swift; sourceTree = "<group>"; };
+		0792613F1CDBAA2F004949D1 /* Combinations+Permutations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Combinations+Permutations.swift"; sourceTree = "<group>"; };
+		079261421CDBAA42004949D1 /* CombinationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinationsTests.swift; sourceTree = "<group>"; };
 		07994E9E1C7E379900296896 /* ElementsAtIndicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementsAtIndicesTests.swift; sourceTree = "<group>"; };
 		07994E9F1C7E379900296896 /* RemoveElementsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveElementsTests.swift; sourceTree = "<group>"; };
 		07994EA01C7E379900296896 /* ReplaceElementsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceElementsTests.swift; sourceTree = "<group>"; };
 		07994F871C7EA0A700296896 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		07994F8A1C7EA10F00296896 /* StackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
+		07DC49401D09E1B7008D22BF /* CollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionType.swift; sourceTree = "<group>"; };
 		07E00A701C85F12E008478C7 /* AnyObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +168,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07098BA51D201209001E9DD6 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				07994F871C7EA0A700296896 /* Stack.swift */,
+				07098BA61D20121F001E9DD6 /* SortedArray.swift */,
+			);
+			name = Structures;
+			sourceTree = "<group>";
+		};
 		078141951C7CBCE4004B68D3 = {
 			isa = PBXGroup;
 			children = (
@@ -159,15 +201,20 @@
 		078141A11C7CBCE4004B68D3 /* ArrayTools */ = {
 			isa = PBXGroup;
 			children = (
+				07098BA51D201209001E9DD6 /* Structures */,
 				078141E01C7CBDC6004B68D3 /* Error.swift */,
 				078141ED1C7CBDFB004B68D3 /* ListProcessing.swift */,
+				0792613F1CDBAA2F004949D1 /* Combinations+Permutations.swift */,
 				078141DE1C7CBDC6004B68D3 /* ElementsAtIndices.swift */,
 				078141DF1C7CBDC6004B68D3 /* Equatable.swift */,
+				078881821D00A4AE00A3ADD4 /* Comparable.swift */,
+				07DC49401D09E1B7008D22BF /* CollectionType.swift */,
 				07E00A701C85F12E008478C7 /* AnyObject.swift */,
+				071DD4121CF894C10054695D /* Predicates.swift */,
 				078141E11C7CBDC6004B68D3 /* RemoveElements.swift */,
 				078141E21C7CBDC6004B68D3 /* ReplaceElements.swift */,
-				07994F871C7EA0A700296896 /* Stack.swift */,
-				078141A41C7CBCE4004B68D3 /* Info.plist */,
+				07514DB01D01BC37009A72BE /* AnySequenceType.swift */,
+				0783ECEB1CA59E8000E7F287 /* Supporting Files */,
 			);
 			path = ArrayTools;
 			sourceTree = "<group>";
@@ -176,12 +223,33 @@
 			isa = PBXGroup;
 			children = (
 				07994E9E1C7E379900296896 /* ElementsAtIndicesTests.swift */,
+				071DD4151CF895250054695D /* PredicatesTests.swift */,
+				079261421CDBAA42004949D1 /* CombinationsTests.swift */,
 				07994E9F1C7E379900296896 /* RemoveElementsTests.swift */,
 				07994EA01C7E379900296896 /* ReplaceElementsTests.swift */,
 				07994F8A1C7EA10F00296896 /* StackTests.swift */,
-				078141B01C7CBCE5004B68D3 /* Info.plist */,
+				0757D4BE1CD1B401003D2C8C /* EquatableTests.swift */,
+				078881851D00A70600A3ADD4 /* StableSortTests.swift */,
+				07098BA91D201503001E9DD6 /* SortedArrayTests.swift */,
+				0783ECEC1CA59E9600E7F287 /* Supporting Files */,
 			);
 			path = ArrayToolsTests;
+			sourceTree = "<group>";
+		};
+		0783ECEB1CA59E8000E7F287 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				078141A41C7CBCE4004B68D3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0783ECEC1CA59E9600E7F287 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				078141B01C7CBCE5004B68D3 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,14 +428,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07098BA71D20121F001E9DD6 /* SortedArray.swift in Sources */,
 				078141E51C7CBDC6004B68D3 /* Equatable.swift in Sources */,
+				078881831D00A4AE00A3ADD4 /* Comparable.swift in Sources */,
 				07E00A711C85F12E008478C7 /* AnyObject.swift in Sources */,
 				078141EB1C7CBDC6004B68D3 /* ReplaceElements.swift in Sources */,
 				07994F881C7EA0A700296896 /* Stack.swift in Sources */,
+				079261401CDBAA2F004949D1 /* Combinations+Permutations.swift in Sources */,
+				071DD4131CF894C10054695D /* Predicates.swift in Sources */,
+				07514DB11D01BC37009A72BE /* AnySequenceType.swift in Sources */,
 				078141E71C7CBDC6004B68D3 /* Error.swift in Sources */,
 				078141E91C7CBDC6004B68D3 /* RemoveElements.swift in Sources */,
 				078141EE1C7CBDFB004B68D3 /* ListProcessing.swift in Sources */,
 				078141E31C7CBDC6004B68D3 /* ElementsAtIndices.swift in Sources */,
+				07DC49411D09E1B7008D22BF /* CollectionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +453,11 @@
 				07994EA51C7E379900296896 /* ReplaceElementsTests.swift in Sources */,
 				07994EA31C7E379900296896 /* RemoveElementsTests.swift in Sources */,
 				07994EA11C7E379900296896 /* ElementsAtIndicesTests.swift in Sources */,
+				0757D4BF1CD1B401003D2C8C /* EquatableTests.swift in Sources */,
+				07098BAA1D201503001E9DD6 /* SortedArrayTests.swift in Sources */,
+				079261431CDBAA42004949D1 /* CombinationsTests.swift in Sources */,
+				078881861D00A70600A3ADD4 /* StableSortTests.swift in Sources */,
+				071DD4161CF895250054695D /* PredicatesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,14 +465,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07098BA81D20121F001E9DD6 /* SortedArray.swift in Sources */,
 				078141E61C7CBDC6004B68D3 /* Equatable.swift in Sources */,
+				078881841D00A4AE00A3ADD4 /* Comparable.swift in Sources */,
 				07E00A721C85F12E008478C7 /* AnyObject.swift in Sources */,
 				078141EC1C7CBDC6004B68D3 /* ReplaceElements.swift in Sources */,
 				07994F891C7EA0A700296896 /* Stack.swift in Sources */,
+				079261411CDBAA2F004949D1 /* Combinations+Permutations.swift in Sources */,
+				071DD4141CF894C10054695D /* Predicates.swift in Sources */,
+				07514DB21D01BC37009A72BE /* AnySequenceType.swift in Sources */,
 				078141E81C7CBDC6004B68D3 /* Error.swift in Sources */,
 				078141EA1C7CBDC6004B68D3 /* RemoveElements.swift in Sources */,
 				078141EF1C7CBDFB004B68D3 /* ListProcessing.swift in Sources */,
 				078141E41C7CBDC6004B68D3 /* ElementsAtIndices.swift in Sources */,
+				07DC49421D09E1B7008D22BF /* CollectionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +490,11 @@
 				07994EA61C7E379900296896 /* ReplaceElementsTests.swift in Sources */,
 				07994EA41C7E379900296896 /* RemoveElementsTests.swift in Sources */,
 				07994EA21C7E379900296896 /* ElementsAtIndicesTests.swift in Sources */,
+				0757D4C01CD1B401003D2C8C /* EquatableTests.swift in Sources */,
+				07098BAB1D201503001E9DD6 /* SortedArrayTests.swift in Sources */,
+				079261441CDBAA42004949D1 /* CombinationsTests.swift in Sources */,
+				078881871D00A70600A3ADD4 /* StableSortTests.swift in Sources */,
+				071DD4171CF895250054695D /* PredicatesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,9 +611,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ArrayTools/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.ArrayTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,9 +632,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ArrayTools/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.ArrayTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -590,7 +684,7 @@
 				INFOPLIST_FILE = ArrayTools/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.ArrayToolsMac;
 				PRODUCT_NAME = ArrayTools;
 				SDKROOT = macosx;
@@ -614,7 +708,7 @@
 				INFOPLIST_FILE = ArrayTools/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.ArrayToolsMac;
 				PRODUCT_NAME = ArrayTools;
 				SDKROOT = macosx;

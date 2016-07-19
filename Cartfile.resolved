@@ -1,4 +1,3 @@
-github "dn-m/ArrayTools" "v1.3"
-github "dn-m/EnumTools" "v0.4.2"
-github "dn-m/StringTools" "v0.2.1"
-github "dn-m/ArithmeticTools" "v0.3.14"
+github "dn-m/ArrayTools" "v1.4.6"
+github "dn-m/EnumTools" "0f674db4897b0ed57195214c62a96cee711d9eef"
+github "dn-m/ArithmeticTools" "c6f8717923147df3966f19e0918094270cf75b61"

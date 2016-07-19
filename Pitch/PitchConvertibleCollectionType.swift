@@ -11,7 +11,11 @@ import ArrayTools
 /**
  Ordered collection of non-unique `PitchConvertible`-conforming values.
  */
-public protocol PitchConvertibleCollectionType: PitchConvertibleContaining, CollectionType {
+public protocol PitchConvertibleCollectionType:
+    PitchConvertibleContaining,
+    CollectionType,
+    Equatable
+{
     
     // MARK: - Associated Types
     
@@ -20,7 +24,7 @@ public protocol PitchConvertibleCollectionType: PitchConvertibleContaining, Coll
     
     // MARK: - Instance Properties
     
-    /// `Array` holding `PitchConvertible` values
+    /// `Array` holding `PitchConvertible` values.
     var array: Array<Element> { get }
 }
 
@@ -67,4 +71,8 @@ extension PitchConvertibleCollectionType {
     public var description: String {
         return "〈\(map{ "\($0)" }.joinWithSeparator(","))〉"
     }
+}
+
+public func == <T: PitchConvertibleCollectionType> (lhs: T, rhs: T) -> Bool {
+    return lhs.sequence == rhs.sequence
 }

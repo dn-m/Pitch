@@ -45,20 +45,9 @@ public struct PitchSet: PitchConvertibleSetType {
      ]
      ```
      */
-    public var dyads: [Dyad] {
-        
-        var pitchesArray = Array(set)
-        
-        guard pitchesArray.count >= 2 else { return [] }
-        
-        var result: [Dyad] = []
-        for a in 0 ..< pitchesArray.count - 1 {
-            for b in a + 1 ..< pitchesArray.count {
-                result.append(Dyad(pitchesArray[a], pitchesArray[b]))
-            }
-        }
-        return result
-    }
+    public lazy var dyads: [Dyad]? = {
+        Array(self.set).subsets(withCardinality: 2)?.map { Dyad($0[0], $0[1]) }
+    }()
     
     /**
      Set of `PitchClass` representations of `PitchSet`.
@@ -71,6 +60,30 @@ public struct PitchSet: PitchConvertibleSetType {
      ```
      */
     public var pitchClassSet: PitchClassSet { return PitchClassSet(map { $0.pitchClass }) }
+    
+    public init(_ pitchSets: PitchSet...) {
+        self.init(pitchSets)
+    }
+    
+    /**
+     Create a `PitchSet` with a sequence of `PitchSet` values.
+     */
+    public init<S: SequenceType where S.Generator.Element == PitchSet>(_ pitchSets: S) {
+        if let (head, tail) = Array(pitchSets).destructured {
+            self.set = tail.reduce(head.set) { $0.union($1.set) }
+        } else {
+            self.set = []
+        }
+    }
+    
+    /**
+     - TODO: Move up the `PitchConvertibleSetType` protocol hierarchy.
+     
+     - returns: `PitchSet` with the union of this and the given `pitchSet`.
+     */
+    public func formUnion(with pitchSet: PitchSet) -> PitchSet {
+        return PitchSet(set.union(pitchSet))
+    }
 }
 
 extension PitchSet: AnySequenceType {
@@ -94,5 +107,18 @@ extension PitchSet: ArrayLiteralConvertible {
      */
     public init(arrayLiteral elements: Element...) {
         self.set = Set(elements)
+    }
+}
+
+extension PitchSet: Equatable { }
+
+public func == (lhs: PitchSet, rhs: PitchSet) -> Bool {
+    return lhs.set == rhs.set
+}
+
+extension PitchSet: CustomStringConvertible {
+    
+    public var description: String {
+        return "\(set.map { "\($0)" })"
     }
 }

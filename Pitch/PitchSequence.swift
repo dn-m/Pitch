@@ -13,15 +13,13 @@ import ArrayTools
  */
 public struct PitchSequence: PitchConvertibleCollectionType {
 
+    // MARK: - Instance Properties
+    
     /// Array of the `Pitch` values contained herein.
     public let array: Array<Pitch>
-    
-    // TODO: prime form
-    // TODO: inverse
-    // TODO: optional : retrograde inverse
-    // TODO: trasposedBy()
-    
-    public var retrograde: PitchSequence { return PitchSequence(reverse()) }
+
+    /// - warning: Not yet implemented!
+    public var intervals: [Interval] { fatalError() }
 }
 
 extension PitchSequence: AnySequenceType {
@@ -36,7 +34,7 @@ extension PitchSequence: AnySequenceType {
     /**
      Create a `PitchSet` with `SequenceType` containing `Pitch` values.
      */
-    public init<S: SequenceType where S.Generator.Element == Pitch>(_ sequence: S) {
+    public init<S: SequenceType where S.Generator.Element == Element>(_ sequence: S) {
         self.array = Array(sequence)
     }
 }
@@ -53,4 +51,7 @@ extension PitchSequence: ArrayLiteralConvertible {
     }
 }
 
+public func == (lhs: PitchSequence, rhs: PitchSequence) -> Bool {
+    return lhs.sequence == rhs.sequence
+}
 

@@ -22,6 +22,13 @@ public struct PitchClassSet: PitchConvertibleSetType {
     
     /// `Set` holding `PitchClass` values.
     public let set: Set<Element>
+    
+    public lazy var dyads: [PitchClassDyad]? = {
+        Array(self.set).subsets(withCardinality: 2)?.map { PitchClassDyad($0[0], $0[1]) }
+    }()
+    
+    // TODO: normal form
+    // TODO: prime form
 }
 
 extension PitchClassSet: AnySequenceType {

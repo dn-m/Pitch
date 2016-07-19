@@ -9,7 +9,9 @@
 import Foundation
 
 /**
- Implementation of Stack structure
+ Implementation of Stack structure.
+ 
+ - TODO: Conform to `SequenceType` and `ComparableType`.
  */
 public struct Stack<Element: Equatable> {
     
