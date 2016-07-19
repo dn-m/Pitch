@@ -1,2 +1,2 @@
-github "dn-m/ArithmeticTools" "HEAD"
-github "dn-m/EnumTools" "HEAD"
+github "dn-m/ArithmeticTools"
+github "dn-m/EnumTools"
