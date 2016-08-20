@@ -209,9 +209,9 @@
 				07CC26A21C94E5630099C21C /* Frequency.swift */,
 				07CC26A51C94E6A00099C21C /* NoteNumber.swift */,
 				07CC26981C94E4910099C21C /* Pitch.swift */,
+				07AD1D471C95D402003225B2 /* PitchClass.swift */,
 				07AD1D441C95D3B0003225B2 /* Interval.swift */,
 				07AD1D4A1C95DE71003225B2 /* IntervalClass.swift */,
-				07AD1D471C95D402003225B2 /* PitchClass.swift */,
 			);
 			name = Elements;
 			sourceTree = "<group>";

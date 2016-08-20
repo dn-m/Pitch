@@ -15,9 +15,10 @@ public struct PitchClass: FloatWrapping {
     
     // MARK: - Instance Properties
     
-    /// Value of this `PitchClass`.
+    /// Value of `PitchClass`.
     public var value: Float
     
+    /// Inversion of `PitchClass`.
     public var inversion: PitchClass { return PitchClass(12 - self.value) }
 }
 
