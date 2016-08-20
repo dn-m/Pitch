@@ -73,6 +73,12 @@ extension PitchConvertibleCollectionType {
     }
 }
 
+// MARK: - Equatable
+
+
+/**
+  - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
+ */
 public func == <T: PitchConvertibleCollectionType> (lhs: T, rhs: T) -> Bool {
     return lhs.sequence == rhs.sequence
 }

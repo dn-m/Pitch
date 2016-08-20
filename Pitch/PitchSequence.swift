@@ -18,8 +18,13 @@ public struct PitchSequence: PitchConvertibleCollectionType {
     /// Array of the `Pitch` values contained herein.
     public let array: Array<Pitch>
 
-    /// - warning: Not yet implemented!
-    public var intervals: [Interval] { fatalError() }
+    /// - TODO: Make IntervalSequence
+    public var intervals: [Interval] {
+        return array.adjacentPairs?
+            .map(Dyad.init)
+            .map(Interval.init)
+            ?? []
+    }
 }
 
 extension PitchSequence: AnySequenceType {
