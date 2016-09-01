@@ -25,7 +25,7 @@ public struct Interval: FloatWrapping {
     }
 }
 
-extension Interval: IntegerLiteralConvertible {
+extension Interval: ExpressibleByIntegerLiteral {
     
     // MARK: - IntegeralLiteralConvertible
     
@@ -37,7 +37,7 @@ extension Interval: IntegerLiteralConvertible {
     }
 }
 
-extension Interval: FloatLiteralConvertible {
+extension Interval: ExpressibleByFloatLiteral {
     
     // MARK: - FloatLiteralConvertible
     

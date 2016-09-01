@@ -21,7 +21,7 @@ public struct PitchClassSequence: PitchConvertibleCollectionType {
     
     /// `PitchClassSequence` with `PitchClass` values in reverse order.
     public var retrograde: PitchClassSequence {
-        return PitchClassSequence(reverse())
+        return PitchClassSequence(reversed())
     }
     
     /// `PitchClassSequence` with `PitchClass` values inverted around `0`.
@@ -60,12 +60,12 @@ extension PitchClassSequence: AnySequenceType {
     /**
      Create a `PitchSet` with `SequenceType` containing `Pitch` values.
      */
-    public init<S: SequenceType where S.Generator.Element == Element>(_ sequence: S) {
+    public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
         self.array = Array(sequence)
     }
 }
 
-extension PitchClassSequence: ArrayLiteralConvertible {
+extension PitchClassSequence: ExpressibleByArrayLiteral {
     
     // MARK: - ArrayLiteralConvertible
     
@@ -79,5 +79,15 @@ extension PitchClassSequence: ArrayLiteralConvertible {
 
 public func == (lhs: PitchClassSequence, rhs: PitchClassSequence) -> Bool {
     return lhs.sequence == rhs.sequence
+}
+
+extension PitchClassSequence: Sequence {
+    
+    public func makeIterator() -> AnyIterator<PitchClass> {
+        var iterator = array.makeIterator()
+        return AnyIterator {
+            return iterator.next()
+        }
+    }
 }
 

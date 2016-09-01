@@ -68,7 +68,7 @@ public struct PitchSet: PitchConvertibleSetType {
     /**
      Create a `PitchSet` with a sequence of `PitchSet` values.
      */
-    public init<S: SequenceType where S.Generator.Element == PitchSet>(_ pitchSets: S) {
+    public init<S: Sequence>(_ pitchSets: S) where S.Iterator.Element == PitchSet {
         if let (head, tail) = Array(pitchSets).destructured {
             self.set = tail.reduce(head.set) { $0.union($1.set) }
         } else {
@@ -93,12 +93,12 @@ extension PitchSet: AnySequenceType {
     /**
      Create a `PitchSet` with a sequence of `Pitch` values.
      */
-    public init<S: SequenceType where S.Generator.Element == Element>(_ sequence: S) {
+    public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
         self.set = Set(sequence)
     }
 }
 
-extension PitchSet: ArrayLiteralConvertible {
+extension PitchSet: ExpressibleByArrayLiteral {
     
     // MARK: - ArrayLiteralConvertible
     

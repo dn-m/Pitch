@@ -36,12 +36,12 @@ extension PitchSequence: AnySequenceType {
     /**
      Create a `PitchSet` with `SequenceType` containing `Pitch` values.
      */
-    public init<S: SequenceType where S.Generator.Element == Element>(_ sequence: S) {
+    public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
         self.array = Array(sequence)
     }
 }
 
-extension PitchSequence: ArrayLiteralConvertible {
+extension PitchSequence: ExpressibleByArrayLiteral {
     
     // MARK: - ArrayLiteralConvertible
     
@@ -57,3 +57,10 @@ public func == (lhs: PitchSequence, rhs: PitchSequence) -> Bool {
     return lhs.sequence == rhs.sequence
 }
 
+extension PitchSequence: Sequence {
+    
+    public func makeIterator() -> AnyIterator<Pitch> {
+        var iterator = array.makeIterator()
+        return AnyIterator { iterator.next() }
+    }
+}

@@ -24,7 +24,7 @@ public struct Pitch {
      - returns: NoteNumber with a random `NoteNumber` value between 60 and 72, with the given
      `resolution`.
      */
-    public static func random(resolution resolution: Float = 1) -> Pitch {
+    public static func random(resolution: Float = 1) -> Pitch {
         return Pitch(noteNumber: NoteNumber.random(resolution: resolution))
     }
     
@@ -81,7 +81,7 @@ extension Pitch: PitchConvertible {
     }
 }
 
-extension Pitch: FloatLiteralConvertible {
+extension Pitch: ExpressibleByFloatLiteral {
     
     // MARK: - FloatLiteralConvertible
     
@@ -93,7 +93,7 @@ extension Pitch: FloatLiteralConvertible {
     }
 }
 
-extension Pitch: IntegerLiteralConvertible {
+extension Pitch: ExpressibleByIntegerLiteral {
     
     // MARK: - IntegerLiteralConvertible
     

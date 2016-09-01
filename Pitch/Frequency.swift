@@ -33,7 +33,7 @@ public struct Frequency: FloatWrapping {
     }
 }
 
-extension Frequency: IntegerLiteralConvertible {
+extension Frequency: ExpressibleByIntegerLiteral {
     
     // MARK: - IntegerLiteralConvertible
     
@@ -51,7 +51,7 @@ extension Frequency: IntegerLiteralConvertible {
     }
 }
 
-extension Frequency: FloatLiteralConvertible {
+extension Frequency: ExpressibleByFloatLiteral {
     
     // MARK: - FloatLiteralConvertible
     

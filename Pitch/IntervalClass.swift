@@ -27,11 +27,11 @@ public struct IntervalClass: FloatWrapping {
      Create an `IntervalClass` with an `Interval`.
      */
     public init(_ interval: Interval) {
-        self.value = interval.value % 12.0
+        self.value = interval.value.truncatingRemainder(dividingBy: 12.0)
     }
 }
 
-extension IntervalClass: IntegerLiteralConvertible {
+extension IntervalClass: ExpressibleByIntegerLiteral {
     
     // MARK: - IntegerLiteralConvertible
     
@@ -43,7 +43,7 @@ extension IntervalClass: IntegerLiteralConvertible {
     }
 }
 
-extension IntervalClass: FloatLiteralConvertible {
+extension IntervalClass: ExpressibleByFloatLiteral {
     
     // MARK: - FloatLiteralConvertible
     
