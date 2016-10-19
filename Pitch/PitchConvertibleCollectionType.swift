@@ -57,6 +57,7 @@ extension PitchConvertibleCollectionType {
     /// End index
     public var endIndex: Int { return array.count }
     
+    
     public func index(after i: Int) -> Int {
         guard i != endIndex else { fatalError("Cannot increment endIndex") }
         return i + 1
