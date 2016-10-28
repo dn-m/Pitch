@@ -32,12 +32,12 @@ extension PitchConvertibleContainingSequence: AnySequenceType {
     /**
      Create a `` with `SequenceType` containing `Pitch` values.
      */
-    public init<S: SequenceType where S.Generator.Element == Element>(_ sequence: S) {
+    public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
         self.array = Array(sequence)
     }
 }
 
-extension PitchConvertibleContainingSequence: ArrayLiteralConvertible {
+extension PitchConvertibleContainingSequence: ExpressibleByArrayLiteral {
     
     // MARK: - ArrayLiteralConvertible
     

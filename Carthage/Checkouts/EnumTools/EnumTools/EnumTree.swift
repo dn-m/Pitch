@@ -40,7 +40,7 @@ public protocol EnumTree: class {
      - returns: `true` if `members` or any subFamily's `members` contains `kind` value. 
      Otherwise `false`.
      */
-    static func has(kind: EnumKind) -> Bool
+    static func has(_ kind: EnumKind) -> Bool
 }
 
 extension EnumTree where
@@ -54,7 +54,7 @@ extension EnumTree where
     /**
      - returns: `true` if `members` or any subFamily's `members` contains `kind` value.
      */
-    public static func has(kind: EnumKind) -> Bool {
+    public static func has(_ kind: EnumKind) -> Bool {
         if members.contains(kind) { return true }
         for family in subFamilies { if family.has(kind) { return true } }
         return false

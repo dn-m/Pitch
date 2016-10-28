@@ -17,9 +17,11 @@ import Foundation
  
  - TODO: Embed in a `SequenceType` conforming structure:
  
- >```
- >let allCases: [InstrumentKind] = iterateEnum(InstrumentKind).map { $0 }
- >```
+ **Example:**
+ 
+ ```
+ let allCases: [InstrumentKind] = iterateEnum(InstrumentKind).map { $0 }
+ ```
  
  - authors: [rintaro](http://stackoverflow.com/users/3804019/rintaro) / 
     [kemetrixom](http://stackoverflow.com/users/3443689/kametrixom) @ 
@@ -29,12 +31,15 @@ import Foundation
  
  - returns: Next case of given Enum type. `nil` once last case has been reached.
  */
-public func iterateEnum<T: Hashable>(_: T.Type) -> AnyGenerator<T> {
+public func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
     var i = 0
-    return AnyGenerator {
-        let next = withUnsafePointer(&i) { UnsafePointer<T>($0).memory }
-        defer { i += 1 }
-        return next.hashValue == i ? next : nil
+    return AnyIterator {
+        let next = withUnsafePointer(to: &i) {
+            $0.withMemoryRebound(to: T.self, capacity: 1) { $0.pointee }
+        }
+        if next.hashValue != i { return nil }
+        i += 1
+        return next
     }
 }
 
@@ -47,7 +52,8 @@ public extension RawRepresentable where Self: Hashable {
      */
     static var allCases: [Self] {
         var allCases: [Self] = []
-        for c in iterateEnum(Self) { allCases.append(c) }
+        for c in iterateEnum(Self.self) { allCases.append(c) }
         return allCases
     }
 }
+

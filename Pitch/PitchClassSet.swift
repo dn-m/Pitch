@@ -41,12 +41,12 @@ extension PitchClassSet: AnySequenceType {
      In the `init` method of the conforming `struct`, set the value of this private `var` with
      the given `sequence.
      */
-    public init<S: SequenceType where S.Generator.Element == Element>(_ sequence: S) {
+    public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
         self.set = Set(sequence)
     }
 }
 
-extension PitchClassSet: ArrayLiteralConvertible {
+extension PitchClassSet: ExpressibleByArrayLiteral {
     
     // MARK: - ArrayLiteralConvertible
     

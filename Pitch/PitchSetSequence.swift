@@ -18,28 +18,25 @@ public struct PitchSetSequence {
     /// `Array` holding `PitchSet` values.
     public let array: Array<PitchSet>
     
-    public init<S: SequenceType where S.Generator.Element == PitchSet>(_ sequence: S) {
+    public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == PitchSet {
         self.array = Array(sequence)
     }
 }
 
-extension PitchSetSequence: CollectionType {
+extension PitchSetSequence: Collection {
     
     public var startIndex: Int { return 0 }
     public var endIndex: Int { return array.count }
     
+    public func index(after i: Int) -> Int {
+        guard i != endIndex else { fatalError("Cannot increment endIndex") }
+        return i + 1
+    }
+    
     public subscript(index: Int) -> Element { return array[index] }
 }
 
-extension PitchSetSequence: SequenceType {
-   
-    public func generate() -> AnyGenerator<PitchSet> {
-        var generator = array.generate()
-        return AnyGenerator { return generator.next() }
-    }
-}
-
-extension PitchSetSequence: ArrayLiteralConvertible {
+extension PitchSetSequence: ExpressibleByArrayLiteral {
     
     // MARK: ArrayLiteralConvertible
     
@@ -49,8 +46,4 @@ extension PitchSetSequence: ArrayLiteralConvertible {
     public init(arrayLiteral elements: Element...) {
         self.array = elements
     }
-}
-
-public func == (lhs: PitchSetSequence, rhs: PitchSetSequence) -> Bool {
-    return lhs.array == rhs.array
 }

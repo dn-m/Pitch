@@ -15,13 +15,14 @@ public struct PitchClass: FloatWrapping {
     
     // MARK: - Instance Properties
     
-    /// Value of this `PitchClass`.
+    /// Value of `PitchClass`.
     public var value: Float
     
+    /// Inversion of `PitchClass`.
     public var inversion: PitchClass { return PitchClass(12 - self.value) }
 }
 
-extension PitchClass: IntegerLiteralConvertible {
+extension PitchClass: ExpressibleByIntegerLiteral {
     
     // MARK: - IntegerLiteralConvertible
     
@@ -35,11 +36,11 @@ extension PitchClass: IntegerLiteralConvertible {
      ```
      */
     public init(integerLiteral value: Int) {
-        self.value = Float(value) % 12.0
+        self.value = Float(value).truncatingRemainder(dividingBy: 12.0)
     }
 }
 
-extension PitchClass: FloatLiteralConvertible {
+extension PitchClass: ExpressibleByFloatLiteral {
     
     // MARK: - IntegerLiterlConvertible
     
@@ -53,7 +54,7 @@ extension PitchClass: FloatLiteralConvertible {
      ```
      */
     public init(floatLiteral: Float) {
-        self.value = floatLiteral % 12.0
+        self.value = floatLiteral.truncatingRemainder(dividingBy: 12.0)
     }
 }
 
@@ -72,6 +73,6 @@ extension PitchClass: PitchConvertible {
      ```
      */
     public init(_ pitch: Pitch) {
-        self.value = pitch.noteNumber.value % 12.0
+        self.value = pitch.noteNumber.value.truncatingRemainder(dividingBy: 12.0)
     }
 }

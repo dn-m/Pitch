@@ -13,7 +13,7 @@ import ArrayTools
  */
 public protocol PitchConvertibleCollectionType:
     PitchConvertibleContaining,
-    CollectionType,
+    Collection,
     Equatable
 {
     
@@ -57,6 +57,12 @@ extension PitchConvertibleCollectionType {
     /// End index
     public var endIndex: Int { return array.count }
     
+    
+    public func index(after i: Int) -> Int {
+        guard i != endIndex else { fatalError("Cannot increment endIndex") }
+        return i + 1
+    }
+    
     /**
      - returns: `Pitch` value at the given `index`.
      */
@@ -69,10 +75,16 @@ extension PitchConvertibleCollectionType {
     
     /// Printed description of `PitchConvertibleCollectionType`.
     public var description: String {
-        return "〈\(map{ "\($0)" }.joinWithSeparator(","))〉"
+        return "〈\(map{ "\($0)" }.joined(separator: ","))〉"
     }
 }
 
+// MARK: - Equatable
+
+
+/**
+  - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
+ */
 public func == <T: PitchConvertibleCollectionType> (lhs: T, rhs: T) -> Bool {
     return lhs.sequence == rhs.sequence
 }

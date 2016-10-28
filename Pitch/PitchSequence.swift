@@ -18,8 +18,10 @@ public struct PitchSequence: PitchConvertibleCollectionType {
     /// Array of the `Pitch` values contained herein.
     public let array: Array<Pitch>
 
-    /// - warning: Not yet implemented!
-    public var intervals: [Interval] { fatalError() }
+    /// - TODO: Make IntervalSequence
+    public var intervals: [Interval]? {
+        return array.adjacentPairs?.lazy.map(Dyad.init).map(Interval.init)
+    }
 }
 
 extension PitchSequence: AnySequenceType {
@@ -34,12 +36,12 @@ extension PitchSequence: AnySequenceType {
     /**
      Create a `PitchSet` with `SequenceType` containing `Pitch` values.
      */
-    public init<S: SequenceType where S.Generator.Element == Element>(_ sequence: S) {
+    public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
         self.array = Array(sequence)
     }
 }
 
-extension PitchSequence: ArrayLiteralConvertible {
+extension PitchSequence: ExpressibleByArrayLiteral {
     
     // MARK: - ArrayLiteralConvertible
     
@@ -55,3 +57,10 @@ public func == (lhs: PitchSequence, rhs: PitchSequence) -> Bool {
     return lhs.sequence == rhs.sequence
 }
 
+extension PitchSequence: Sequence {
+    
+    public func makeIterator() -> AnyIterator<Pitch> {
+        var iterator = array.makeIterator()
+        return AnyIterator { iterator.next() }
+    }
+}

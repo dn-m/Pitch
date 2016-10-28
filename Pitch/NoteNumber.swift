@@ -19,7 +19,7 @@ public struct NoteNumber: FloatWrapping {
     /**
      - returns: NoteNumber with a random value between 60 and 72, with the given `resolution`.
      */
-    public static func random(resolution resolution: Float = 1) -> NoteNumber {
+    public static func random(resolution: Float = 1) -> NoteNumber {
         return NoteNumber(Float.random(min: 60, max: 72, resolution: resolution))
     }
     
@@ -55,7 +55,7 @@ public struct NoteNumber: FloatWrapping {
     }
 }
 
-extension NoteNumber: IntegerLiteralConvertible {
+extension NoteNumber: ExpressibleByIntegerLiteral {
     
     // MARK: IntegerLiteralConvertible
     
@@ -73,7 +73,7 @@ extension NoteNumber: IntegerLiteralConvertible {
     }
 }
 
-extension NoteNumber: FloatLiteralConvertible {
+extension NoteNumber: ExpressibleByFloatLiteral {
     
     // MARK: FloatLiteralConvertible
     

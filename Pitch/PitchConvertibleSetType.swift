@@ -48,5 +48,5 @@ extension PitchConvertibleSetType {
     // MARK: - CustomStringConvertible
     
     /// Printable description
-    public var description: String { return "{\(map{ "\($0)" }.joinWithSeparator(","))}" }
+    public var description: String { return "{\(map{ "\($0)" }.joined(separator: ","))}" }
 }

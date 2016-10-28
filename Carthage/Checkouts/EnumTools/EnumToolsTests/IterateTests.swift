@@ -13,12 +13,12 @@ class IterateTests: XCTestCase {
 
     func testIterate() {
         
-        enum TestEnum { case A, B, C, D, E, F, G }
+        enum TestEnum { case a, b, c, d, e, f, g }
         
         var enumCollection: [TestEnum] = []
-        for el in iterateEnum(TestEnum) { enumCollection.append(el) }
+        for el in iterateEnum(TestEnum.self) { enumCollection.append(el) }
         
-        let expected: [TestEnum] = [.A, .B, .C, .D, .E, .F, .G]
+        let expected: [TestEnum] = [.a, .b, .c, .d, .e, .f, .g]
         XCTAssertEqual(enumCollection, expected)
     }
     

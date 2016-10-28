@@ -63,12 +63,6 @@
 		07CC26B41C94E89E0099C21C /* ArithmeticTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CC26A91C94E8620099C21C /* ArithmeticTools.framework */; };
 		07D6FC951CEBF33F00E3D409 /* PitchSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D6FC941CEBF33F00E3D409 /* PitchSetTests.swift */; };
 		07D6FC961CEBF33F00E3D409 /* PitchSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D6FC941CEBF33F00E3D409 /* PitchSetTests.swift */; };
-		07D7ABF11D0226700046DB8C /* IntervalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7ABF01D0226700046DB8C /* IntervalType.swift */; };
-		07D7ABF21D0226700046DB8C /* IntervalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7ABF01D0226700046DB8C /* IntervalType.swift */; };
-		07D7ABF41D0226930046DB8C /* DyadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7ABF31D0226930046DB8C /* DyadType.swift */; };
-		07D7ABF51D0226930046DB8C /* DyadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7ABF31D0226930046DB8C /* DyadType.swift */; };
-		07D7ABF71D0228130046DB8C /* DyadConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7ABF61D0228130046DB8C /* DyadConvertible.swift */; };
-		07D7ABF81D0228130046DB8C /* DyadConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7ABF61D0228130046DB8C /* DyadConvertible.swift */; };
 		07D7ABFA1D022B5B0046DB8C /* PitchClassDyad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7ABF91D022B5B0046DB8C /* PitchClassDyad.swift */; };
 		07D7ABFB1D022B5B0046DB8C /* PitchClassDyad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7ABF91D022B5B0046DB8C /* PitchClassDyad.swift */; };
 		A8D7132CC49299D7A21F159D /* ArrayTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2FB7073AC462C303F41B42F /* ArrayTools.framework */; };
@@ -151,9 +145,6 @@
 		07CC26A81C94E8620099C21C /* ArrayTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArrayTools.framework; path = Carthage/Build/iOS/ArrayTools.framework; sourceTree = "<group>"; };
 		07CC26A91C94E8620099C21C /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = Carthage/Build/iOS/ArithmeticTools.framework; sourceTree = "<group>"; };
 		07D6FC941CEBF33F00E3D409 /* PitchSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchSetTests.swift; sourceTree = "<group>"; };
-		07D7ABF01D0226700046DB8C /* IntervalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntervalType.swift; sourceTree = "<group>"; };
-		07D7ABF31D0226930046DB8C /* DyadType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DyadType.swift; sourceTree = "<group>"; };
-		07D7ABF61D0228130046DB8C /* DyadConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DyadConvertible.swift; sourceTree = "<group>"; };
 		07D7ABF91D022B5B0046DB8C /* PitchClassDyad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchClassDyad.swift; sourceTree = "<group>"; };
 		0E0E20452242D0350AA49DC4 /* ArithmeticTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ArithmeticTools.framework; path = Carthage/Build/Mac/ArithmeticTools.framework; sourceTree = "<group>"; };
 		246C689217A6E5C782338DAA /* EnumTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EnumTools.framework; path = Carthage/Build/Mac/EnumTools.framework; sourceTree = "<group>"; };
@@ -209,9 +200,9 @@
 				07CC26A21C94E5630099C21C /* Frequency.swift */,
 				07CC26A51C94E6A00099C21C /* NoteNumber.swift */,
 				07CC26981C94E4910099C21C /* Pitch.swift */,
+				07AD1D471C95D402003225B2 /* PitchClass.swift */,
 				07AD1D441C95D3B0003225B2 /* Interval.swift */,
 				07AD1D4A1C95DE71003225B2 /* IntervalClass.swift */,
-				07AD1D471C95D402003225B2 /* PitchClass.swift */,
 			);
 			name = Elements;
 			sourceTree = "<group>";
@@ -319,9 +310,6 @@
 				07A4A8171D01DCCA00ED5EA9 /* PitchConvertibleContaining.swift */,
 				07A4A8141D01DC1E00ED5EA9 /* PitchConvertibleSetType.swift */,
 				07A4A80E1D01DB9500ED5EA9 /* PitchConvertibleCollectionType.swift */,
-				07D7ABF01D0226700046DB8C /* IntervalType.swift */,
-				07D7ABF31D0226930046DB8C /* DyadType.swift */,
-				07D7ABF61D0228130046DB8C /* DyadConvertible.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -441,14 +429,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "James Bean";
 				TargetAttributes = {
 					07CC265E1C94E0850099C21C = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					07CC26681C94E0850099C21C = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 					07CC267F1C94E0A00099C21C = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -555,11 +545,9 @@
 				07A4A8061D01D9B100ED5EA9 /* PitchConvertible.swift in Sources */,
 				075DBB621C9B9D3A00E2D3FD /* PitchSet.swift in Sources */,
 				07D7ABFA1D022B5B0046DB8C /* PitchClassDyad.swift in Sources */,
-				07D7ABF11D0226700046DB8C /* IntervalType.swift in Sources */,
 				07A4A8181D01DCCA00ED5EA9 /* PitchConvertibleContaining.swift in Sources */,
 				07C3314A1D05CEDD004B53B7 /* PitchConvertibleContainingSequence.swift in Sources */,
 				07CC26A31C94E5630099C21C /* Frequency.swift in Sources */,
-				07D7ABF71D0228130046DB8C /* DyadConvertible.swift in Sources */,
 				07AD1D481C95D402003225B2 /* PitchClass.swift in Sources */,
 				07A4A80F1D01DB9500ED5EA9 /* PitchConvertibleCollectionType.swift in Sources */,
 				07CC26991C94E4910099C21C /* Pitch.swift in Sources */,
@@ -569,7 +557,6 @@
 				07A4A81B1D01E7F800ED5EA9 /* PitchClassSet.swift in Sources */,
 				07CC26A61C94E6A00099C21C /* NoteNumber.swift in Sources */,
 				070EA95A1D01C364000EAEFB /* PitchSequence.swift in Sources */,
-				07D7ABF41D0226930046DB8C /* DyadType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,11 +582,9 @@
 				07A4A8071D01D9B100ED5EA9 /* PitchConvertible.swift in Sources */,
 				075DBB631C9B9D3A00E2D3FD /* PitchSet.swift in Sources */,
 				07D7ABFB1D022B5B0046DB8C /* PitchClassDyad.swift in Sources */,
-				07D7ABF21D0226700046DB8C /* IntervalType.swift in Sources */,
 				07A4A8191D01DCCA00ED5EA9 /* PitchConvertibleContaining.swift in Sources */,
 				07C3314B1D05CEDD004B53B7 /* PitchConvertibleContainingSequence.swift in Sources */,
 				07CC26A41C94E5630099C21C /* Frequency.swift in Sources */,
-				07D7ABF81D0228130046DB8C /* DyadConvertible.swift in Sources */,
 				07AD1D491C95D402003225B2 /* PitchClass.swift in Sources */,
 				07A4A8101D01DB9500ED5EA9 /* PitchConvertibleCollectionType.swift in Sources */,
 				07CC269A1C94E4910099C21C /* Pitch.swift in Sources */,
@@ -609,7 +594,6 @@
 				07A4A81C1D01E7F800ED5EA9 /* PitchClassSet.swift in Sources */,
 				07CC26A71C94E6A00099C21C /* NoteNumber.swift in Sources */,
 				070EA95B1D01C364000EAEFB /* PitchSequence.swift in Sources */,
-				07D7ABF51D0226930046DB8C /* DyadType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,8 +638,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -702,8 +688,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -723,6 +711,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -734,6 +723,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -748,6 +738,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -755,6 +746,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -768,6 +760,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.Pitch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -784,6 +777,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.PitchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -799,6 +793,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Carthage/Build/iOS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.PitchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -823,6 +818,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -846,6 +842,7 @@
 				PRODUCT_NAME = Pitch;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -866,6 +863,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -885,6 +883,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.PitchMacTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
