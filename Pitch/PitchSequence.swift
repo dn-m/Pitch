@@ -19,8 +19,12 @@ public struct PitchSequence: PitchConvertibleCollectionType {
     public let array: Array<Pitch>
 
     /// - TODO: Make IntervalSequence
-    public var intervals: [Interval]? {
-        return array.adjacentPairs?.lazy.map(Dyad.init).map(Interval.init)
+    public var intervals: [Interval] {
+        return array.adjacentPairs?
+            .lazy
+            .map(Dyad.init)
+            .map(Interval.init)
+        ?? []
     }
 }
 

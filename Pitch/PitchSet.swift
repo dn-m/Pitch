@@ -46,7 +46,9 @@ public struct PitchSet: PitchConvertibleSetType {
      ```
      */
     public lazy var dyads: [Dyad]? = {
-        Array(self.set).subsets(withCardinality: 2)?.map { Dyad($0[0], $0[1]) }
+        Array(self.set)
+            .subsets(withCardinality: 2)?
+            .map { Dyad($0[0], $0[1]) }
     }()
     
     /**
@@ -59,8 +61,11 @@ public struct PitchSet: PitchConvertibleSetType {
      pitchSet.pitchClassSet // => [3.5, 9.25]
      ```
      */
-    public var pitchClassSet: PitchClassSet { return PitchClassSet(map { $0.pitchClass }) }
+    public var pitchClassSet: PitchClassSet {
+        return PitchClassSet(map { $0.pitchClass })
+    }
     
+    /// Create a `PitchSet` by creating a union of multiple `PitchSet` values.
     public init(_ pitchSets: PitchSet...) {
         self.init(pitchSets)
     }
