@@ -18,9 +18,6 @@ public struct IntervalClass: FloatWrapping {
     /// Value of this `IntervalClass`.
     public var value: Float
     
-    /// - warning: Not yet implemented!
-    public var vector: Float { fatalError() }
-    
     // MARK: - Initializers
     
     /**

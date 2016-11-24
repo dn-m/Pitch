@@ -19,7 +19,9 @@ public struct PitchClass: FloatWrapping {
     public var value: Float
     
     /// Inversion of `PitchClass`.
-    public var inversion: PitchClass { return PitchClass(12 - self.value) }
+    public var inversion: PitchClass {
+        return PitchClass(12 - self.value)
+    }
 }
 
 extension PitchClass: ExpressibleByIntegerLiteral {
