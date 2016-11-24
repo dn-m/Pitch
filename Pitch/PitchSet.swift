@@ -46,7 +46,9 @@ public struct PitchSet: PitchConvertibleSetType {
      ```
      */
     public lazy var dyads: [Dyad]? = {
-        Array(self.set).subsets(withCardinality: 2)?.map { Dyad($0[0], $0[1]) }
+        Array(self.set)
+            .subsets(withCardinality: 2)?
+            .map { Dyad($0[0], $0[1]) }
     }()
     
     /**
