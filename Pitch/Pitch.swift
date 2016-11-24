@@ -23,6 +23,8 @@ public struct Pitch {
     /**
      - returns: NoteNumber with a random `NoteNumber` value between 60 and 72, with the given
      `resolution`.
+     
+     - TODO: Add `inRange: _` or similar.
      */
     public static func random(resolution: Float = 1) -> Pitch {
         return Pitch(noteNumber: NoteNumber.random(resolution: resolution))
@@ -37,7 +39,9 @@ public struct Pitch {
     public let frequency: Frequency
     
     /// Modulo 12 representation of `NoteNumber` representation of `Pitch`.
-    public var pitchClass: PitchClass { return PitchClass(self) }
+    public var pitchClass: PitchClass {
+        return PitchClass(self)
+    }
     
     // MARK: - Initializers
     
