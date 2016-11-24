@@ -20,7 +20,7 @@ class PitchSetTests: XCTestCase {
                 Pitch(noteNumber: 63)
             ]
         )
-        XCTAssertEqual(set.dyads!.count, 6)
+        XCTAssertEqual(set.dyads.count, 6)
     }
     
     func testArrayLiteralConvertible() {
