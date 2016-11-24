@@ -18,6 +18,8 @@ public struct NoteNumber: FloatWrapping {
     
     /**
      - returns: NoteNumber with a random value between 60 and 72, with the given `resolution`.
+     
+     - TODO: Implement `inRange: _` or similar.
      */
     public static func random(resolution: Float = 1) -> NoteNumber {
         return NoteNumber(Float.random(min: 60, max: 72, resolution: resolution))
