@@ -65,6 +65,7 @@ public struct PitchSet: PitchConvertibleSetType {
         return PitchClassSet(map { $0.pitchClass })
     }
     
+    /// Create a `PitchSet` by creating a union of multiple `PitchSet` values.
     public init(_ pitchSets: PitchSet...) {
         self.init(pitchSets)
     }
