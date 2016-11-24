@@ -59,7 +59,9 @@ public struct PitchSet: PitchConvertibleSetType {
      pitchSet.pitchClassSet // => [3.5, 9.25]
      ```
      */
-    public var pitchClassSet: PitchClassSet { return PitchClassSet(map { $0.pitchClass }) }
+    public var pitchClassSet: PitchClassSet {
+        return PitchClassSet(map { $0.pitchClass })
+    }
     
     public init(_ pitchSets: PitchSet...) {
         self.init(pitchSets)
