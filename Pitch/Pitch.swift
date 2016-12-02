@@ -109,16 +109,6 @@ extension Pitch: ExpressibleByIntegerLiteral {
     }
 }
 
-extension Pitch: Comparable { }
-
-public func == (lhs: Pitch, rhs: Pitch) -> Bool {
-    return lhs.noteNumber == rhs.noteNumber
-}
-
-public func < (lhs: Pitch, rhs: Pitch) -> Bool {
-    return lhs.noteNumber < rhs.noteNumber
-}
-
 extension Pitch: Hashable {
     
     // MARK: - Hashable
@@ -134,6 +124,14 @@ extension Pitch: CustomStringConvertible {
     /// Printed description.
     public var description: String { return "\(noteNumber.value)" }
     
+}
+
+public func == (lhs: Pitch, rhs: Pitch) -> Bool {
+    return lhs.noteNumber == rhs.noteNumber
+}
+
+public func < (lhs: Pitch, rhs: Pitch) -> Bool {
+    return lhs.noteNumber < rhs.noteNumber
 }
 
 // MARK: - Transposition
@@ -153,3 +151,4 @@ func - (lhs: Pitch, rhs: Float) -> Pitch {
 func - (lhs: Float, rhs: Pitch) -> Pitch {
     return Pitch(noteNumber: NoteNumber(lhs - rhs.noteNumber.value))
 }
+

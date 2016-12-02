@@ -29,13 +29,9 @@ public struct PitchCollection: NoteNumberRepresentableCollectionType {
     /// Array of the `Pitch` values contained herein.
     public let array: Array<Pitch>
 
-    /// - TODO: Make IntervalSequence
-    public var intervals: [PitchInterval] {
-        return array.adjacentPairs?
-            .lazy
-            .map(PitchDyad.init)
-            .map(PitchInterval.init)
-        ?? []
+    /// Collection of `PitchInterval` values between adjacent values contained herein.
+    public var intervals: PitchIntervalCollection {
+        return PitchIntervalCollection(array.adjacentPairs?.map(PitchInterval.init) ?? [])
     }
 }
 
