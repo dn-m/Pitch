@@ -11,7 +11,7 @@ import ArrayTools
 /**
  Ordered collection of non-unique `Pitch` values.
  */
-public struct OrderedPitchSet: NoteNumberRepresentableCollectionType {
+public struct PitchCollection: NoteNumberRepresentableCollectionType {
 
     // MARK: - Instance Properties
     
@@ -28,7 +28,7 @@ public struct OrderedPitchSet: NoteNumberRepresentableCollectionType {
     }
 }
 
-extension OrderedPitchSet: AnySequenceType {
+extension PitchCollection: AnySequenceType {
     
     // MARK: - PitchSequenceType
     
@@ -45,7 +45,7 @@ extension OrderedPitchSet: AnySequenceType {
     }
 }
 
-extension OrderedPitchSet: ExpressibleByArrayLiteral {
+extension PitchCollection: ExpressibleByArrayLiteral {
     
     // MARK: - ArrayLiteralConvertible
     
@@ -57,11 +57,11 @@ extension OrderedPitchSet: ExpressibleByArrayLiteral {
     }
 }
 
-public func == (lhs: OrderedPitchSet, rhs: OrderedPitchSet) -> Bool {
+public func == (lhs: PitchCollection, rhs: PitchCollection) -> Bool {
     return lhs.sequence == rhs.sequence
 }
 
-extension OrderedPitchSet: Sequence {
+extension PitchCollection: Sequence {
     
     public func makeIterator() -> AnyIterator<Pitch> {
         var iterator = array.makeIterator()

@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		070192FA1C94EA3200266260 /* ArrayTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07CC26A81C94E8620099C21C /* ArrayTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		070192FB1C94EA3200266260 /* ArithmeticTools.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07CC26A91C94E8620099C21C /* ArithmeticTools.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		070EA95A1D01C364000EAEFB /* OrderedPitchSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070EA9591D01C364000EAEFB /* OrderedPitchSet.swift */; };
-		070EA95B1D01C364000EAEFB /* OrderedPitchSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070EA9591D01C364000EAEFB /* OrderedPitchSet.swift */; };
+		070EA95A1D01C364000EAEFB /* PitchCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070EA9591D01C364000EAEFB /* PitchCollection.swift */; };
+		070EA95B1D01C364000EAEFB /* PitchCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070EA9591D01C364000EAEFB /* PitchCollection.swift */; };
 		07457F9E1DF137C300A1608D /* OrderedPitchClassIntervalSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07457F9D1DF137C300A1608D /* OrderedPitchClassIntervalSet.swift */; };
 		07457F9F1DF137C300A1608D /* OrderedPitchClassIntervalSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07457F9D1DF137C300A1608D /* OrderedPitchClassIntervalSet.swift */; };
 		0752E24F1D09D7820059EADF /* PitchSetSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752E24E1D09D7820059EADF /* PitchSetSequence.swift */; };
@@ -120,7 +120,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		070EA9591D01C364000EAEFB /* OrderedPitchSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedPitchSet.swift; sourceTree = "<group>"; };
+		070EA9591D01C364000EAEFB /* PitchCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchCollection.swift; sourceTree = "<group>"; };
 		07457F9D1DF137C300A1608D /* OrderedPitchClassIntervalSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedPitchClassIntervalSet.swift; sourceTree = "<group>"; };
 		0752E24E1D09D7820059EADF /* PitchSetSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchSetSequence.swift; sourceTree = "<group>"; };
 		075DBB611C9B9D3A00E2D3FD /* PitchSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchSet.swift; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 				07AD1D3E1C95D2B8003225B2 /* PitchDyad.swift */,
 				075DBB611C9B9D3A00E2D3FD /* PitchSet.swift */,
 				0752E24E1D09D7820059EADF /* PitchSetSequence.swift */,
-				070EA9591D01C364000EAEFB /* OrderedPitchSet.swift */,
+				070EA9591D01C364000EAEFB /* PitchCollection.swift */,
 			);
 			name = Containers;
 			sourceTree = "<group>";
@@ -570,7 +570,7 @@
 				07AD1D451C95D3B0003225B2 /* PitchInterval.swift in Sources */,
 				07A4A81B1D01E7F800ED5EA9 /* PitchClassSet.swift in Sources */,
 				07CC26A61C94E6A00099C21C /* NoteNumber.swift in Sources */,
-				070EA95A1D01C364000EAEFB /* OrderedPitchSet.swift in Sources */,
+				070EA95A1D01C364000EAEFB /* PitchCollection.swift in Sources */,
 				0798A7AB1DF1226500AAD892 /* NoteNumberRepresentableContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,7 +610,7 @@
 				07AD1D461C95D3B0003225B2 /* PitchInterval.swift in Sources */,
 				07A4A81C1D01E7F800ED5EA9 /* PitchClassSet.swift in Sources */,
 				07CC26A71C94E6A00099C21C /* NoteNumber.swift in Sources */,
-				070EA95B1D01C364000EAEFB /* OrderedPitchSet.swift in Sources */,
+				070EA95B1D01C364000EAEFB /* PitchCollection.swift in Sources */,
 				0798A7AC1DF1226500AAD892 /* NoteNumberRepresentableContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
