@@ -11,10 +11,10 @@ import ArrayTools
 /// Collection of `PitchInterval` values
 public struct PitchIntervalCollection: NoteNumberRepresentableCollectionType {
     
-    /// `NoteNumberRepresentable` type of dyad.
+    /// `NoteNumberRepresentableDyad` type.
     public typealias Dyad = PitchDyad
     
-    /// `NoteNumberRepresentable` type of interval.
+    /// `NoteNumberRepresentableInterval` type.
     public typealias Interval = PitchInterval
     
     // MARK: - Instance Properties
