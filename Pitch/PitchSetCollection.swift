@@ -1,5 +1,5 @@
 //
-//  PitchSetSequence.swift
+//  PitchSetCollection.swift
 //  Pitch
 //
 //  Created by James Bean on 6/9/16.
@@ -11,7 +11,7 @@ import ArrayTools
 /**
  Ordered collection of non-unique `PitchSet` values.
  */
-public struct PitchSetSequence {
+public struct PitchSetCollection {
     
     public typealias Element = PitchSet
     
@@ -23,7 +23,7 @@ public struct PitchSetSequence {
     }
 }
 
-extension PitchSetSequence: Collection {
+extension PitchSetCollection: Collection {
     
     // MARK: - Collection
     
@@ -38,7 +38,7 @@ extension PitchSetSequence: Collection {
     public subscript(index: Int) -> Element { return array[index] }
 }
 
-extension PitchSetSequence: ExpressibleByArrayLiteral {
+extension PitchSetCollection: ExpressibleByArrayLiteral {
     
     // MARK: ArrayLiteralConvertible
     
