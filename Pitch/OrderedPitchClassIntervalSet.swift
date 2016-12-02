@@ -8,7 +8,7 @@
 
 import ArrayTools
 
-public struct OrderedPitchClassIntervalSet: OrderedNoteNumberRepresentableSetType {
+public struct OrderedPitchClassIntervalSet: NoteNumberRepresentableCollectionType {
     
     public let array: Array<PitchClassInterval>
 }

@@ -1,5 +1,5 @@
 //
-//  OrderedNoteNumberRepresentableSetType.swift
+//  NoteNumberRepresentableCollectionType.swift
 //  Pitch
 //
 //  Created by James Bean on 12/1/16.
@@ -11,7 +11,7 @@ import ArrayTools
 /**
  Ordered collection of non-unique `PitchConvertible`-conforming values.
  */
-public protocol OrderedNoteNumberRepresentableSetType:
+public protocol NoteNumberRepresentableCollectionType:
     NoteNumberRepresentableContainer,
     Collection,
     Equatable
@@ -28,7 +28,7 @@ public protocol OrderedNoteNumberRepresentableSetType:
     var array: Array<Element> { get }
 }
 
-extension OrderedNoteNumberRepresentableSetType {
+extension NoteNumberRepresentableCollectionType {
     
     // MARK: - AnySequenceType
     
@@ -36,7 +36,7 @@ extension OrderedNoteNumberRepresentableSetType {
     public var sequence: AnySequence<Element> { return AnySequence(array) }
 }
 
-extension OrderedNoteNumberRepresentableSetType {
+extension NoteNumberRepresentableCollectionType {
     
     // MARK: - PitchConvertibleContaining
     
@@ -47,7 +47,7 @@ extension OrderedNoteNumberRepresentableSetType {
     public var isMonadic: Bool { return array.count == 1 }
 }
 
-extension OrderedNoteNumberRepresentableSetType {
+extension NoteNumberRepresentableCollectionType {
     
     // MARK: - CollectionType
     
@@ -69,7 +69,7 @@ extension OrderedNoteNumberRepresentableSetType {
     public subscript(index: Int) -> Element { return array[index] }
 }
 
-extension OrderedNoteNumberRepresentableSetType {
+extension NoteNumberRepresentableCollectionType {
     
     // MARK: - CustomStringConvertible
     
@@ -85,6 +85,6 @@ extension OrderedNoteNumberRepresentableSetType {
 /**
  - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
  */
-public func == <T: OrderedNoteNumberRepresentableSetType> (lhs: T, rhs: T) -> Bool {
+public func == <T: NoteNumberRepresentableCollectionType> (lhs: T, rhs: T) -> Bool {
     return lhs.sequence == rhs.sequence
 }

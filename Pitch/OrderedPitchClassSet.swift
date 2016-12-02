@@ -9,10 +9,11 @@
 import ArrayTools
 import ArithmeticTools
 
-/**
- Ordered collection of non-unique `PitchClass` values.
- */
-public struct OrderedPitchClassSet: OrderedNoteNumberRepresentableSetType {
+
+/// Ordered collection of non-unique `PitchClass` values.
+///
+/// - TODO: Rename to `PitchClassCollection` (the contents are not unique!)
+public struct OrderedPitchClassSet: NoteNumberRepresentableCollectionType {
 
     // MARK: - Instance Properties
     
@@ -20,6 +21,8 @@ public struct OrderedPitchClassSet: OrderedNoteNumberRepresentableSetType {
     public let array: Array<PitchClass>
     
     /// `PitchClassSequence` with `PitchClass` values in reverse order.
+    ///
+    /// - TODO: Move up `OrderedNoteNumberRespresentableSetType`
     public var retrograde: OrderedPitchClassSet {
         return OrderedPitchClassSet(reversed())
     }

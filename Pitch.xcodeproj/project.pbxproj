@@ -31,8 +31,8 @@
 		0798A7AC1DF1226500AAD892 /* NoteNumberRepresentableContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798A7AA1DF1226500AAD892 /* NoteNumberRepresentableContainer.swift */; };
 		0798A7AE1DF1246E00AAD892 /* NoteNumberRepresentableSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798A7AD1DF1246E00AAD892 /* NoteNumberRepresentableSetType.swift */; };
 		0798A7AF1DF1246E00AAD892 /* NoteNumberRepresentableSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798A7AD1DF1246E00AAD892 /* NoteNumberRepresentableSetType.swift */; };
-		0798A7B11DF124DB00AAD892 /* OrderedNoteNumberRepresentableSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798A7B01DF124DB00AAD892 /* OrderedNoteNumberRepresentableSetType.swift */; };
-		0798A7B21DF124DB00AAD892 /* OrderedNoteNumberRepresentableSetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798A7B01DF124DB00AAD892 /* OrderedNoteNumberRepresentableSetType.swift */; };
+		0798A7B11DF124DB00AAD892 /* NoteNumberRepresentableCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798A7B01DF124DB00AAD892 /* NoteNumberRepresentableCollectionType.swift */; };
+		0798A7B21DF124DB00AAD892 /* NoteNumberRepresentableCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798A7B01DF124DB00AAD892 /* NoteNumberRepresentableCollectionType.swift */; };
 		07A4A8061D01D9B100ED5EA9 /* PitchConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A4A8051D01D9B100ED5EA9 /* PitchConvertible.swift */; };
 		07A4A8071D01D9B100ED5EA9 /* PitchConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A4A8051D01D9B100ED5EA9 /* PitchConvertible.swift */; };
 		07A4A80C1D01DA6700ED5EA9 /* OrderedPitchClassSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A4A80B1D01DA6700ED5EA9 /* OrderedPitchClassSet.swift */; };
@@ -131,7 +131,7 @@
 		0798A7A71DF11D4F00AAD892 /* NoteNumberRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteNumberRepresentable.swift; sourceTree = "<group>"; };
 		0798A7AA1DF1226500AAD892 /* NoteNumberRepresentableContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteNumberRepresentableContainer.swift; sourceTree = "<group>"; };
 		0798A7AD1DF1246E00AAD892 /* NoteNumberRepresentableSetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteNumberRepresentableSetType.swift; sourceTree = "<group>"; };
-		0798A7B01DF124DB00AAD892 /* OrderedNoteNumberRepresentableSetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedNoteNumberRepresentableSetType.swift; sourceTree = "<group>"; };
+		0798A7B01DF124DB00AAD892 /* NoteNumberRepresentableCollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteNumberRepresentableCollectionType.swift; sourceTree = "<group>"; };
 		07A4A8051D01D9B100ED5EA9 /* PitchConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchConvertible.swift; sourceTree = "<group>"; };
 		07A4A80B1D01DA6700ED5EA9 /* OrderedPitchClassSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedPitchClassSet.swift; sourceTree = "<group>"; };
 		07A4A81A1D01E7F800ED5EA9 /* PitchClassSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchClassSet.swift; sourceTree = "<group>"; };
@@ -317,7 +317,7 @@
 			children = (
 				07A4A8051D01D9B100ED5EA9 /* PitchConvertible.swift */,
 				0798A7AD1DF1246E00AAD892 /* NoteNumberRepresentableSetType.swift */,
-				0798A7B01DF124DB00AAD892 /* OrderedNoteNumberRepresentableSetType.swift */,
+				0798A7B01DF124DB00AAD892 /* NoteNumberRepresentableCollectionType.swift */,
 				0798A7A71DF11D4F00AAD892 /* NoteNumberRepresentable.swift */,
 				0798A7AA1DF1226500AAD892 /* NoteNumberRepresentableContainer.swift */,
 				0793E7C81DF1315A009050BF /* NoteNumberRepresentableDyad.swift */,
@@ -558,7 +558,7 @@
 				07A4A8061D01D9B100ED5EA9 /* PitchConvertible.swift in Sources */,
 				075DBB621C9B9D3A00E2D3FD /* PitchSet.swift in Sources */,
 				0798A7AE1DF1246E00AAD892 /* NoteNumberRepresentableSetType.swift in Sources */,
-				0798A7B11DF124DB00AAD892 /* OrderedNoteNumberRepresentableSetType.swift in Sources */,
+				0798A7B11DF124DB00AAD892 /* NoteNumberRepresentableCollectionType.swift in Sources */,
 				07D7ABFA1D022B5B0046DB8C /* PitchClassDyad.swift in Sources */,
 				0793E7CC1DF131C0009050BF /* NoteNumberRepresentableInterval.swift in Sources */,
 				0798A7A81DF11D4F00AAD892 /* NoteNumberRepresentable.swift in Sources */,
@@ -598,7 +598,7 @@
 				07A4A8071D01D9B100ED5EA9 /* PitchConvertible.swift in Sources */,
 				075DBB631C9B9D3A00E2D3FD /* PitchSet.swift in Sources */,
 				0798A7AF1DF1246E00AAD892 /* NoteNumberRepresentableSetType.swift in Sources */,
-				0798A7B21DF124DB00AAD892 /* OrderedNoteNumberRepresentableSetType.swift in Sources */,
+				0798A7B21DF124DB00AAD892 /* NoteNumberRepresentableCollectionType.swift in Sources */,
 				07D7ABFB1D022B5B0046DB8C /* PitchClassDyad.swift in Sources */,
 				0793E7CD1DF131C0009050BF /* NoteNumberRepresentableInterval.swift in Sources */,
 				0798A7A91DF11D4F00AAD892 /* NoteNumberRepresentable.swift in Sources */,

@@ -11,7 +11,7 @@ import ArrayTools
 /**
  Ordered collection of non-unique `Pitch` values.
  */
-public struct OrderedPitchSet: OrderedNoteNumberRepresentableSetType {
+public struct OrderedPitchSet: NoteNumberRepresentableCollectionType {
 
     // MARK: - Instance Properties
     
