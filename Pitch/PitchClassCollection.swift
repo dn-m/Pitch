@@ -1,5 +1,5 @@
 //
-//  OrderedPitchClassSet.swift
+//  PitchClassCollection.swift
 //  Pitch
 //
 //  Created by James Bean on 6/3/16.
@@ -13,7 +13,7 @@ import ArithmeticTools
 /// Ordered collection of non-unique `PitchClass` values.
 ///
 /// - TODO: Rename to `PitchClassCollection` (the contents are not unique!)
-public struct OrderedPitchClassSet: NoteNumberRepresentableCollectionType {
+public struct PitchClassCollection: NoteNumberRepresentableCollectionType {
 
     // MARK: - Instance Properties
     
@@ -23,13 +23,13 @@ public struct OrderedPitchClassSet: NoteNumberRepresentableCollectionType {
     /// `PitchClassSequence` with `PitchClass` values in reverse order.
     ///
     /// - TODO: Move up `OrderedNoteNumberRespresentableSetType`
-    public var retrograde: OrderedPitchClassSet {
-        return OrderedPitchClassSet(reversed())
+    public var retrograde: PitchClassCollection {
+        return PitchClassCollection(reversed())
     }
     
     /// `PitchClassSequence` with `PitchClass` values inverted around `0`.
-    public var inversion: OrderedPitchClassSet {
-        return OrderedPitchClassSet(map { $0.inversion })
+    public var inversion: PitchClassCollection {
+        return PitchClassCollection(map { $0.inversion })
     }
     
     /**
@@ -62,7 +62,7 @@ public struct OrderedPitchClassSet: NoteNumberRepresentableCollectionType {
     }()
 }
 
-extension OrderedPitchClassSet: AnySequenceType {
+extension PitchClassCollection: AnySequenceType {
     
     // MARK: - AnySequenceType
     
@@ -77,7 +77,7 @@ extension OrderedPitchClassSet: AnySequenceType {
     }
 }
 
-extension OrderedPitchClassSet: ExpressibleByArrayLiteral {
+extension PitchClassCollection: ExpressibleByArrayLiteral {
     
     // MARK: - ArrayLiteralConvertible
     
@@ -89,11 +89,11 @@ extension OrderedPitchClassSet: ExpressibleByArrayLiteral {
     }
 }
 
-public func == (lhs: OrderedPitchClassSet, rhs: OrderedPitchClassSet) -> Bool {
+public func == (lhs: PitchClassCollection, rhs: PitchClassCollection) -> Bool {
     return lhs.sequence == rhs.sequence
 }
 
-extension OrderedPitchClassSet: Sequence {
+extension PitchClassCollection: Sequence {
     
     public func makeIterator() -> AnyIterator<PitchClass> {
         var iterator = array.makeIterator()

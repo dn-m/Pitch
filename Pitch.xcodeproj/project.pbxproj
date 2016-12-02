@@ -35,8 +35,8 @@
 		0798A7B21DF124DB00AAD892 /* NoteNumberRepresentableCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798A7B01DF124DB00AAD892 /* NoteNumberRepresentableCollectionType.swift */; };
 		07A4A8061D01D9B100ED5EA9 /* PitchConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A4A8051D01D9B100ED5EA9 /* PitchConvertible.swift */; };
 		07A4A8071D01D9B100ED5EA9 /* PitchConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A4A8051D01D9B100ED5EA9 /* PitchConvertible.swift */; };
-		07A4A80C1D01DA6700ED5EA9 /* OrderedPitchClassSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A4A80B1D01DA6700ED5EA9 /* OrderedPitchClassSet.swift */; };
-		07A4A80D1D01DA6700ED5EA9 /* OrderedPitchClassSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A4A80B1D01DA6700ED5EA9 /* OrderedPitchClassSet.swift */; };
+		07A4A80C1D01DA6700ED5EA9 /* PitchClassCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A4A80B1D01DA6700ED5EA9 /* PitchClassCollection.swift */; };
+		07A4A80D1D01DA6700ED5EA9 /* PitchClassCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A4A80B1D01DA6700ED5EA9 /* PitchClassCollection.swift */; };
 		07A4A81B1D01E7F800ED5EA9 /* PitchClassSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A4A81A1D01E7F800ED5EA9 /* PitchClassSet.swift */; };
 		07A4A81C1D01E7F800ED5EA9 /* PitchClassSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A4A81A1D01E7F800ED5EA9 /* PitchClassSet.swift */; };
 		07AD1D3F1C95D2B8003225B2 /* PitchDyad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AD1D3E1C95D2B8003225B2 /* PitchDyad.swift */; };
@@ -133,7 +133,7 @@
 		0798A7AD1DF1246E00AAD892 /* NoteNumberRepresentableSetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteNumberRepresentableSetType.swift; sourceTree = "<group>"; };
 		0798A7B01DF124DB00AAD892 /* NoteNumberRepresentableCollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteNumberRepresentableCollectionType.swift; sourceTree = "<group>"; };
 		07A4A8051D01D9B100ED5EA9 /* PitchConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchConvertible.swift; sourceTree = "<group>"; };
-		07A4A80B1D01DA6700ED5EA9 /* OrderedPitchClassSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedPitchClassSet.swift; sourceTree = "<group>"; };
+		07A4A80B1D01DA6700ED5EA9 /* PitchClassCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchClassCollection.swift; sourceTree = "<group>"; };
 		07A4A81A1D01E7F800ED5EA9 /* PitchClassSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchClassSet.swift; sourceTree = "<group>"; };
 		07AD1D3E1C95D2B8003225B2 /* PitchDyad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchDyad.swift; sourceTree = "<group>"; };
 		07AD1D441C95D3B0003225B2 /* PitchInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchInterval.swift; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 		07C331481D05CC9F004B53B7 /* Containers */ = {
 			isa = PBXGroup;
 			children = (
-				07A4A80B1D01DA6700ED5EA9 /* OrderedPitchClassSet.swift */,
+				07A4A80B1D01DA6700ED5EA9 /* PitchClassCollection.swift */,
 				07457F9D1DF137C300A1608D /* OrderedPitchClassIntervalSet.swift */,
 				07A4A81A1D01E7F800ED5EA9 /* PitchClassSet.swift */,
 				07D7ABF91D022B5B0046DB8C /* PitchClassDyad.swift */,
@@ -566,7 +566,7 @@
 				07CC26A31C94E5630099C21C /* Frequency.swift in Sources */,
 				07AD1D481C95D402003225B2 /* PitchClass.swift in Sources */,
 				07CC26991C94E4910099C21C /* Pitch.swift in Sources */,
-				07A4A80C1D01DA6700ED5EA9 /* OrderedPitchClassSet.swift in Sources */,
+				07A4A80C1D01DA6700ED5EA9 /* PitchClassCollection.swift in Sources */,
 				07AD1D451C95D3B0003225B2 /* PitchInterval.swift in Sources */,
 				07A4A81B1D01E7F800ED5EA9 /* PitchClassSet.swift in Sources */,
 				07CC26A61C94E6A00099C21C /* NoteNumber.swift in Sources */,
@@ -606,7 +606,7 @@
 				07CC26A41C94E5630099C21C /* Frequency.swift in Sources */,
 				07AD1D491C95D402003225B2 /* PitchClass.swift in Sources */,
 				07CC269A1C94E4910099C21C /* Pitch.swift in Sources */,
-				07A4A80D1D01DA6700ED5EA9 /* OrderedPitchClassSet.swift in Sources */,
+				07A4A80D1D01DA6700ED5EA9 /* PitchClassCollection.swift in Sources */,
 				07AD1D461C95D3B0003225B2 /* PitchInterval.swift in Sources */,
 				07A4A81C1D01E7F800ED5EA9 /* PitchClassSet.swift in Sources */,
 				07CC26A71C94E6A00099C21C /* NoteNumber.swift in Sources */,
