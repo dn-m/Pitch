@@ -6,16 +6,22 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import Foundation
+import func ArithmeticTools.ordered
 
-// this should be temporary
-public struct PitchClassDyad {
+public struct PitchClassDyad: NoteNumberRepresentableDyad {
     
-    let lower: PitchClass
-    let higher: PitchClass
-    var interval: Interval { return Interval(higher.value - lower.value) }
+    public typealias Element = PitchClass
     
-    public init(_ lower: PitchClass, _ higher: PitchClass) {
+    public let lower: Element
+    
+    public let higher: Element
+    
+    var interval: PitchInterval {
+        return PitchInterval(noteNumber: higher.noteNumber - lower.noteNumber)
+    }
+    
+    public init(_ a: Element, _ b: Element) {
+        let (lower, higher) = ordered(a,b)
         self.lower = lower
         self.higher = higher
     }

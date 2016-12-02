@@ -25,6 +25,8 @@ public struct PitchSetSequence {
 
 extension PitchSetSequence: Collection {
     
+    // MARK: - Collection
+    
     public var startIndex: Int { return 0 }
     public var endIndex: Int { return array.count }
     

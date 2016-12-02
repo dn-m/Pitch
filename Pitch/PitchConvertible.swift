@@ -11,10 +11,10 @@ import ArithmeticTools
 /**
  Conforming types can be initialized with a `Pitch` value.
  */
-public protocol PitchConvertible: Hashable {
+public protocol PitchConvertible {
     
     // MARK: - Initializers
-    
+
     /**
      Initialize conforming type with a `Pitch` value.
      */

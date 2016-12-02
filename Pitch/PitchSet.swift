@@ -11,12 +11,15 @@ import ArrayTools
 /**
  Unordered set of unique `Pitch` values.
  */
-public struct PitchSet: PitchConvertibleSetType {
+public struct PitchSet: NoteNumberRepresentableSetType {
     
     // MARK: - Associated Types
     
     /// `PitchConvertible` type contained herein.
     public typealias Element = Pitch
+    
+    public typealias Dyad = PitchDyad
+    public typealias Interval = PitchInterval
     
     // MARK: - Instance Properties
     

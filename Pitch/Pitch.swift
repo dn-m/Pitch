@@ -11,7 +11,7 @@ import ArithmeticTools
 /**
  The quality of a sound governed by the rate of vibrations producing it.
  */
-public struct Pitch {
+public struct Pitch: NoteNumberRepresentable {
     
     // MARK: - Type Properties
     
@@ -134,4 +134,22 @@ extension Pitch: CustomStringConvertible {
     /// Printed description.
     public var description: String { return "\(noteNumber.value)" }
     
+}
+
+// MARK: - Transposition
+
+func + (lhs: Pitch, rhs: Float) -> Pitch {
+    return Pitch(noteNumber: NoteNumber(lhs.noteNumber.value + rhs))
+}
+
+func + (lhs: Float, rhs: Pitch) -> Pitch {
+    return Pitch(noteNumber: NoteNumber(lhs + rhs.noteNumber.value))
+}
+
+func - (lhs: Pitch, rhs: Float) -> Pitch {
+    return Pitch(noteNumber: NoteNumber(lhs.noteNumber.value - rhs))
+}
+
+func - (lhs: Float, rhs: Pitch) -> Pitch {
+    return Pitch(noteNumber: NoteNumber(lhs - rhs.noteNumber.value))
 }

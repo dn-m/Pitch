@@ -1,0 +1,90 @@
+//
+//  OrderedNoteNumberRepresentableSetType.swift
+//  Pitch
+//
+//  Created by James Bean on 12/1/16.
+//  Copyright © 2016 James Bean. All rights reserved.
+//
+
+import ArrayTools
+
+/**
+ Ordered collection of non-unique `PitchConvertible`-conforming values.
+ */
+public protocol OrderedNoteNumberRepresentableSetType:
+    NoteNumberRepresentableContainer,
+    Collection,
+    Equatable
+{
+    
+    // MARK: - Associated Types
+    
+    /// `PitchConvertible`-conforming type of values contained herein.
+    associatedtype Element: NoteNumberRepresentable
+    
+    // MARK: - Instance Properties
+    
+    /// `Array` holding `PitchConvertible` values.
+    var array: Array<Element> { get }
+}
+
+extension OrderedNoteNumberRepresentableSetType {
+    
+    // MARK: - AnySequenceType
+    
+    /// Iterable sequence of `Pitch` values contained herein.
+    public var sequence: AnySequence<Element> { return AnySequence(array) }
+}
+
+extension OrderedNoteNumberRepresentableSetType {
+    
+    // MARK: - PitchConvertibleContaining
+    
+    /// - returns `true` if there are no `Pitch` values contained herein. Otherwise, `false`.
+    public var isEmpty: Bool { return array.isEmpty }
+    
+    /// - returns `true` if there is one `Pitch` value contained herein. Otherwise `false`.
+    public var isMonadic: Bool { return array.count == 1 }
+}
+
+extension OrderedNoteNumberRepresentableSetType {
+    
+    // MARK: - CollectionType
+    
+    /// Start index
+    public var startIndex: Int { return 0 }
+    
+    /// End index
+    public var endIndex: Int { return array.count }
+    
+    
+    public func index(after i: Int) -> Int {
+        guard i != endIndex else { fatalError("Cannot increment endIndex") }
+        return i + 1
+    }
+    
+    /**
+     - returns: `Pitch` value at the given `index`.
+     */
+    public subscript(index: Int) -> Element { return array[index] }
+}
+
+extension OrderedNoteNumberRepresentableSetType {
+    
+    // MARK: - CustomStringConvertible
+    
+    /// Printed description of `PitchConvertibleCollectionType`.
+    public var description: String {
+        return "〈\(map{ "\($0)" }.joined(separator: ","))〉"
+    }
+}
+
+// MARK: - Equatable
+
+
+/**
+ - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
+ */
+public func == <T: OrderedNoteNumberRepresentableSetType> (lhs: T, rhs: T) -> Bool {
+    return lhs.sequence == rhs.sequence
+}
