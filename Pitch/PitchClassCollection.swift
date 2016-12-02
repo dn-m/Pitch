@@ -25,7 +25,7 @@ public struct PitchClassCollection: NoteNumberRepresentableCollectionType {
     
     /// `PitchClassSequence` with `PitchClass` values in reverse order.
     ///
-    /// - TODO: Move up `OrderedNoteNumberRespresentableSetType`
+    /// - TODO: Move up `OrderedNoteNumberRespresentableSetType` protocol hierarchy.
     public var retrograde: PitchClassCollection {
         return PitchClassCollection(reversed())
     }
@@ -38,20 +38,12 @@ public struct PitchClassCollection: NoteNumberRepresentableCollectionType {
     /**
      Array of `IntervalClass` values between each adjacent `PitchClass` herein.
 
-     - TODO: Refactor up the `PitchConvertibleCollectionType` protocol hierarchy
+     - TODO: Refactor up the `NoteNumberRepresentableCollectionType` protocol hierarchy
      */
-    public lazy var intervals: PitchClassIntervalCollection? = {
-        
-        guard let intervals = self.array
-            .lazy
-            .adjacentPairs?
-            .map(PitchClassDyad.init)
-            .map(PitchClassInterval.init)
-        else {
-            return nil
-        }
-
-        return PitchClassIntervalCollection(intervals)
+    public lazy var intervals: PitchClassIntervalCollection = {
+        return PitchClassIntervalCollection(
+            self.array.adjacentPairs?.map(PitchClassInterval.init) ?? []
+        )
     }()
     
     /** 
