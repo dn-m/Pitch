@@ -8,12 +8,12 @@
 
 import ArrayTools
 
-public struct OrderedPitchClassIntervalSet: NoteNumberRepresentableCollectionType {
+public struct PitchClassIntervalCollection: NoteNumberRepresentableCollectionType {
     
     public let array: Array<PitchClassInterval>
 }
 
-extension OrderedPitchClassIntervalSet: AnySequenceType {
+extension PitchClassIntervalCollection: AnySequenceType {
     
     // MARK: - PitchSequenceType
     
@@ -30,7 +30,7 @@ extension OrderedPitchClassIntervalSet: AnySequenceType {
     }
 }
 
-extension OrderedPitchClassIntervalSet: ExpressibleByArrayLiteral {
+extension PitchClassIntervalCollection: ExpressibleByArrayLiteral {
     
     // MARK: - ArrayLiteralConvertible
     
@@ -42,7 +42,7 @@ extension OrderedPitchClassIntervalSet: ExpressibleByArrayLiteral {
     }
 }
 
-extension OrderedPitchClassIntervalSet: Sequence {
+extension PitchClassIntervalCollection: Sequence {
     
     public func makeIterator() -> AnyIterator<PitchClassInterval> {
         var iterator = array.makeIterator()
@@ -50,6 +50,6 @@ extension OrderedPitchClassIntervalSet: Sequence {
     }
 }
 
-public func == (lhs: OrderedPitchClassIntervalSet, rhs: OrderedPitchClassIntervalSet) -> Bool {
+public func == (lhs: PitchClassIntervalCollection, rhs: PitchClassIntervalCollection) -> Bool {
     return lhs.sequence == rhs.sequence
 }

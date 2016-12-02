@@ -37,7 +37,7 @@ public struct PitchClassCollection: NoteNumberRepresentableCollectionType {
 
      - TODO: Refactor up the `PitchConvertibleCollectionType` protocol hierarchy
      */
-    public lazy var intervals: OrderedPitchClassIntervalSet? = {
+    public lazy var intervals: PitchClassIntervalCollection? = {
         
         guard let intervals = self.array
             .lazy
@@ -48,7 +48,7 @@ public struct PitchClassCollection: NoteNumberRepresentableCollectionType {
             return nil
         }
 
-        return OrderedPitchClassIntervalSet(intervals)
+        return PitchClassIntervalCollection(intervals)
     }()
     
     /** 
