@@ -11,16 +11,22 @@ import ArrayTools
 /**
  Unordered set of unique `Pitch` values.
  */
-public struct PitchSet: PitchConvertibleSetType {
+public struct PitchSet: NoteNumberRepresentableSetType {
     
     // MARK: - Associated Types
     
     /// `PitchConvertible` type contained herein.
     public typealias Element = Pitch
     
+    /// `NoteNumberRepresentableDyad` type.
+    public typealias Dyad = PitchDyad
+    
+    /// `NoteNumberRepresentableInterval` type.
+    public typealias Interval = PitchInterval
+    
     // MARK: - Instance Properties
     
-    /// `Set` holding `Pitch` values.
+    /// Backing store for elements contained herein.
     public let set: Set<Element>
     
     /**

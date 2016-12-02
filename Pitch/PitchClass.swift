@@ -11,16 +11,23 @@ import ArithmeticTools
 /**
  Modulo 12 representation of `noteNumber` of `Pitch`.
  */
-public struct PitchClass: FloatWrapping {
+public struct PitchClass: NoteNumberRepresentable {
     
     // MARK: - Instance Properties
     
-    /// Value of `PitchClass`.
-    public var value: Float
-    
     /// Inversion of `PitchClass`.
     public var inversion: PitchClass {
-        return PitchClass(12 - self.value)
+        return PitchClass(12 - noteNumber.value)
+    }
+    
+    /// Value of `PitchClass`.
+    public var noteNumber: NoteNumber
+    
+    // MARK: - Initializers
+    
+    //// Create a `PitchClass` with a given `noteNumber`.
+    public init(noteNumber: NoteNumber) {
+        self.noteNumber = noteNumber
     }
 }
 
@@ -38,7 +45,8 @@ extension PitchClass: ExpressibleByIntegerLiteral {
      ```
      */
     public init(integerLiteral value: Int) {
-        self.value = Float(value).truncatingRemainder(dividingBy: 12.0)
+        let newValue = Float(value).truncatingRemainder(dividingBy: 12.0)
+        self.init(noteNumber: NoteNumber(newValue))
     }
 }
 
@@ -55,8 +63,9 @@ extension PitchClass: ExpressibleByFloatLiteral {
      let pitchClass = 49.5 // => 1.5
      ```
      */
-    public init(floatLiteral: Float) {
-        self.value = floatLiteral.truncatingRemainder(dividingBy: 12.0)
+    public init(floatLiteral value: Float) {
+        let newValue = value.truncatingRemainder(dividingBy: 12.0)
+        self.init(noteNumber: NoteNumber(newValue))
     }
 }
 
@@ -75,6 +84,8 @@ extension PitchClass: PitchConvertible {
      ```
      */
     public init(_ pitch: Pitch) {
-        self.value = pitch.noteNumber.value.truncatingRemainder(dividingBy: 12.0)
+        self.noteNumber = NoteNumber(
+            pitch.noteNumber.value.truncatingRemainder(dividingBy: 12.0)
+        )
     }
 }

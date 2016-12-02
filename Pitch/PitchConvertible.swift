@@ -8,15 +8,13 @@
 
 import ArithmeticTools
 
-/**
- Conforming types can be initialized with a `Pitch` value.
- */
-public protocol PitchConvertible: Hashable {
+/// Protocol defining types that can be initialized with a `Pitch` value.
+public protocol PitchConvertible {
     
     // MARK: - Initializers
-    
+
     /**
-     Initialize conforming type with a `Pitch` value.
+     Initialize with a `Pitch` value.
      */
     init(_ pitch: Pitch)
 }

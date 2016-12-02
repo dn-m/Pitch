@@ -6,16 +6,34 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import Foundation
+import func ArithmeticTools.ordered
 
-// this should be temporary
-public struct PitchClassDyad {
+/// Ordered pair of `PitchClass` values.
+public struct PitchClassDyad: NoteNumberRepresentableDyad {
     
-    let lower: PitchClass
-    let higher: PitchClass
-    var interval: Interval { return Interval(higher.value - lower.value) }
+    // MARK: - Associated Types
     
-    public init(_ lower: PitchClass, _ higher: PitchClass) {
+    /// Type of `NoteNumberRepresentable` value contained herein.
+    public typealias Element = PitchClass
+    
+    // MARK: - Instance Properties
+    
+    /// Interval between the two `PitchClass` values contained herein.
+    var interval: PitchInterval {
+        return PitchInterval(noteNumber: higher.noteNumber - lower.noteNumber)
+    }
+    
+    /// Lower of two `PitchClass` values contained herein.
+    public let lower: Element
+    
+    /// Higher of two `PitchClass` values contained herein.
+    public let higher: Element
+    
+    // MARK: - Initializers
+    
+    /// Create a `PitchClassDyad` with two values of type `Element`.
+    public init(_ a: Element, _ b: Element) {
+        let (lower, higher) = ordered(a,b)
         self.lower = lower
         self.higher = higher
     }

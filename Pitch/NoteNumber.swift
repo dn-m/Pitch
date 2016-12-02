@@ -22,7 +22,7 @@ public struct NoteNumber: FloatWrapping {
      - TODO: Implement `inRange: _` or similar.
      */
     public static func random(resolution: Float = 1) -> NoteNumber {
-        return NoteNumber(Float.random(min: 60, max: 72, resolution: resolution))
+        return NoteNumber(Float.random(min: 60, max: 72))
     }
     
     // MARK: - Instance Properties
@@ -91,4 +91,8 @@ extension NoteNumber: ExpressibleByFloatLiteral {
     public init(floatLiteral value: Float) {
         self.value = value
     }
+}
+
+public func - (lhs: NoteNumber, rhs: NoteNumber) -> NoteNumber {
+    return NoteNumber(lhs.value - rhs.value)
 }

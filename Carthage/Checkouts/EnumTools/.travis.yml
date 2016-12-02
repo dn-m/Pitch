@@ -1,5 +1,7 @@
 language: objective-c
-osx_image: xcode7.3
-xcode_project: EnumTools.xcodeproj
-xcode_scheme: EnumToolsMac
-xcode_sdk: macosx10.11
+osx_image: xcode8
+env:
+  matrix:
+    - DESTINATION="platform=iOS Simulator,OS=10.0,name=iPad Pro (12.9 inch)"
+
+script: xcodebuild test -project EnumTools.xcodeproj -scheme EnumTools -destination "${DESTINATION}" TOOLCHAINS=swift
