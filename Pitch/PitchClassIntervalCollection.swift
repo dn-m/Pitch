@@ -12,6 +12,11 @@ import ArrayTools
 /// Ordered collection of `PitchClassInterval` types.
 public struct PitchClassIntervalCollection: NoteNumberRepresentableCollectionType {
     
+    // FIXME: This isn't quite right ...
+    public typealias Dyad = PitchClassDyad
+    
+    public typealias Interval = PitchClassInterval
+    
     /// Backing store of values.
     public let array: Array<PitchClassInterval>
 }

@@ -9,12 +9,15 @@
 import ArrayTools
 import ArithmeticTools
 
-
-/// Ordered collection of non-unique `PitchClass` values.
-///
-/// - TODO: Rename to `PitchClassCollection` (the contents are not unique!)
+/// Ordered collection of `PitchClass` values.
 public struct PitchClassCollection: NoteNumberRepresentableCollectionType {
 
+    // MARK: - Associated Types
+    
+    public typealias Dyad = PitchClassDyad
+    
+    public typealias Interval = PitchClassInterval
+    
     // MARK: - Instance Properties
     
     /// Array of the `PitchClass` values contained herein.

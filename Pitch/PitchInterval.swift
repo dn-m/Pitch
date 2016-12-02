@@ -12,33 +12,42 @@ import ArithmeticTools
 /// Interval between two `Pitch` values.
 public struct PitchInterval: NoteNumberRepresentableInterval {
     
+    // MARK: - Associated Types
+    
+    public typealias Element = Pitch
+    
     // MARK: - Instance Properties
     
     /// Value of this `Interval`.
     public var noteNumber: NoteNumber
+  
+    // MARK: - Initializers
     
+    /// Create a `PitchInterval` with a given `noteNumber`.
     public init(noteNumber: NoteNumber) {
         self.noteNumber = noteNumber
     }
     
-    /**
-     Create an `Interval` with a `Dyad` of `Pitch` values.
-     */
+    /// Create a `PitchInterval` with a `Dyad` of `Pitch` values.
     public init(dyad: PitchDyad) {
         self.noteNumber = dyad.higher.noteNumber - dyad.lower.noteNumber
     }
+    
+    /// Create a `PitchInterval` with two values of type `Element`.
+    public init(_ a: Element, _ b: Element) {
+        self.init(dyad: PitchDyad(a,b))
+    }
 }
 
-/*
 extension PitchInterval: ExpressibleByIntegerLiteral {
     
-    // MARK: - IntegeralLiteralConvertible
+    // MARK: - IntegerLiteralConvertible
     
     /**
-     Create an `Interval` with an `IntegerLiteral`
+     Create an `PitchInterval` with an `IntegerLiteral`.
      */
     public init(integerLiteral value: Int) {
-        self.value = Float(value)
+        self.init(noteNumber: NoteNumber(Float(value)))
     }
 }
 
@@ -47,10 +56,9 @@ extension PitchInterval: ExpressibleByFloatLiteral {
     // MARK: - FloatLiteralConvertible
     
     /**
-     Create an `Interval` with a `FloatLiteral`.
+     Create an `PitchInterval` with a `FloatLiteral`.
      */
     public init(floatLiteral value: Float) {
-        self.value = value
+        self.init(noteNumber: NoteNumber(value))
     }
 }
-*/

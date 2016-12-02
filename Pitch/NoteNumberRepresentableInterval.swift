@@ -8,7 +8,16 @@
 
 import Foundation
 
+/// Protocol definining an interval between two `NoteNumberRepresentable` types
 public protocol NoteNumberRepresentableInterval: NoteNumberRepresentable {
     
-    // anything else in here?
+    // MARK: - Associated Types
+    
+    /// Type of `NoteNumberRepresentable` values between which this interval lies.
+    associatedtype Element: NoteNumberRepresentable
+    
+    // MARK: - Initializers
+    
+    /// Create a `NoteNumberRepresentableInterval` with two values of type `Element`.
+    init(_ a: Element, _ b: Element)
 }

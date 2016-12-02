@@ -11,28 +11,38 @@
  */
 public struct PitchClassInterval: NoteNumberRepresentableInterval {
     
+    // MARK: - Associated Types
+    
+    /// `NoteNumberRepresentable` type of values between which this interval lies.
+    public typealias Element = PitchClass
+    
     // MARK: - Instance Properties
     
-    /// Value of this `IntervalClass`.
+    /// `NoteNumber` representation of this `PitchClassInterval`.
     public var noteNumber: NoteNumber
     
     // MARK: - Initializers
     
+    /// Create a `PitchClassInterval` with a given `noteNumber`.
     public init(noteNumber: NoteNumber) {
         self.noteNumber = noteNumber
     }
     
-    /**
-     Create an `IntervalClass` with an `Interval`.
-     */
+    /// Create a `PitchClassInterval` with a `PitchInterval`.
     public init(_ interval: PitchInterval) {
         self.noteNumber = NoteNumber(
             interval.noteNumber.value.truncatingRemainder(dividingBy: 12.0)
         )
     }
     
+    /// Create a `PitchClassInterval` with a `PitchClassDyad`.
     public init(dyad: PitchClassDyad) {
         self.noteNumber = dyad.higher.noteNumber - dyad.lower.noteNumber
+    }
+    
+    /// Create a `PitchClassInterval` with two `PitchClass` types.
+    public init(_ a: PitchClass, _ b: PitchClass) {
+        self.init(dyad: PitchClassDyad(a,b))
     }
 }
 

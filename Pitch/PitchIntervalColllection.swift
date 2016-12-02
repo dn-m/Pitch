@@ -10,6 +10,10 @@ import ArrayTools
 
 public struct PitchIntervalCollection: NoteNumberRepresentableCollectionType {
     
+    public typealias Dyad = PitchDyad
+    
+    public typealias Interval = PitchInterval
+    
     public let array: Array<Element>
 }
 

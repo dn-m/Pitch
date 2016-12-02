@@ -8,21 +8,13 @@
 
 import Foundation
 
-/**
- Protocol definining an unordered set of unique `NoteNumberRepresentable`-conforming values.
- */
+/// Protocol definining an unordered set of unique `NoteNumberRepresentable`-conforming values.
 public protocol NoteNumberRepresentableSetType: NoteNumberRepresentableContainer {
     
     // MARK: - Associates Types
     
     /// The type of `NoteNumberRepresentable` values contained herein.
     associatedtype Element: NoteNumberRepresentable
-    
-    /// The type representing a dyad of the values contained herein.
-    associatedtype Dyad: NoteNumberRepresentableDyad
-    
-    /// The type representing an interval of the values contained herein.
-    associatedtype Interval: NoteNumberRepresentableInterval
     
     // MARK: - Instance Properties
     

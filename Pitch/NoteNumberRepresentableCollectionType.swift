@@ -9,7 +9,7 @@
 import ArrayTools
 
 /**
- Ordered collection of non-unique `NoteNumberRepresentable` types.
+ Ordered collection of `NoteNumberRepresentable` types.
  */
 public protocol NoteNumberRepresentableCollectionType:
     NoteNumberRepresentableContainer,
@@ -24,7 +24,7 @@ public protocol NoteNumberRepresentableCollectionType:
     
     // MARK: - Instance Properties
     
-    /// `Array` holding `PitchConvertible` values.
+    /// Backing store of elements contained herein.
     var array: Array<Element> { get }
 }
 
@@ -32,7 +32,7 @@ extension NoteNumberRepresentableCollectionType {
     
     // MARK: - AnySequenceType
     
-    /// Iterable sequence of `Pitch` values contained herein.
+    /// Iterable sequence of `NoteNumberRepresentable` values contained herein.
     public var sequence: AnySequence<Element> { return AnySequence(array) }
 }
 
@@ -41,10 +41,14 @@ extension NoteNumberRepresentableCollectionType {
     // MARK: - PitchConvertibleContaining
     
     /// - returns `true` if there are no `Pitch` values contained herein. Otherwise, `false`.
-    public var isEmpty: Bool { return array.isEmpty }
+    public var isEmpty: Bool {
+        return array.isEmpty
+    }
     
     /// - returns `true` if there is one `Pitch` value contained herein. Otherwise `false`.
-    public var isMonadic: Bool { return array.count == 1 }
+    public var isMonadic: Bool {
+        return array.count == 1
+    }
 }
 
 extension NoteNumberRepresentableCollectionType {
@@ -57,15 +61,13 @@ extension NoteNumberRepresentableCollectionType {
     /// End index
     public var endIndex: Int { return array.count }
     
-    
+    /// Index after the given `i`.
     public func index(after i: Int) -> Int {
         guard i != endIndex else { fatalError("Cannot increment endIndex") }
         return i + 1
     }
     
-    /**
-     - returns: `Pitch` value at the given `index`.
-     */
+    /// - returns: Value at the given `index`.
     public subscript(index: Int) -> Element { return array[index] }
 }
 
@@ -79,8 +81,9 @@ extension NoteNumberRepresentableCollectionType {
     }
 }
 
-extension NoteNumberRepresentableContainer {
+extension NoteNumberRepresentableCollectionType {
     
+    /// Make iterator for `NoteNumberRepresentableCollectionType`
     public func makeIterator() -> AnyIterator<Element> {
         let iterator = sequence.makeIterator()
         return AnyIterator { iterator.next() }

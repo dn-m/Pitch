@@ -13,6 +13,12 @@ import ArrayTools
  */
 public struct PitchCollection: NoteNumberRepresentableCollectionType {
 
+    // MARK: - Associated Types
+    
+    public typealias Dyad = PitchDyad
+
+    public typealias Interval = PitchInterval
+    
     // MARK: - Instance Properties
     
     /// Array of the `Pitch` values contained herein.
