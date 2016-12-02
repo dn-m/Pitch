@@ -15,8 +15,3 @@ public protocol NoteNumberRepresentableContainer: AnySequenceType {
     
     var sequence: AnySequence<Element> { get }
 }
-
-extension NoteNumberRepresentableContainer {
-    
-    
-}

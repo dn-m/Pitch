@@ -9,7 +9,7 @@
 import ArrayTools
 
 /**
- Ordered collection of non-unique `PitchConvertible`-conforming values.
+ Ordered collection of non-unique `NoteNumberRepresentable` types.
  */
 public protocol NoteNumberRepresentableCollectionType:
     NoteNumberRepresentableContainer,
@@ -78,6 +78,15 @@ extension NoteNumberRepresentableCollectionType {
         return "〈\(map{ "\($0)" }.joined(separator: ","))〉"
     }
 }
+
+extension NoteNumberRepresentableContainer {
+    
+    public func makeIterator() -> AnyIterator<Element> {
+        let iterator = sequence.makeIterator()
+        return AnyIterator { iterator.next() }
+    }
+}
+
 
 // MARK: - Equatable
 

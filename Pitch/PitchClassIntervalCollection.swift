@@ -8,18 +8,21 @@
 
 import ArrayTools
 
+
+/// Ordered collection of `PitchClassInterval` types.
 public struct PitchClassIntervalCollection: NoteNumberRepresentableCollectionType {
     
+    /// Backing store of values.
     public let array: Array<PitchClassInterval>
 }
 
 extension PitchClassIntervalCollection: AnySequenceType {
     
-    // MARK: - PitchSequenceType
+    // MARK: - AnySequenceType
     
     // MARK: - Associated Types
     
-    /// `PitchConvertible` values contained herein.
+    /// Type of `NoteNumberRepresentable` values contained herein.
     public typealias Element = PitchClassInterval
     
     /**
@@ -34,9 +37,8 @@ extension PitchClassIntervalCollection: ExpressibleByArrayLiteral {
     
     // MARK: - ArrayLiteralConvertible
     
-    /**
-     Create a `PitchSequence` with an array literal.
-     */
+    
+    /// Create a `PitchClassIntervalCollection` with an array literal.
     public init(arrayLiteral elements: Element...) {
         self.array = elements
     }
@@ -44,12 +46,14 @@ extension PitchClassIntervalCollection: ExpressibleByArrayLiteral {
 
 extension PitchClassIntervalCollection: Sequence {
     
-    public func makeIterator() -> AnyIterator<PitchClassInterval> {
-        var iterator = array.makeIterator()
+    /// Make iterator for `PitchClassIntervalCollection`.
+    public func makeIterator() -> AnyIterator<Element> {
+        let iterator = sequence.makeIterator()
         return AnyIterator { iterator.next() }
     }
 }
 
+/// - returns: `true` if all values in both collections are equivalent. Otherwise, `false`.
 public func == (lhs: PitchClassIntervalCollection, rhs: PitchClassIntervalCollection) -> Bool {
     return lhs.sequence == rhs.sequence
 }
