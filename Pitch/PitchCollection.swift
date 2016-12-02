@@ -63,12 +63,6 @@ extension PitchCollection: ExpressibleByArrayLiteral {
     }
 }
 
-/// - returns: `true` if all values contained in both collections are equivalent. Otherwise, 
-///            `false`.
-public func == (lhs: PitchCollection, rhs: PitchCollection) -> Bool {
-    return lhs.sequence == rhs.sequence
-}
-
 extension PitchCollection: Sequence {
     
     // MARK: - Sequence
@@ -78,4 +72,10 @@ extension PitchCollection: Sequence {
         var iterator = array.makeIterator()
         return AnyIterator { iterator.next() }
     }
+}
+
+/// - returns: `true` if all values contained in both collections are equivalent. Otherwise,
+///            `false`.
+public func == (lhs: PitchCollection, rhs: PitchCollection) -> Bool {
+    return lhs.sequence == rhs.sequence
 }
