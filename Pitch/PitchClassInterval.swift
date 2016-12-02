@@ -6,9 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-/** 
- Modulo 12 representation of an `Interval` value.
- */
+/// Interval between two `PitchClass` values.
 public struct PitchClassInterval: NoteNumberRepresentableInterval {
     
     // MARK: - Associated Types
@@ -54,7 +52,7 @@ extension PitchClassInterval: ExpressibleByIntegerLiteral {
      Create an `IntervalClass` with an `IntegerLiteral`.
      */
     public init(integerLiteral value: Int) {
-        self.noteNumber = NoteNumber(Float(value))
+        self.init(noteNumber: NoteNumber(Float(value)))
     }
 }
 
@@ -66,6 +64,6 @@ extension PitchClassInterval: ExpressibleByFloatLiteral {
      Create an `IntervalClass` with a `FloatLiteral`.
      */
     public init(floatLiteral value: Float) {
-        self.noteNumber = NoteNumber(value)
+        self.init(noteNumber: NoteNumber(value))
     }
 }
