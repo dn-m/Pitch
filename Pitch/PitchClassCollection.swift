@@ -14,8 +14,10 @@ public struct PitchClassCollection: NoteNumberRepresentableCollectionType {
 
     // MARK: - Associated Types
     
+    /// `NoteNumberRepresentableDyad` type.
     public typealias Dyad = PitchClassDyad
     
+    /// `NoteNumberRepresentableInterval` type.
     public typealias Interval = PitchClassInterval
     
     // MARK: - Instance Properties
