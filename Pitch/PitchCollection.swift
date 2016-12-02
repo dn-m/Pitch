@@ -15,8 +15,13 @@ public struct PitchCollection: NoteNumberRepresentableCollectionType {
 
     // MARK: - Associated Types
     
+    /// `NoteNumberRepresentable` type of values contained herein.
+    public typealias Element = Pitch
+    
+    /// `NoteNumberRepresentableDyad` type holding two values contained herein.
     public typealias Dyad = PitchDyad
 
+    /// `NoteNumberRepresentableInterval` type which lies between two values contained herein.
     public typealias Interval = PitchInterval
     
     // MARK: - Instance Properties
@@ -36,15 +41,10 @@ public struct PitchCollection: NoteNumberRepresentableCollectionType {
 
 extension PitchCollection: AnySequenceType {
     
-    // MARK: - PitchSequenceType
-    
-    // MARK: - Associated Types
-    
-    /// `PitchConvertible` values contained herein.
-    public typealias Element = Pitch
+    // MARK: - PitchCollection
     
     /**
-     Create a `PitchSet` with `SequenceType` containing `Pitch` values.
+     Create a `PitchCollection` with `SequenceType` containing `Pitch` values.
      */
     public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
         self.array = Array(sequence)
@@ -56,19 +56,24 @@ extension PitchCollection: ExpressibleByArrayLiteral {
     // MARK: - ArrayLiteralConvertible
     
     /**
-     Create a `PitchSequence` with an array literal.
+     Create a `PitchCollection` with an array literal.
      */
     public init(arrayLiteral elements: Element...) {
         self.array = elements
     }
 }
 
+/// - returns: `true` if all values contained in both collections are equivalent. Otherwise, 
+///            `false`.
 public func == (lhs: PitchCollection, rhs: PitchCollection) -> Bool {
     return lhs.sequence == rhs.sequence
 }
 
 extension PitchCollection: Sequence {
     
+    // MARK: - Sequence
+    
+    /// Make iterator for `PitchCollection`.
     public func makeIterator() -> AnyIterator<Pitch> {
         var iterator = array.makeIterator()
         return AnyIterator { iterator.next() }
