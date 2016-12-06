@@ -11,6 +11,11 @@ import XCTest
 
 class NoteNumberTests: XCTestCase {
 
+    func testRandom() {
+        let nn: NoteNumber = NoteNumber.random()
+        XCTAssert(nn.value >= 60 && nn.value <= 72)
+    }
+    
     func testNoteNumberInit() {
         let _: NoteNumber = 60.0
         let _ = NoteNumber(floatLiteral: 60.0)
