@@ -18,11 +18,8 @@ class PitchIntervalTests: XCTestCase {
     }
     
     func testInitWithDyad() {
-        let pitch1 = Pitch(60.0)
-        let pitch2 = Pitch(62.0)
-        let _ = PitchInterval(pitch1, pitch2)
-        
-        let dyad = PitchDyad(pitch1, pitch2)
+        let _ = PitchInterval(Pitch(60.0), Pitch(62.0))
+        let dyad = PitchDyad(Pitch(60.0), Pitch(62.0))
         let interval = PitchInterval(dyad: dyad)
         XCTAssertEqual(interval, 2.0)
     } 
