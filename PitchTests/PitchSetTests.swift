@@ -23,8 +23,35 @@ class PitchSetTests: XCTestCase {
         XCTAssertEqual(set.dyads.count, 6)
     }
     
+    func testPitchClassSet() {
+        let pitchSet: PitchSet = [Pitch(63.5), Pitch(69.25)]
+        let pcs = pitchSet.pitchClassSet
+        let pcs2: PitchClassSet = [3.5,9.25]
+        XCTAssertEqual(pcs.set, pcs2.set)
+    }
+    
+    func testInitPitchSetUnion() {
+        let pitchSet1: PitchSet = [Pitch(60), Pitch(61)]
+        let pitchSet2: PitchSet = [Pitch(62), Pitch(63)]
+        let new = PitchSet(pitchSet1, pitchSet2)
+        XCTAssert(new == [Pitch(60), Pitch(61), Pitch(62), Pitch(63)])
+        
+    }
+    
+    func testFormUnion() {
+        let pitchSet1: PitchSet = [Pitch(60), Pitch(61)]
+        let pitchSet2: PitchSet = [Pitch(62), Pitch(63)]
+        let new = pitchSet1.formUnion(with: pitchSet2)
+        XCTAssert(new == [Pitch(60), Pitch(61), Pitch(62), Pitch(63)])
+    }
+    
+    func testDescription() {
+        let pitchSet: PitchSet = [Pitch(61), Pitch(60)]
+        XCTAssertEqual(pitchSet.description, "[\"61.0\", \"60.0\"]")
+    }
+    
     func testArrayLiteralConvertible() {
-        let _: PitchSet = [Pitch(noteNumber: 60), Pitch(noteNumber: 61)]
+        let _: PitchSet = [Pitch(noteNumber: 60.0), Pitch(noteNumber: 61.0)]
     }
     
     func testInitWithPitchSetsEmpty() {
