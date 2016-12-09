@@ -99,8 +99,3 @@ extension PitchClassCollection: Sequence {
         }
     }
 }
-
-// TODO: Move up to `ArrayTools`.
-private func flipped <T> (pair: (T, T)) -> (T, T) {
-    return (pair.1, pair.0)
-}
