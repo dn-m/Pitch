@@ -41,10 +41,25 @@ class PitchCollectionTests: XCTestCase{
         XCTAssertEqual(ite.next(), 60.0)
     }
     
+    func testIsEmpty() {
+        let collection: PitchCollection = []
+        XCTAssert(collection.isEmpty)
+    }
+    
+    func testIsMonadic() {
+        let collection: PitchCollection = [Pitch(60.0)]
+        XCTAssert(collection.isMonadic)
+    }
+    
     func testIntervals() {
         let collection: PitchCollection = [Pitch(60.0), Pitch(62.0), Pitch(65.0)]
         let intervals = collection.intervals
         XCTAssertEqual(intervals, [2.0, 3.0])
+    }
+    
+    func testDescription() {
+        let collection: PitchCollection = [Pitch(60.0), Pitch(62.0)]
+        XCTAssertEqual(collection.description, "〈60.0,62.0〉")
     }
     
     func testEquality() {

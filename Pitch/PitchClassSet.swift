@@ -65,3 +65,11 @@ extension PitchClassSet: ExpressibleByArrayLiteral {
         self.set = Set(elements)
     }
 }
+
+
+/**
+ - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
+ */
+public func == (lhs: PitchClassSet, rhs: PitchClassSet) -> Bool {
+    return lhs.sequence == rhs.sequence
+}

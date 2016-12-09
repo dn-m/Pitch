@@ -13,8 +13,7 @@ import ArrayTools
  */
 public protocol NoteNumberRepresentableCollectionType:
     NoteNumberRepresentableContainer,
-    Collection,
-    Equatable
+    Collection
 {
     
     // MARK: - Associated Types
@@ -88,15 +87,4 @@ extension NoteNumberRepresentableCollectionType {
         let iterator = sequence.makeIterator()
         return AnyIterator { iterator.next() }
     }
-}
-
-
-// MARK: - Equatable
-
-
-/**
- - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
- */
-public func == <T: NoteNumberRepresentableCollectionType> (lhs: T, rhs: T) -> Bool {
-    return lhs.sequence == rhs.sequence
 }

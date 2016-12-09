@@ -9,7 +9,7 @@
 import ArrayTools
 
 /// Protocol defining types containing `NoteNumberRepresentable` values.
-public protocol NoteNumberRepresentableContainer: AnySequenceType {
+public protocol NoteNumberRepresentableContainer: AnySequenceType, Equatable {
     
     /// The types contained herein.
     associatedtype Element: NoteNumberRepresentable
@@ -22,4 +22,14 @@ public protocol NoteNumberRepresentableContainer: AnySequenceType {
     
     /// Backing store of values contained herein.
     var sequence: AnySequence<Element> { get }
+}
+
+// MARK: - Equatable
+
+
+/**
+ - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
+ */
+public func == <T: NoteNumberRepresentableContainer> (lhs: T, rhs: T) -> Bool {
+    return lhs.sequence == rhs.sequence
 }

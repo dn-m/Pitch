@@ -23,6 +23,11 @@ class PitchSetTests: XCTestCase {
         XCTAssertEqual(set.dyads.count, 6)
     }
     
+    func testIsMonadic() {
+        let pitchSet: PitchSet = [Pitch(60)]
+        XCTAssert(pitchSet.isMonadic)
+    }
+    
     func testPitchClassSet() {
         let pitchSet: PitchSet = [Pitch(63.5), Pitch(69.25)]
         let pcs = pitchSet.pitchClassSet
