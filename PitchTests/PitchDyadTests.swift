@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Pitch
+import Pitch
 
 class PitchDyadTests: XCTestCase {
     
@@ -27,9 +27,27 @@ class PitchDyadTests: XCTestCase {
         XCTAssertEqual(dyad.description, "60.0, 62.0")
     }
     
-    func testEquality() {
-        let dyad1 = PitchDyad(Pitch(60.0), Pitch(62.0))
-        let dyad2 = PitchDyad(Pitch(60.0), Pitch(62.0))
-        XCTAssert(dyad1 == dyad2)
+    func testEqualityTrue() {
+        let a: PitchDyad = .init(60,62)
+        let b: PitchDyad = .init(60,62)
+        XCTAssert(a == b)
+    }
+    
+    func testEqualityFalseHigherNotEqual() {
+        let a: PitchDyad = .init(60,62)
+        let b: PitchDyad = .init(60,63)
+        XCTAssertFalse(a == b)
+    }
+    
+    func testEqualityFalseLowerNotEqual() {
+        let a: PitchDyad = .init(60,62)
+        let b: PitchDyad = .init(59,62)
+        XCTAssertFalse(a == b)
+    }
+    
+    func testEqualityFalseNeitherEqual() {
+        let a: PitchDyad = .init(60,63)
+        let b: PitchDyad = .init(59,62)
+        XCTAssertFalse(a == b)
     }
 }

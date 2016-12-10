@@ -21,3 +21,4 @@ public protocol NoteNumberRepresentableInterval: NoteNumberRepresentable {
     /// Create a `NoteNumberRepresentableInterval` with two values of type `Element`.
     init(_ a: Element, _ b: Element)
 }
+
