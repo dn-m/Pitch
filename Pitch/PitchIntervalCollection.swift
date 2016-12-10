@@ -40,7 +40,7 @@ extension PitchIntervalCollection: AnySequenceType {
 
 extension PitchIntervalCollection: ExpressibleByArrayLiteral {
     
-    // MARK: - ArrayLiteralConvertible
+    // MARK: - `ExpressibleByArrayLiteral`
     
     /**
      Create a `PitchSequence` with an array literal.

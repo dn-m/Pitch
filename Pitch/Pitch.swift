@@ -87,7 +87,7 @@ extension Pitch: PitchConvertible {
 
 extension Pitch: ExpressibleByFloatLiteral {
     
-    // MARK: - FloatLiteralConvertible
+    // MARK: - `ExpressibleByFloatLiteral`
     
     /**
      Create a `Pitch` with a `FloatLiteral`. This value is the `NoteNumber` value.
@@ -99,7 +99,7 @@ extension Pitch: ExpressibleByFloatLiteral {
 
 extension Pitch: ExpressibleByIntegerLiteral {
     
-    // MARK: - IntegerLiteralConvertible
+    // MARK: - `ExpressibleByIntegerLiteral`
     
     /**
      Create a `Pitch` with an `IntegerLiteral`. This value is the `NoteNumber` value.

@@ -33,7 +33,7 @@ public struct PitchClass: NoteNumberRepresentable {
 
 extension PitchClass: ExpressibleByIntegerLiteral {
     
-    // MARK: - IntegerLiteralConvertible
+    // MARK: - `ExpressibleByIntegerLiteral`
     
     /**
      Create a `PitchClass` with an `IntegerLiteralType`.

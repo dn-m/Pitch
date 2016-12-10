@@ -39,7 +39,7 @@ extension PitchClassIntervalCollection: AnySequenceType {
 
 extension PitchClassIntervalCollection: ExpressibleByArrayLiteral {
     
-    // MARK: - ArrayLiteralConvertible
+    // MARK: - `ExpressibleByArrayLiteral`
     
     /// Create a `PitchClassIntervalCollection` with an array literal.
     public init(arrayLiteral elements: Element...) {

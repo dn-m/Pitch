@@ -49,7 +49,7 @@ extension PitchCollection: AnySequenceType {
 
 extension PitchCollection: ExpressibleByArrayLiteral {
     
-    // MARK: - ArrayLiteralConvertible
+    // MARK: - `ExpressibleByArrayLiteral`
     
     /**
      Create a `PitchCollection` with an array literal.

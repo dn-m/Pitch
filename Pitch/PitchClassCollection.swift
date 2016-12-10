@@ -76,7 +76,7 @@ extension PitchClassCollection: AnySequenceType {
 
 extension PitchClassCollection: ExpressibleByArrayLiteral {
     
-    // MARK: - ArrayLiteralConvertible
+    // MARK: - `ExpressibleByArrayLiteral`
     
     /**
      Create a `PitchClassSequence` with an array literal.
