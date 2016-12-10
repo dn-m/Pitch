@@ -7,7 +7,7 @@
 //
 
 /// Protocol definining a dyad (ordered pair) of `NoteNumberRepresentable` types.
-public protocol NoteNumberRepresentableDyad {
+public protocol NoteNumberRepresentableDyad: Equatable {
     
     // MARK: - Associated Types
     
@@ -26,4 +26,14 @@ public protocol NoteNumberRepresentableDyad {
     
     /// Create a `NoteNumberRepresentableDyad` with two values of type `Element`.
     init(_ a: Element, _ b: Element)
+}
+
+// MARK: - Equatable
+
+
+/**
+ - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
+ */
+public func == <T: NoteNumberRepresentableDyad> (lhs: T, rhs: T) -> Bool {
+    return lhs.lower == rhs.higher
 }
