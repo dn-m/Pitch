@@ -38,10 +38,3 @@ public struct PitchClassDyad: NoteNumberRepresentableDyad {
         self.higher = higher
     }
 }
-
-/**
- - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
- */
-public func == (lhs: PitchClassDyad, rhs: PitchClassDyad) -> Bool {
-    return lhs.lower == rhs.lower && lhs.higher == rhs.higher
-}
