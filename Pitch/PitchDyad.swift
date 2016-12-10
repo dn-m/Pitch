@@ -51,8 +51,9 @@ extension PitchDyad: CustomStringConvertible {
     public var description: String { return "\(lower), \(higher)" }
 }
 
-extension PitchDyad: Equatable { }
-
+/**
+ - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
+ */
 public func == (lhs: PitchDyad, rhs: PitchDyad) -> Bool {
     return lhs.lower == rhs.lower && lhs.higher == rhs.higher
 }
