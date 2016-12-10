@@ -11,7 +11,7 @@ import ArrayTools
 /**
  Unordered set of unique `PitchClass` values.
  */
-public struct PitchClassSet: NoteNumberRepresentableSetType {
+public struct PitchClassSet: NoteNumberRepresentableSet {
     
     // MARK: - Associated Types
     
