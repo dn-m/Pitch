@@ -10,7 +10,7 @@ import ArrayTools
 import ArithmeticTools
 
 /// Ordered collection of `PitchClass` values.
-public struct PitchClassCollection: NoteNumberRepresentableCollectionType {
+public struct PitchClassCollection: NoteNumberRepresentableCollection {
 
     // MARK: - Associated Types
     
@@ -40,7 +40,7 @@ public struct PitchClassCollection: NoteNumberRepresentableCollectionType {
     /**
      Array of `IntervalClass` values between each adjacent `PitchClass` herein.
 
-     - TODO: Refactor up the `NoteNumberRepresentableCollectionType` protocol hierarchy
+     - TODO: Refactor up the `NoteNumberRepresentableCollection` protocol hierarchy
      */
     public lazy var intervals: PitchClassIntervalCollection = {
         return PitchClassIntervalCollection(

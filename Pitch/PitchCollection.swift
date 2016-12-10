@@ -11,7 +11,7 @@ import ArrayTools
 /**
  Ordered collection of non-unique `Pitch` values.
  */
-public struct PitchCollection: NoteNumberRepresentableCollectionType {
+public struct PitchCollection: NoteNumberRepresentableCollection {
 
     // MARK: - Associated Types
     

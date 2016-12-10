@@ -1,5 +1,5 @@
 //
-//  NoteNumberRepresentableCollectionType.swift
+//  NoteNumberRepresentableCollection.swift
 //  Pitch
 //
 //  Created by James Bean on 12/1/16.
@@ -11,7 +11,7 @@ import ArrayTools
 /**
  Ordered collection of `NoteNumberRepresentable` types.
  */
-public protocol NoteNumberRepresentableCollectionType:
+public protocol NoteNumberRepresentableCollection:
     NoteNumberRepresentableContainer,
     Collection
 {
@@ -27,7 +27,7 @@ public protocol NoteNumberRepresentableCollectionType:
     var array: Array<Element> { get }
 }
 
-extension NoteNumberRepresentableCollectionType {
+extension NoteNumberRepresentableCollection {
     
     // MARK: - AnySequenceType
     
@@ -35,7 +35,7 @@ extension NoteNumberRepresentableCollectionType {
     public var sequence: AnySequence<Element> { return AnySequence(array) }
 }
 
-extension NoteNumberRepresentableCollectionType {
+extension NoteNumberRepresentableCollection {
     
     // MARK: - PitchConvertibleContaining
     
@@ -50,7 +50,7 @@ extension NoteNumberRepresentableCollectionType {
     }
 }
 
-extension NoteNumberRepresentableCollectionType {
+extension NoteNumberRepresentableCollection {
     
     // MARK: - CollectionType
     
@@ -70,7 +70,7 @@ extension NoteNumberRepresentableCollectionType {
     public subscript(index: Int) -> Element { return array[index] }
 }
 
-extension NoteNumberRepresentableCollectionType {
+extension NoteNumberRepresentableCollection {
     
     // MARK: - CustomStringConvertible
     
@@ -80,9 +80,9 @@ extension NoteNumberRepresentableCollectionType {
     }
 }
 
-extension NoteNumberRepresentableCollectionType {
+extension NoteNumberRepresentableCollection {
     
-    /// Make iterator for `NoteNumberRepresentableCollectionType`
+    /// Make iterator for `NoteNumberRepresentableCollection`
     public func makeIterator() -> AnyIterator<Element> {
         let iterator = sequence.makeIterator()
         return AnyIterator { iterator.next() }

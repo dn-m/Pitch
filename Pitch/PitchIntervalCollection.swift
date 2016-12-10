@@ -9,7 +9,7 @@
 import ArrayTools
 
 /// Collection of `PitchInterval` values
-public struct PitchIntervalCollection: NoteNumberRepresentableCollectionType {
+public struct PitchIntervalCollection: NoteNumberRepresentableCollection {
     
     /// `NoteNumberRepresentableDyad` type.
     public typealias Dyad = PitchDyad
