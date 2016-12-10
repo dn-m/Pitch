@@ -27,6 +27,6 @@ class PitchIntervalTests: XCTestCase {
     func testEquatable() {
         let a: PitchInterval = .init(48, 51)
         let b: PitchInterval = .init(48, 51)
-        XCTAssert(a == b)
+        XCTAssertEqual(a, b)
     }
 }

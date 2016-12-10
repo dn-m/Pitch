@@ -11,7 +11,7 @@ import ArrayTools
 /**
  Ordered collection of non-unique `Pitch` values.
  */
-public struct PitchCollection: NoteNumberRepresentableCollectionType {
+public struct PitchCollection: NoteNumberRepresentableCollection {
 
     // MARK: - Associated Types
     
@@ -49,7 +49,7 @@ extension PitchCollection: AnySequenceType {
 
 extension PitchCollection: ExpressibleByArrayLiteral {
     
-    // MARK: - ArrayLiteralConvertible
+    // MARK: - `ExpressibleByArrayLiteral`
     
     /**
      Create a `PitchCollection` with an array literal.

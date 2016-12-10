@@ -59,7 +59,7 @@ public struct NoteNumber: FloatWrapping {
 
 extension NoteNumber: ExpressibleByIntegerLiteral {
     
-    // MARK: IntegerLiteralConvertible
+    // MARK: `ExpressibleByIntegerLiteral`
     
     /**
      Create a `NoteNumber` with an `IntegerLiteralType`.
@@ -77,7 +77,7 @@ extension NoteNumber: ExpressibleByIntegerLiteral {
 
 extension NoteNumber: ExpressibleByFloatLiteral {
     
-    // MARK: FloatLiteralConvertible
+    // MARK: `ExpressibleByFloatLiteral`
     
     /**
      Create a `NoteNumber` with a `FloatLiteralType`.

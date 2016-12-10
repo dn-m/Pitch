@@ -10,7 +10,7 @@ import ArrayTools
 
 
 /// Ordered collection of `PitchClassInterval` types.
-public struct PitchClassIntervalCollection: NoteNumberRepresentableCollectionType {
+public struct PitchClassIntervalCollection: NoteNumberRepresentableCollection {
     
     /// `NoteNumberRepresentableDyad` type.
     public typealias Dyad = PitchClassDyad
@@ -39,7 +39,7 @@ extension PitchClassIntervalCollection: AnySequenceType {
 
 extension PitchClassIntervalCollection: ExpressibleByArrayLiteral {
     
-    // MARK: - ArrayLiteralConvertible
+    // MARK: - `ExpressibleByArrayLiteral`
     
     /// Create a `PitchClassIntervalCollection` with an array literal.
     public init(arrayLiteral elements: Element...) {

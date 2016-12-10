@@ -30,24 +30,24 @@ class PitchDyadTests: XCTestCase {
     func testEqualityTrue() {
         let a: PitchDyad = .init(60,62)
         let b: PitchDyad = .init(60,62)
-        XCTAssert(a == b)
+        XCTAssertEqual(a, b)
     }
     
     func testEqualityFalseHigherNotEqual() {
         let a: PitchDyad = .init(60,62)
         let b: PitchDyad = .init(60,63)
-        XCTAssertFalse(a == b)
+        XCTAssertNotEqual(a, b)
     }
     
     func testEqualityFalseLowerNotEqual() {
         let a: PitchDyad = .init(60,62)
         let b: PitchDyad = .init(59,62)
-        XCTAssertFalse(a == b)
+        XCTAssertNotEqual(a, b)
     }
     
     func testEqualityFalseNeitherEqual() {
-        let a: PitchDyad = .init(60,63)
-        let b: PitchDyad = .init(59,62)
-        XCTAssertFalse(a == b)
+        let a = PitchDyad(60,63)
+        let b = PitchDyad(59,62)
+        XCTAssertNotEqual(a, b)
     }
 }

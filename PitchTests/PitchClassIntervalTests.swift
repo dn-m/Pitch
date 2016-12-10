@@ -16,5 +16,5 @@ class PitchClassIntervalTests: XCTestCase {
         let _ = PitchClassInterval(interval)
         let _: PitchClassInterval = 2
         let _: PitchClassInterval = 2.0
-    }  
+    }
 }

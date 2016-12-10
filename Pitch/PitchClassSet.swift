@@ -11,7 +11,7 @@ import ArrayTools
 /**
  Unordered set of unique `PitchClass` values.
  */
-public struct PitchClassSet: NoteNumberRepresentableSetType {
+public struct PitchClassSet: NoteNumberRepresentableSet {
     
     // MARK: - Associated Types
     
@@ -56,7 +56,7 @@ extension PitchClassSet: AnySequenceType {
 
 extension PitchClassSet: ExpressibleByArrayLiteral {
     
-    // MARK: - ArrayLiteralConvertible
+    // MARK: - `ExpressibleByArrayLiteral`
     
     /**
      Create a `PitchClassSequence` with an array literal.

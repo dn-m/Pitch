@@ -40,7 +40,7 @@ extension PitchSetCollection: Collection {
 
 extension PitchSetCollection: ExpressibleByArrayLiteral {
     
-    // MARK: ArrayLiteralConvertible
+    // MARK: ExpressibleByArrayLiteral
     
     /**
      Create a `PitchSetSequence` with an array literal.

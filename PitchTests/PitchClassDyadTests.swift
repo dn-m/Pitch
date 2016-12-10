@@ -17,8 +17,14 @@ class PitchClassDyadTests: XCTestCase {
     }
     
     func testEquality() {
-        let pcDyad1 = PitchClassDyad(PitchClass(3.0), PitchClass(7.0))
-        let pcDyad2 = PitchClassDyad(PitchClass(3.0), PitchClass(7.0))
-        XCTAssert(pcDyad1 == pcDyad2)
+        let a = PitchClassDyad(3,7)
+        let b = PitchClassDyad(3,7)
+        XCTAssertEqual(a, b)
+    }
+    
+    func testEqualityNotEqual() {
+        let a = PitchClassDyad(3,7)
+        let b = PitchClassDyad(2,9)
+        XCTAssertNotEqual(a, b)
     }
 }

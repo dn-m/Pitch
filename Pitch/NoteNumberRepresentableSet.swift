@@ -1,5 +1,5 @@
 //
-//  NoteNumberRepresentableSetType.swift
+//  NoteNumberRepresentableSet.swift
 //  Pitch
 //
 //  Created by James Bean on 12/1/16.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Protocol definining an unordered set of unique `NoteNumberRepresentable`-conforming values.
-public protocol NoteNumberRepresentableSetType: NoteNumberRepresentableContainer {
+public protocol NoteNumberRepresentableSet: NoteNumberRepresentableContainer {
     
     // MARK: - Associates Types
     
@@ -22,7 +22,7 @@ public protocol NoteNumberRepresentableSetType: NoteNumberRepresentableContainer
     var set: Set<Element> { get }
 }
 
-extension NoteNumberRepresentableSetType {
+extension NoteNumberRepresentableSet {
     
     // MARK: - PitchConvertibleContaining
     
@@ -37,7 +37,7 @@ extension NoteNumberRepresentableSetType {
     }
 }
 
-extension NoteNumberRepresentableSetType {
+extension NoteNumberRepresentableSet {
     
     // MARK: - AnySequenceType
     
@@ -45,7 +45,7 @@ extension NoteNumberRepresentableSetType {
     public var sequence: AnySequence<Element> { return AnySequence(set) }
 }
 
-extension NoteNumberRepresentableSetType {
+extension NoteNumberRepresentableSet {
     
     // MARK: - CustomStringConvertible
     

@@ -41,7 +41,7 @@ public struct PitchInterval: NoteNumberRepresentableInterval {
 
 extension PitchInterval: ExpressibleByIntegerLiteral {
     
-    // MARK: - IntegerLiteralConvertible
+    // MARK: - `ExpressibleByIntegerLiteral`
     
     /**
      Create an `PitchInterval` with an `IntegerLiteral`.
@@ -53,7 +53,7 @@ extension PitchInterval: ExpressibleByIntegerLiteral {
 
 extension PitchInterval: ExpressibleByFloatLiteral {
     
-    // MARK: - FloatLiteralConvertible
+    // MARK: - `ExpressibleByFloatLiteral`
     
     /**
      Create an `PitchInterval` with a `FloatLiteral`.
