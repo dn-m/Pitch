@@ -22,5 +22,11 @@ class PitchIntervalTests: XCTestCase {
         let dyad = PitchDyad(Pitch(60.0), Pitch(62.0))
         let interval = PitchInterval(dyad: dyad)
         XCTAssertEqual(interval, 2.0)
-    } 
+    }
+    
+    func testEquatable() {
+        let a: PitchInterval = .init(48, 51)
+        let b: PitchInterval = .init(48, 51)
+        XCTAssert(a == b)
+    }
 }
