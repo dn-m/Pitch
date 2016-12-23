@@ -18,4 +18,3 @@ public protocol PitchConvertible {
      */
     init(_ pitch: Pitch)
 }
-
