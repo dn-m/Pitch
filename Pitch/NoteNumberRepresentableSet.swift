@@ -39,7 +39,7 @@ extension NoteNumberRepresentableSet {
 
 extension NoteNumberRepresentableSet {
     
-    // MARK: - AnySequenceType
+    // MARK: - AnySequenceWrapping
     
     /// Iterable sequence of `NoteNumberRepresentable` values held by the conforming type
     public var sequence: AnySequence<Element> { return AnySequence(set) }

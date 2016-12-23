@@ -6,10 +6,10 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import ArrayTools
+import Collections
 
 /// Protocol defining types containing `NoteNumberRepresentable` values.
-public protocol NoteNumberRepresentableContainer: AnySequenceType, Equatable {
+public protocol NoteNumberRepresentableContainer: AnySequenceWrapping, Equatable {
     
     /// The types contained herein.
     associatedtype Element: NoteNumberRepresentable
@@ -25,7 +25,6 @@ public protocol NoteNumberRepresentableContainer: AnySequenceType, Equatable {
 }
 
 // MARK: - Equatable
-
 
 /**
  - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.

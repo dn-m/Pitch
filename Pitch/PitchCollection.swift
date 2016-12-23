@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import ArrayTools
+import Collections
 
 /**
  Ordered collection of non-unique `Pitch` values.
@@ -35,7 +35,7 @@ public struct PitchCollection: NoteNumberRepresentableCollection {
     }
 }
 
-extension PitchCollection: AnySequenceType {
+extension PitchCollection: AnySequenceWrapping {
     
     // MARK: - PitchCollection
     

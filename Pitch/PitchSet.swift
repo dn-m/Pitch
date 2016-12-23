@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import ArrayTools
+import Collections
 
 /**
  Unordered set of unique `Pitch` values.
@@ -53,9 +53,8 @@ public struct PitchSet: NoteNumberRepresentableSet {
      */
     public lazy var dyads: [Dyad] = {
         Array(self.set)
-            .subsets(withCardinality: 2)?
+            .subsets(cardinality: 2)
             .map { Dyad($0[0], $0[1]) }
-        ?? []
     }()
     
     /**
@@ -98,9 +97,9 @@ public struct PitchSet: NoteNumberRepresentableSet {
     }
 }
 
-extension PitchSet: AnySequenceType {
+extension PitchSet: AnySequenceWrapping {
     
-    // MARK: - AnySequenceType
+    // MARK: - AnySequenceWrapping
     
     /**
      Create a `PitchSet` with a sequence of `Pitch` values.

@@ -7,12 +7,12 @@
 //
 
 import XCTest
-import ArrayTools
+import Collections
 @testable import Pitch
 
 class PitchCollectionTests: XCTestCase{
     
-    struct PitchSequence: AnySequenceType {
+    struct PitchSequence: AnySequenceWrapping {
 
         typealias Element = Pitch
         let array: [Pitch]

@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import ArrayTools
+import Collections
 
 /// Collection of `PitchInterval` values
 public struct PitchIntervalCollection: NoteNumberRepresentableCollection {
@@ -23,7 +23,7 @@ public struct PitchIntervalCollection: NoteNumberRepresentableCollection {
     public let array: Array<Element>
 }
 
-extension PitchIntervalCollection: AnySequenceType {
+extension PitchIntervalCollection: AnySequenceWrapping {
     
     // MARK: - PitchIntervalCollection
     
