@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import ArrayTools
+import Collections
 
 /**
  Ordered collection of `NoteNumberRepresentable` types.
@@ -29,7 +29,7 @@ public protocol NoteNumberRepresentableCollection:
 
 extension NoteNumberRepresentableCollection {
     
-    // MARK: - AnySequenceType
+    // MARK: - AnySequenceWrapping
     
     /// Iterable sequence of `NoteNumberRepresentable` values contained herein.
     public var sequence: AnySequence<Element> { return AnySequence(array) }

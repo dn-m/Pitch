@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import ArrayTools
+import Collections
 
 /**
  Ordered collection of non-unique `Pitch` values.
@@ -35,7 +35,7 @@ public struct PitchCollection: NoteNumberRepresentableCollection {
     }
 }
 
-extension PitchCollection: AnySequenceType {
+extension PitchCollection: AnySequenceWrapping {
     
     // MARK: - PitchCollection
     
@@ -74,4 +74,13 @@ extension PitchCollection: Sequence {
 ///            `false`.
 public func == (lhs: PitchCollection, rhs: PitchCollection) -> Bool {
     return lhs.sequence == rhs.sequence
+}
+
+public func == <T: Equatable> (lhs: AnySequence<T>, rhs: AnySequence<T>) -> Bool {
+    for (a,b) in zip(lhs,rhs) {
+        if a != b {
+            return false
+        }
+    }
+    return true
 }

@@ -6,13 +6,13 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import ArrayTools
+import Collections
 import XCTest
 @testable import Pitch
 
 class PitchSetCollectionTests: XCTestCase {
     
-    struct PitchSetSequence: AnySequenceType {
+    struct PitchSetSequence: AnySequenceWrapping {
         
         typealias Element = PitchSet
         let array: [PitchSet]

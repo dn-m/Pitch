@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import ArrayTools
+import Collections
 
 
 /// Ordered collection of `PitchClassInterval` types.
@@ -22,9 +22,9 @@ public struct PitchClassIntervalCollection: NoteNumberRepresentableCollection {
     public let array: Array<PitchClassInterval>
 }
 
-extension PitchClassIntervalCollection: AnySequenceType {
+extension PitchClassIntervalCollection: AnySequenceWrapping {
     
-    // MARK: - AnySequenceType
+    // MARK: - AnySequenceWrapping
     
     /// Type of `NoteNumberRepresentable` values contained herein.
     public typealias Element = PitchClassInterval

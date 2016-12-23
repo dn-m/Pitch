@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import ArrayTools
+import Collections
 
 /**
  Unordered set of unique `PitchClass` values.
@@ -30,21 +30,20 @@ public struct PitchClassSet: NoteNumberRepresentableSet {
     /// Array of `PitchClassDyads` comprising this `PitchClassSet`.
     public lazy var dyads: [PitchClassDyad] = {
         Array(self.set)
-            .subsets(withCardinality: 2)?
+            .subsets(cardinality: 2)
             .map { PitchClassDyad($0[0], $0[1]) }
-        ?? []
     }()
     
     // TODO: normal form
     // TODO: prime form
 }
 
-extension PitchClassSet: AnySequenceType {
+extension PitchClassSet: AnySequenceWrapping {
     
-    // MARK: - AnySequenceType
+    // MARK: - AnySequenceWrapping
     
     /**
-     Create an `AnySequenceType` with a `Sequence` of any type.
+     Create an `AnySequenceWrapping` with a `Sequence` of any type.
      
      In the `init` method of the conforming `struct`, set the value of this private `var` with
      the given `sequence.

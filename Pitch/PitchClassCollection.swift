@@ -6,7 +6,7 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import ArrayTools
+import Collections
 import ArithmeticTools
 
 /// Ordered collection of `PitchClass` values.
@@ -51,17 +51,17 @@ public struct PitchClassCollection: NoteNumberRepresentableCollection {
     /** 
      Array of `PitchClassDyad` values between each combination (choose 2) herein.
      */
-    public lazy var dyads: [PitchClassDyad]? = {
+    public lazy var dyads: [PitchClassDyad] = {
         
         return self.array
-            .subsets(withCardinality: 2)?
+            .subsets(cardinality: 2)
             .map { PitchClassDyad($0[0], $0[1]) }
     }()
 }
 
-extension PitchClassCollection: AnySequenceType {
+extension PitchClassCollection: AnySequenceWrapping {
     
-    // MARK: - AnySequenceType
+    // MARK: - AnySequenceWrapping
     
     /// `PitchConvertible`-conforming type contained herein.
     public typealias Element = PitchClass
