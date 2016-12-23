@@ -75,12 +75,3 @@ extension PitchCollection: Sequence {
 public func == (lhs: PitchCollection, rhs: PitchCollection) -> Bool {
     return lhs.sequence == rhs.sequence
 }
-
-public func == <T: Equatable> (lhs: AnySequence<T>, rhs: AnySequence<T>) -> Bool {
-    for (a,b) in zip(lhs,rhs) {
-        if a != b {
-            return false
-        }
-    }
-    return true
-}
