@@ -50,11 +50,6 @@ class PitchSetTests: XCTestCase {
         XCTAssert(new == [Pitch(60), Pitch(61), Pitch(62), Pitch(63)])
     }
     
-    func testDescription() {
-        let pitchSet: PitchSet = [Pitch(61), Pitch(60)]
-        XCTAssertEqual(pitchSet.description, "[\"61.0\", \"60.0\"]")
-    }
-    
     func testArrayLiteralConvertible() {
         let _: PitchSet = [Pitch(noteNumber: 60.0), Pitch(noteNumber: 61.0)]
     }
