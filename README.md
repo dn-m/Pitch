@@ -12,7 +12,7 @@ Integrate **Pitch** into your macOS or iOS project with [Carthage](https://githu
 
 1. Follow [these instructions](https://github.com/Carthage/Carthage#installing-carthage) to install Carthage, if necessary.
 2. Add `github "dn-m/Pitch"` to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile).
-3. Follow [these instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) to integrate **Pitch** into your OSX or iOS project.
+3. Follow [these instructions](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) to integrate **Pitch** into your macOS or iOS project.
 
 
 ---
