@@ -9,7 +9,7 @@ env:
     - DESTINATION="platform=OS X"
       SCHEME="PitchMac"
 
-before_script: if [ -a ./Cartfile ]; then carthage update; fi;
+before_script: carthage update
 
 script: travis_retry xcodebuild test
   -project Pitch.xcodeproj
