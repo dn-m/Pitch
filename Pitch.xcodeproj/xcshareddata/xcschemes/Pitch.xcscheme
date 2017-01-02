@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "07CC265E1C94E0850099C21C"
-               BuildableName = "Pitch.framework"
-               BlueprintName = "Pitch"
+               BuildableName = "Pitch iOS.framework"
+               BlueprintName = "Pitch iOS"
                ReferencedContainer = "container:Pitch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "07CC26681C94E0850099C21C"
-               BuildableName = "PitchTests.xctest"
-               BlueprintName = "PitchTests"
+               BuildableName = "Pitch iOS Tests.xctest"
+               BlueprintName = "Pitch iOS Tests"
                ReferencedContainer = "container:Pitch.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -44,8 +44,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07CC265E1C94E0850099C21C"
-            BuildableName = "Pitch.framework"
-            BlueprintName = "Pitch"
+            BuildableName = "Pitch iOS.framework"
+            BlueprintName = "Pitch iOS"
             ReferencedContainer = "container:Pitch.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07CC265E1C94E0850099C21C"
-            BuildableName = "Pitch.framework"
-            BlueprintName = "Pitch"
+            BuildableName = "Pitch iOS.framework"
+            BlueprintName = "Pitch iOS"
             ReferencedContainer = "container:Pitch.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -84,8 +84,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07CC265E1C94E0850099C21C"
-            BuildableName = "Pitch.framework"
-            BlueprintName = "Pitch"
+            BuildableName = "Pitch iOS.framework"
+            BlueprintName = "Pitch iOS"
             ReferencedContainer = "container:Pitch.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
