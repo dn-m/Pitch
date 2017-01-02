@@ -151,10 +151,10 @@
 		07CC265F1C94E0850099C21C /* Pitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CC26621C94E0850099C21C /* Pitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Pitch.h; path = Pitch/Pitch.h; sourceTree = "<group>"; };
 		07CC26641C94E0850099C21C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07CC26691C94E0850099C21C /* PitchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07CC26691C94E0850099C21C /* Pitch iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pitch iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CC26701C94E0850099C21C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07CC26801C94E0A00099C21C /* Pitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		07CC26891C94E0A00099C21C /* PitchMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PitchMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07CC26891C94E0A00099C21C /* Pitch macOS Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pitch macOS Test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CC26981C94E4910099C21C /* Pitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitch.swift; sourceTree = "<group>"; };
 		07CC269F1C94E4E00099C21C /* PitchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchTests.swift; sourceTree = "<group>"; };
 		07CC26A21C94E5630099C21C /* Frequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frequency.swift; sourceTree = "<group>"; };
@@ -260,9 +260,9 @@
 			isa = PBXGroup;
 			children = (
 				07CC265F1C94E0850099C21C /* Pitch.framework */,
-				07CC26691C94E0850099C21C /* PitchTests.xctest */,
+				07CC26691C94E0850099C21C /* Pitch iOS Tests.xctest */,
 				07CC26801C94E0A00099C21C /* Pitch.framework */,
-				07CC26891C94E0A00099C21C /* PitchMacTests.xctest */,
+				07CC26891C94E0A00099C21C /* Pitch macOS Test.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -380,9 +380,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		07CC265E1C94E0850099C21C /* Pitch */ = {
+		07CC265E1C94E0850099C21C /* Pitch iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07CC26731C94E0850099C21C /* Build configuration list for PBXNativeTarget "Pitch" */;
+			buildConfigurationList = 07CC26731C94E0850099C21C /* Build configuration list for PBXNativeTarget "Pitch iOS" */;
 			buildPhases = (
 				07CC265A1C94E0850099C21C /* Sources */,
 				07CC265B1C94E0850099C21C /* Frameworks */,
@@ -393,14 +393,14 @@
 			);
 			dependencies = (
 			);
-			name = Pitch;
+			name = "Pitch iOS";
 			productName = Pitch;
 			productReference = 07CC265F1C94E0850099C21C /* Pitch.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		07CC26681C94E0850099C21C /* PitchTests */ = {
+		07CC26681C94E0850099C21C /* Pitch iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07CC26761C94E0850099C21C /* Build configuration list for PBXNativeTarget "PitchTests" */;
+			buildConfigurationList = 07CC26761C94E0850099C21C /* Build configuration list for PBXNativeTarget "Pitch iOS Tests" */;
 			buildPhases = (
 				07CC26651C94E0850099C21C /* Sources */,
 				07CC26661C94E0850099C21C /* Frameworks */,
@@ -413,14 +413,14 @@
 			dependencies = (
 				07CC266C1C94E0850099C21C /* PBXTargetDependency */,
 			);
-			name = PitchTests;
+			name = "Pitch iOS Tests";
 			productName = PitchTests;
-			productReference = 07CC26691C94E0850099C21C /* PitchTests.xctest */;
+			productReference = 07CC26691C94E0850099C21C /* Pitch iOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		07CC267F1C94E0A00099C21C /* PitchMac */ = {
+		07CC267F1C94E0A00099C21C /* Pitch macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07CC26911C94E0A00099C21C /* Build configuration list for PBXNativeTarget "PitchMac" */;
+			buildConfigurationList = 07CC26911C94E0A00099C21C /* Build configuration list for PBXNativeTarget "Pitch macOS" */;
 			buildPhases = (
 				07CC267B1C94E0A00099C21C /* Sources */,
 				07CC267C1C94E0A00099C21C /* Frameworks */,
@@ -431,14 +431,14 @@
 			);
 			dependencies = (
 			);
-			name = PitchMac;
+			name = "Pitch macOS";
 			productName = PitchMac;
 			productReference = 07CC26801C94E0A00099C21C /* Pitch.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		07CC26881C94E0A00099C21C /* PitchMacTests */ = {
+		07CC26881C94E0A00099C21C /* Pitch macOS Test */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 07CC26941C94E0A00099C21C /* Build configuration list for PBXNativeTarget "PitchMacTests" */;
+			buildConfigurationList = 07CC26941C94E0A00099C21C /* Build configuration list for PBXNativeTarget "Pitch macOS Test" */;
 			buildPhases = (
 				07CC26851C94E0A00099C21C /* Sources */,
 				07CC26861C94E0A00099C21C /* Frameworks */,
@@ -451,9 +451,9 @@
 			dependencies = (
 				07CC268C1C94E0A00099C21C /* PBXTargetDependency */,
 			);
-			name = PitchMacTests;
+			name = "Pitch macOS Test";
 			productName = PitchMacTests;
-			productReference = 07CC26891C94E0A00099C21C /* PitchMacTests.xctest */;
+			productReference = 07CC26891C94E0A00099C21C /* Pitch macOS Test.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -494,10 +494,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				07CC265E1C94E0850099C21C /* Pitch */,
-				07CC26681C94E0850099C21C /* PitchTests */,
-				07CC267F1C94E0A00099C21C /* PitchMac */,
-				07CC26881C94E0A00099C21C /* PitchMacTests */,
+				07CC265E1C94E0850099C21C /* Pitch iOS */,
+				07CC26681C94E0850099C21C /* Pitch iOS Tests */,
+				07CC267F1C94E0A00099C21C /* Pitch macOS */,
+				07CC26881C94E0A00099C21C /* Pitch macOS Test */,
 			);
 		};
 /* End PBXProject section */
@@ -664,12 +664,12 @@
 /* Begin PBXTargetDependency section */
 		07CC266C1C94E0850099C21C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 07CC265E1C94E0850099C21C /* Pitch */;
+			target = 07CC265E1C94E0850099C21C /* Pitch iOS */;
 			targetProxy = 07CC266B1C94E0850099C21C /* PBXContainerItemProxy */;
 		};
 		07CC268C1C94E0A00099C21C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 07CC267F1C94E0A00099C21C /* PitchMac */;
+			target = 07CC267F1C94E0A00099C21C /* Pitch macOS */;
 			targetProxy = 07CC268B1C94E0A00099C21C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -788,7 +788,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.Pitch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pitch;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -814,7 +814,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.Pitch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pitch;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -963,7 +963,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07CC26731C94E0850099C21C /* Build configuration list for PBXNativeTarget "Pitch" */ = {
+		07CC26731C94E0850099C21C /* Build configuration list for PBXNativeTarget "Pitch iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07CC26741C94E0850099C21C /* Debug */,
@@ -972,7 +972,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07CC26761C94E0850099C21C /* Build configuration list for PBXNativeTarget "PitchTests" */ = {
+		07CC26761C94E0850099C21C /* Build configuration list for PBXNativeTarget "Pitch iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07CC26771C94E0850099C21C /* Debug */,
@@ -981,7 +981,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07CC26911C94E0A00099C21C /* Build configuration list for PBXNativeTarget "PitchMac" */ = {
+		07CC26911C94E0A00099C21C /* Build configuration list for PBXNativeTarget "Pitch macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07CC26921C94E0A00099C21C /* Debug */,
@@ -990,7 +990,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		07CC26941C94E0A00099C21C /* Build configuration list for PBXNativeTarget "PitchMacTests" */ = {
+		07CC26941C94E0A00099C21C /* Build configuration list for PBXNativeTarget "Pitch macOS Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				07CC26951C94E0A00099C21C /* Debug */,

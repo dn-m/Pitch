@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "07CC267F1C94E0A00099C21C"
                BuildableName = "Pitch.framework"
-               BlueprintName = "PitchMac"
+               BlueprintName = "Pitch macOS"
                ReferencedContainer = "container:Pitch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "07CC26881C94E0A00099C21C"
-               BuildableName = "PitchMacTests.xctest"
-               BlueprintName = "PitchMacTests"
+               BuildableName = "Pitch macOS Test.xctest"
+               BlueprintName = "Pitch macOS Test"
                ReferencedContainer = "container:Pitch.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -45,7 +45,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07CC267F1C94E0A00099C21C"
             BuildableName = "Pitch.framework"
-            BlueprintName = "PitchMac"
+            BlueprintName = "Pitch macOS"
             ReferencedContainer = "container:Pitch.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,7 +67,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07CC267F1C94E0A00099C21C"
             BuildableName = "Pitch.framework"
-            BlueprintName = "PitchMac"
+            BlueprintName = "Pitch macOS"
             ReferencedContainer = "container:Pitch.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -85,7 +85,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07CC267F1C94E0A00099C21C"
             BuildableName = "Pitch.framework"
-            BlueprintName = "PitchMac"
+            BlueprintName = "Pitch macOS"
             ReferencedContainer = "container:Pitch.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
