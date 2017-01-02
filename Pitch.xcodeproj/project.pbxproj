@@ -51,12 +51,12 @@
 		07C4DA941D02333B008E05FE /* PitchClassCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4DA931D02333B008E05FE /* PitchClassCollectionTests.swift */; };
 		07C4DA951D02333B008E05FE /* PitchClassCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C4DA931D02333B008E05FE /* PitchClassCollectionTests.swift */; };
 		07CC26631C94E0850099C21C /* Pitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 07CC26621C94E0850099C21C /* Pitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07CC266A1C94E0850099C21C /* Pitch iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CC265F1C94E0850099C21C /* Pitch iOS.framework */; };
+		07CC266A1C94E0850099C21C /* Pitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CC265F1C94E0850099C21C /* Pitch.framework */; };
 		07CC268A1C94E0A00099C21C /* Pitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CC26801C94E0A00099C21C /* Pitch.framework */; };
 		07CC26971C94E0B40099C21C /* Pitch.h in Headers */ = {isa = PBXBuildFile; fileRef = 07CC26621C94E0850099C21C /* Pitch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07CC26991C94E4910099C21C /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC26981C94E4910099C21C /* Pitch.swift */; };
 		07CC269A1C94E4910099C21C /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC26981C94E4910099C21C /* Pitch.swift */; };
-		07CC269C1C94E4C10099C21C /* Pitch iOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07CC265F1C94E0850099C21C /* Pitch iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		07CC269C1C94E4C10099C21C /* Pitch.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07CC265F1C94E0850099C21C /* Pitch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07CC269E1C94E4C90099C21C /* Pitch.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07CC26801C94E0A00099C21C /* Pitch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07CC26A01C94E4E00099C21C /* PitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC269F1C94E4E00099C21C /* PitchTests.swift */; };
 		07CC26A11C94E4E00099C21C /* PitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC269F1C94E4E00099C21C /* PitchTests.swift */; };
@@ -109,7 +109,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				07CC269C1C94E4C10099C21C /* Pitch iOS.framework in CopyFiles */,
+				07CC269C1C94E4C10099C21C /* Pitch.framework in CopyFiles */,
 				070192FB1C94EA3200266260 /* ArithmeticTools.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,7 +148,7 @@
 		07AD1D471C95D402003225B2 /* PitchClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchClass.swift; sourceTree = "<group>"; };
 		07AD1D4A1C95DE71003225B2 /* PitchClassInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchClassInterval.swift; sourceTree = "<group>"; };
 		07C4DA931D02333B008E05FE /* PitchClassCollectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchClassCollectionTests.swift; sourceTree = "<group>"; };
-		07CC265F1C94E0850099C21C /* Pitch iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pitch iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07CC265F1C94E0850099C21C /* Pitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CC26621C94E0850099C21C /* Pitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Pitch.h; path = Pitch/Pitch.h; sourceTree = "<group>"; };
 		07CC26641C94E0850099C21C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07CC26691C94E0850099C21C /* Pitch iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pitch iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,7 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07CC26B41C94E89E0099C21C /* ArithmeticTools.framework in Frameworks */,
-				07CC266A1C94E0850099C21C /* Pitch iOS.framework in Frameworks */,
+				07CC266A1C94E0850099C21C /* Pitch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +259,7 @@
 		07CC26601C94E0850099C21C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07CC265F1C94E0850099C21C /* Pitch iOS.framework */,
+				07CC265F1C94E0850099C21C /* Pitch.framework */,
 				07CC26691C94E0850099C21C /* Pitch iOS Tests.xctest */,
 				07CC26801C94E0A00099C21C /* Pitch.framework */,
 				07CC26891C94E0A00099C21C /* Pitch macOS Test.xctest */,
@@ -395,7 +395,7 @@
 			);
 			name = "Pitch iOS";
 			productName = Pitch;
-			productReference = 07CC265F1C94E0850099C21C /* Pitch iOS.framework */;
+			productReference = 07CC265F1C94E0850099C21C /* Pitch.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		07CC26681C94E0850099C21C /* Pitch iOS Tests */ = {
@@ -788,7 +788,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.Pitch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pitch;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -814,7 +814,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bean.Pitch;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pitch;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
