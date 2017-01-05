@@ -60,4 +60,3 @@ extension Comparable {
 public func - <T: NoteNumberRepresentable> (lhs: T, rhs: T) -> T {
     return T(noteNumber: NoteNumber(lhs.noteNumber.value - rhs.noteNumber.value))
 }
-
