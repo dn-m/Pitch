@@ -37,11 +37,9 @@ public struct PitchClassCollection: NoteNumberRepresentableCollection {
         return PitchClassCollection(map { $0.inversion })
     }
     
-    /**
-     Array of `IntervalClass` values between each adjacent `PitchClass` herein.
-
-     - TODO: Refactor up the `NoteNumberRepresentableCollection` protocol hierarchy
-     */
+    /// Array of `IntervalClass` values between each adjacent `PitchClass` herein.
+    ///
+    /// - TODO: Refactor up the `NoteNumberRepresentableCollection` protocol hierarchy
     public lazy var intervals: PitchClassIntervalCollection = {
         return PitchClassIntervalCollection(
             self.array.adjacentPairs?.map(PitchClassInterval.init) ?? []
