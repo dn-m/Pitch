@@ -13,8 +13,10 @@ public struct PitchClassSet: NoteNumberRepresentableSet {
     
     // MARK: - Associated Types
     
+    /// Type of pairs of `Element` values contained herein.
     public typealias Dyad = PitchClassDyad
     
+    /// Type of interval between two `Element` values contained herein.
     public typealias Interval = PitchClassInterval
     
     /// `PitchConvertible` type contained herein.
