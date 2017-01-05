@@ -28,8 +28,7 @@ public protocol NoteNumberRepresentableDyad: Equatable {
     init(_ a: Element, _ b: Element)
 }
 
-// MARK: - Equatable
-
+// MARK: - `Equatable`
 
 /// - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
 public func == <T: NoteNumberRepresentableDyad> (lhs: T, rhs: T) -> Bool {

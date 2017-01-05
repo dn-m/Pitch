@@ -22,8 +22,18 @@ public protocol NoteNumberRepresentable: Comparable, Hashable {
     init(noteNumber: NoteNumber)
 }
 
+extension NoteNumberRepresentable {
+    
+    // MARK: - `Hashable`
+    
+    /// Hash value of a `NoteNumberRepresentable` type.
+    public var hashValue: Int {
+        return noteNumber.hashValue
+    }
+}
+
 /// - returns: `true` if both values are representable by the same `NoteNumber`.
-///            Otherwise, `false`.
+/// Otherwise, `false`.
 public func == <T: NoteNumberRepresentable> (lhs: T, rhs: T) -> Bool {
     return lhs.noteNumber == rhs.noteNumber
 }
@@ -34,17 +44,8 @@ public func < <T: NoteNumberRepresentable> (lhs: T, rhs: T) -> Bool {
 }
 
 /// - returns: A `NoteNumberRepresentable` value that is the difference between the two given
-///            values.
+/// values.
 public func - <T: NoteNumberRepresentable> (lhs: T, rhs: T) -> T {
     return T(noteNumber: NoteNumber(lhs.noteNumber.value - rhs.noteNumber.value))
 }
 
-extension NoteNumberRepresentable {
-
-    // MARK: - Hashable
-
-    /// Hash value of a `NoteNumberRepresentable` type.
-    public var hashValue: Int {
-        return noteNumber.hashValue
-    }
-}

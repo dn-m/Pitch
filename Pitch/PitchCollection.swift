@@ -37,7 +37,7 @@ public struct PitchCollection: NoteNumberRepresentableCollection {
 
 extension PitchCollection: AnySequenceWrapping {
     
-    // MARK: - PitchCollection
+    // MARK: - `PitchCollection`
     
     /**
      Create a `PitchCollection` with `SequenceType` containing `Pitch` values.
@@ -61,7 +61,7 @@ extension PitchCollection: ExpressibleByArrayLiteral {
 
 extension PitchCollection: Sequence {
     
-    // MARK: - Sequence
+    // MARK: - `Sequence`
     
     /// Make iterator for `PitchCollection`.
     public func makeIterator() -> AnyIterator<Pitch> {
@@ -71,7 +71,7 @@ extension PitchCollection: Sequence {
 }
 
 /// - returns: `true` if all values contained in both collections are equivalent. Otherwise,
-///            `false`.
+/// `false`.
 public func == (lhs: PitchCollection, rhs: PitchCollection) -> Bool {
     return lhs.sequence == rhs.sequence
 }

@@ -8,9 +8,7 @@
 
 import Collections
 
-/**
- Ordered collection of `NoteNumberRepresentable` types.
- */
+/// Ordered collection of `NoteNumberRepresentable` types.
 public protocol NoteNumberRepresentableCollection:
     NoteNumberRepresentableContainer,
     Collection
@@ -29,7 +27,7 @@ public protocol NoteNumberRepresentableCollection:
 
 extension NoteNumberRepresentableCollection {
     
-    // MARK: - AnySequenceWrapping
+    // MARK: - `AnySequenceWrapping`
     
     /// Iterable sequence of `NoteNumberRepresentable` values contained herein.
     public var sequence: AnySequence<Element> { return AnySequence(array) }
@@ -37,7 +35,7 @@ extension NoteNumberRepresentableCollection {
 
 extension NoteNumberRepresentableCollection {
     
-    // MARK: - PitchConvertibleContaining
+    // MARK: - `PitchConvertibleContaining`
     
     /// - returns `true` if there are no `Pitch` values contained herein. Otherwise, `false`.
     public var isEmpty: Bool {
@@ -52,7 +50,7 @@ extension NoteNumberRepresentableCollection {
 
 extension NoteNumberRepresentableCollection {
     
-    // MARK: - CollectionType
+    // MARK: - `Collection`
     
     /// Start index
     public var startIndex: Int { return 0 }
@@ -72,19 +70,10 @@ extension NoteNumberRepresentableCollection {
 
 extension NoteNumberRepresentableCollection {
     
-    // MARK: - CustomStringConvertible
+    // MARK: - `CustomStringConvertible`
     
     /// Printed description of `PitchConvertibleCollectionType`.
     public var description: String {
         return "〈\(map{ "\($0)" }.joined(separator: ","))〉"
-    }
-}
-
-extension NoteNumberRepresentableCollection {
-    
-    /// Make iterator for `NoteNumberRepresentableCollection`
-    public func makeIterator() -> AnyIterator<Element> {
-        let iterator = sequence.makeIterator()
-        return AnyIterator { iterator.next() }
     }
 }

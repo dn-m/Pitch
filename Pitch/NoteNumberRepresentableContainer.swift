@@ -26,9 +26,7 @@ public protocol NoteNumberRepresentableContainer: AnySequenceWrapping, Equatable
 
 // MARK: - Equatable
 
-/**
- - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
- */
+/// - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
 public func == <T: NoteNumberRepresentableContainer> (lhs: T, rhs: T) -> Bool {
     return lhs.sequence == rhs.sequence
 }

@@ -8,9 +8,7 @@
 
 import Collections
 
-/**
- Unordered set of unique `PitchClass` values.
- */
+/// Unordered set of unique `PitchClass` values.
 public struct PitchClassSet: NoteNumberRepresentableSet {
     
     // MARK: - Associated Types
@@ -40,7 +38,7 @@ public struct PitchClassSet: NoteNumberRepresentableSet {
 
 extension PitchClassSet: AnySequenceWrapping {
     
-    // MARK: - AnySequenceWrapping
+    // MARK: - `AnySequenceWrapping`
     
     /**
      Create an `AnySequenceWrapping` with a `Sequence` of any type.

@@ -61,14 +61,13 @@ public struct PitchClassCollection: NoteNumberRepresentableCollection {
 
 extension PitchClassCollection: AnySequenceWrapping {
     
-    // MARK: - AnySequenceWrapping
+    // MARK: - `AnySequenceWrapping`
     
     /// `PitchConvertible`-conforming type contained herein.
     public typealias Element = PitchClass
     
-    /**
-     Create a `PitchSet` with `SequenceType` containing `Pitch` values.
-     */
+    
+    /// Create a `PitchSet` with `SequenceType` containing `Pitch` values.
     public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
         self.array = Array(sequence)
     }
@@ -78,24 +77,8 @@ extension PitchClassCollection: ExpressibleByArrayLiteral {
     
     // MARK: - `ExpressibleByArrayLiteral`
     
-    /**
-     Create a `PitchClassSequence` with an array literal.
-     */
+    /// Create a `PitchClassSequence` with an array literal.
     public init(arrayLiteral elements: PitchClass...) {
         self.array = elements
-    }
-}
-
-public func == (lhs: PitchClassCollection, rhs: PitchClassCollection) -> Bool {
-    return lhs.sequence == rhs.sequence
-}
-
-extension PitchClassCollection: Sequence {
-    
-    public func makeIterator() -> AnyIterator<PitchClass> {
-        var iterator = array.makeIterator()
-        return AnyIterator {
-            return iterator.next()
-        }
     }
 }

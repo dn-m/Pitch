@@ -6,8 +6,6 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import Foundation
-
 /// Protocol definining an unordered set of unique `NoteNumberRepresentable`-conforming values.
 public protocol NoteNumberRepresentableSet: NoteNumberRepresentableContainer {
     
@@ -24,7 +22,17 @@ public protocol NoteNumberRepresentableSet: NoteNumberRepresentableContainer {
 
 extension NoteNumberRepresentableSet {
     
-    // MARK: - PitchConvertibleContaining
+    // MARK: - `Equatable`
+    
+    /// - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.set == rhs.set
+    }
+}
+
+extension NoteNumberRepresentableSet {
+    
+    // MARK: - `PitchConvertibleContaining`
     
     /// - returns: `true` if there are no values contained herein. Otherwsie `false`.
     public var isEmpty: Bool {
@@ -39,15 +47,17 @@ extension NoteNumberRepresentableSet {
 
 extension NoteNumberRepresentableSet {
     
-    // MARK: - AnySequenceWrapping
+    // MARK: - `AnySequenceWrapping`
     
     /// Iterable sequence of `NoteNumberRepresentable` values held by the conforming type
-    public var sequence: AnySequence<Element> { return AnySequence(set) }
+    public var sequence: AnySequence<Element> {
+        return AnySequence(set)
+    }
 }
 
 extension NoteNumberRepresentableSet {
     
-    // MARK: - CustomStringConvertible
+    // MARK: - `CustomStringConvertible`
     
     /// Printable description
     public var description: String { return "{\(map{ "\($0)" }.joined(separator: ","))}" }

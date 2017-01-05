@@ -52,7 +52,7 @@ extension PitchClass: ExpressibleByIntegerLiteral {
 
 extension PitchClass: ExpressibleByFloatLiteral {
     
-    // MARK: - IntegerLiterlConvertible
+    // MARK: - `ExpressibleByFloatLiteral`
     
     /**
      Create a `PitchClass` with a `FloatLiteralType`.
@@ -71,7 +71,7 @@ extension PitchClass: ExpressibleByFloatLiteral {
 
 extension PitchClass: PitchConvertible {
     
-    // MARK: - PitchConvertible
+    // MARK: - `PitchConvertible`
     
     /**
      Create a `PitchClass` with a `Pitch` object.

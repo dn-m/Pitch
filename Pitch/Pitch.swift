@@ -74,7 +74,7 @@ public struct Pitch: NoteNumberRepresentable {
 
 extension Pitch: PitchConvertible {
     
-    // MARK: - PitchConvertible
+    // MARK: - `PitchConvertible`
     
     /**
      Create a `Pitch` with another `Pitch`.
@@ -111,7 +111,7 @@ extension Pitch: ExpressibleByIntegerLiteral {
 
 extension Pitch: Hashable {
     
-    // MARK: - Hashable
+    // MARK: - `Hashable`
 
     /// Hash value.
     public var hashValue: Int { return noteNumber.hashValue }
@@ -119,22 +119,29 @@ extension Pitch: Hashable {
 
 extension Pitch: CustomStringConvertible {
  
-    // MARK: - CustomStringConvertible
+    // MARK: - `CustomStringConvertible`
     
     /// Printed description.
     public var description: String { return "\(noteNumber.value)" }
     
 }
 
+// MARK: - `Equatable`
+
+/// - Returns: `true` if both `Pitch` values are equivalent. Otherwise, `false`.
 public func == (lhs: Pitch, rhs: Pitch) -> Bool {
     return lhs.noteNumber == rhs.noteNumber
 }
 
+// MARK: - `Comparable`
+
+/// - Returns: `true` if the left `Pitch` is less than the right `Pitch`. Otherwise, `false`.
 public func < (lhs: Pitch, rhs: Pitch) -> Bool {
     return lhs.noteNumber < rhs.noteNumber
 }
 
 // MARK: - Transposition
+
 
 func + (lhs: Pitch, rhs: Float) -> Pitch {
     return Pitch(noteNumber: NoteNumber(lhs.noteNumber.value + rhs))
