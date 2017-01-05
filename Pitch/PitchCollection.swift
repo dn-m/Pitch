@@ -39,9 +39,7 @@ extension PitchCollection: AnySequenceWrapping {
     
     // MARK: - `PitchCollection`
     
-    /**
-     Create a `PitchCollection` with `SequenceType` containing `Pitch` values.
-     */
+    /// Create a `PitchCollection` with `SequenceType` containing `Pitch` values.
     public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
         self.array = Array(sequence)
     }
@@ -51,9 +49,7 @@ extension PitchCollection: ExpressibleByArrayLiteral {
     
     // MARK: - `ExpressibleByArrayLiteral`
     
-    /**
-     Create a `PitchCollection` with an array literal.
-     */
+    /// Create a `PitchCollection` with an array literal.
     public init(arrayLiteral elements: Element...) {
         self.array = elements
     }
@@ -68,10 +64,4 @@ extension PitchCollection: Sequence {
         var iterator = array.makeIterator()
         return AnyIterator { iterator.next() }
     }
-}
-
-/// - returns: `true` if all values contained in both collections are equivalent. Otherwise,
-/// `false`.
-public func == (lhs: PitchCollection, rhs: PitchCollection) -> Bool {
-    return lhs.sequence == rhs.sequence
 }
