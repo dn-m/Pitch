@@ -8,9 +8,7 @@
 
 import Collections
 
-/**
- Ordered collection of non-unique `Pitch` values.
- */
+/// Ordered collection of non-unique `Pitch` values.
 public struct PitchCollection: NoteNumberRepresentableCollection {
 
     // MARK: - Associated Types

@@ -42,9 +42,7 @@ extension PitchIntervalCollection: ExpressibleByArrayLiteral {
     
     // MARK: - `ExpressibleByArrayLiteral`
     
-    /**
-     Create a `PitchSequence` with an array literal.
-     */
+    /// Create a `PitchSequence` with an array literal.
     public init(arrayLiteral elements: Element...) {
         self.array = elements
     }
@@ -52,16 +50,11 @@ extension PitchIntervalCollection: ExpressibleByArrayLiteral {
 
 extension PitchIntervalCollection: Sequence {
     
-    // MARK: - Sequence
+    // MARK: - `Sequence`
     
     /// Make an iterator for a `PitchIntervalCollection`.
     public func makeIterator() -> AnyIterator<Element> {
         let iterator = sequence.makeIterator()
         return AnyIterator { iterator.next() }
     }
-}
-
-/// - returns: `true` if all elements in both collections are equivalent. Otherwise, `false`.
-public func == (lhs: PitchIntervalCollection, rhs: PitchIntervalCollection) -> Bool {
-    return lhs.sequence == rhs.sequence
 }
