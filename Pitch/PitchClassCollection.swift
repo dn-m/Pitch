@@ -66,8 +66,7 @@ extension PitchClassCollection: AnySequenceWrapping {
     /// `PitchConvertible`-conforming type contained herein.
     public typealias Element = PitchClass
     
-    
-    /// Create a `PitchSet` with `SequenceType` containing `Pitch` values.
+    /// Create a `PitchClassCollection` with `Sequence` containing `Pitch` values.
     public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
         self.array = Array(sequence)
     }
