@@ -12,14 +12,7 @@ import XCTest
 class PitchSetTests: XCTestCase {
 
     func testDyads() {
-        var set = PitchSet(
-            [
-                Pitch(noteNumber: 60),
-                Pitch(noteNumber: 61),
-                Pitch(noteNumber: 62),
-                Pitch(noteNumber: 63)
-            ]
-        )
+        var set: PitchSet = [60, 61, 62, 63]
         XCTAssertEqual(set.dyads.count, 6)
     }
     
