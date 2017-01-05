@@ -57,9 +57,7 @@ extension PitchClassSet: ExpressibleByArrayLiteral {
     
     // MARK: - `ExpressibleByArrayLiteral`
     
-    /**
-     Create a `PitchClassSequence` with an array literal.
-     */
+    /// Create a `PitchClassSequence` with an array literal.
     public init(arrayLiteral elements: Element...) {
         self.set = Set(elements)
     }
