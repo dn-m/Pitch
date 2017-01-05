@@ -48,9 +48,7 @@ public struct PitchClassCollection: NoteNumberRepresentableCollection {
         )
     }()
     
-    /** 
-     Array of `PitchClassDyad` values between each combination (choose 2) herein.
-     */
+    /// Array of `PitchClassDyad` values between each combination (choose 2) herein.
     public lazy var dyads: [PitchClassDyad] = {
         
         return self.array
