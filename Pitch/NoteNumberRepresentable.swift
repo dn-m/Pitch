@@ -38,17 +38,17 @@ extension NoteNumberRepresentable {
     
     /// - returns: `true` if both values are representable by the same `NoteNumber`.
     /// Otherwise, `false`.
-    public func == <T: NoteNumberRepresentable> (lhs: T, rhs: T) -> Bool {
+    public static func == (lhs: Self, rhs: Self) -> Bool {
         return lhs.noteNumber == rhs.noteNumber
     }
 }
 
-extension Comparable {
+extension NoteNumberRepresentable {
     
     // MARK: - `Comparable`
     
     /// - returns: `true` if the first value is less than the second value. Otherwise, `false`.
-    public func < <T: NoteNumberRepresentable> (lhs: T, rhs: T) -> Bool {
+    public static func < (lhs: Self, rhs: Self) -> Bool {
         return lhs.noteNumber < rhs.noteNumber
     }
 }

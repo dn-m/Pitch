@@ -28,9 +28,13 @@ public protocol NoteNumberRepresentableDyad: Equatable {
     init(_ a: Element, _ b: Element)
 }
 
-// MARK: - `Equatable`
+extension NoteNumberRepresentableDyad {
 
-/// - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
-public func == <T: NoteNumberRepresentableDyad> (lhs: T, rhs: T) -> Bool {
-    return lhs.lower == rhs.lower && lhs.higher == rhs.higher
+    // MARK: - `Equatable`
+    
+    /// - returns: `true` if the values contained in each value are equivalent. Otherwise `false`.
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        return lhs.lower == rhs.lower && lhs.higher == rhs.higher
+    }
 }
+
