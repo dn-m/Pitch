@@ -8,7 +8,7 @@
 
 import ArithmeticTools
 
-/// Protocol defining values representable by a `NoteNumber`
+/// Protocol defining values representable by a `NoteNumber`.
 public protocol NoteNumberRepresentable: Comparable, Hashable {
     
     // MARK: - Instance Properties
