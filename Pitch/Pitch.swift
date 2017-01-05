@@ -8,9 +8,8 @@
 
 import ArithmeticTools
 
-/**
- The quality of a sound governed by the rate of vibrations producing it.
- */
+
+/// The quality of a sound governed by the rate of vibrations producing it.
 public struct Pitch: NoteNumberRepresentable {
     
     // MARK: - Type Properties
