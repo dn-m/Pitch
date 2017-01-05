@@ -8,9 +8,7 @@
 
 import ArithmeticTools
 
-/**
- Modulo 12 representation of `noteNumber` of `Pitch`.
- */
+/// Modulo 12 representation of `noteNumber` of `Pitch`.
 public struct PitchClass: NoteNumberRepresentable {
     
     // MARK: - Instance Properties
@@ -52,7 +50,7 @@ extension PitchClass: ExpressibleByIntegerLiteral {
 
 extension PitchClass: ExpressibleByFloatLiteral {
     
-    // MARK: - IntegerLiterlConvertible
+    // MARK: - `ExpressibleByFloatLiteral`
     
     /**
      Create a `PitchClass` with a `FloatLiteralType`.
@@ -71,7 +69,7 @@ extension PitchClass: ExpressibleByFloatLiteral {
 
 extension PitchClass: PitchConvertible {
     
-    // MARK: - PitchConvertible
+    // MARK: - `PitchConvertible`
     
     /**
      Create a `PitchClass` with a `Pitch` object.

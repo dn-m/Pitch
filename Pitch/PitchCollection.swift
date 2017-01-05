@@ -8,9 +8,7 @@
 
 import Collections
 
-/**
- Ordered collection of non-unique `Pitch` values.
- */
+/// Ordered collection of non-unique `Pitch` values.
 public struct PitchCollection: NoteNumberRepresentableCollection {
 
     // MARK: - Associated Types
@@ -37,11 +35,9 @@ public struct PitchCollection: NoteNumberRepresentableCollection {
 
 extension PitchCollection: AnySequenceWrapping {
     
-    // MARK: - PitchCollection
+    // MARK: - `PitchCollection`
     
-    /**
-     Create a `PitchCollection` with `SequenceType` containing `Pitch` values.
-     */
+    /// Create a `PitchCollection` with `SequenceType` containing `Pitch` values.
     public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
         self.array = Array(sequence)
     }
@@ -51,9 +47,7 @@ extension PitchCollection: ExpressibleByArrayLiteral {
     
     // MARK: - `ExpressibleByArrayLiteral`
     
-    /**
-     Create a `PitchCollection` with an array literal.
-     */
+    /// Create a `PitchCollection` with an array literal.
     public init(arrayLiteral elements: Element...) {
         self.array = elements
     }
@@ -61,17 +55,11 @@ extension PitchCollection: ExpressibleByArrayLiteral {
 
 extension PitchCollection: Sequence {
     
-    // MARK: - Sequence
+    // MARK: - `Sequence`
     
     /// Make iterator for `PitchCollection`.
     public func makeIterator() -> AnyIterator<Pitch> {
         var iterator = array.makeIterator()
         return AnyIterator { iterator.next() }
     }
-}
-
-/// - returns: `true` if all values contained in both collections are equivalent. Otherwise,
-///            `false`.
-public func == (lhs: PitchCollection, rhs: PitchCollection) -> Bool {
-    return lhs.sequence == rhs.sequence
 }

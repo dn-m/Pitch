@@ -37,20 +37,16 @@ public struct PitchClassCollection: NoteNumberRepresentableCollection {
         return PitchClassCollection(map { $0.inversion })
     }
     
-    /**
-     Array of `IntervalClass` values between each adjacent `PitchClass` herein.
-
-     - TODO: Refactor up the `NoteNumberRepresentableCollection` protocol hierarchy
-     */
+    /// Array of `IntervalClass` values between each adjacent `PitchClass` herein.
+    ///
+    /// - TODO: Refactor up the `NoteNumberRepresentableCollection` protocol hierarchy
     public lazy var intervals: PitchClassIntervalCollection = {
         return PitchClassIntervalCollection(
             self.array.adjacentPairs?.map(PitchClassInterval.init) ?? []
         )
     }()
     
-    /** 
-     Array of `PitchClassDyad` values between each combination (choose 2) herein.
-     */
+    /// Array of `PitchClassDyad` values between each combination (choose 2) herein.
     public lazy var dyads: [PitchClassDyad] = {
         
         return self.array
@@ -61,14 +57,12 @@ public struct PitchClassCollection: NoteNumberRepresentableCollection {
 
 extension PitchClassCollection: AnySequenceWrapping {
     
-    // MARK: - AnySequenceWrapping
+    // MARK: - `AnySequenceWrapping`
     
     /// `PitchConvertible`-conforming type contained herein.
     public typealias Element = PitchClass
     
-    /**
-     Create a `PitchSet` with `SequenceType` containing `Pitch` values.
-     */
+    /// Create a `PitchClassCollection` with `Sequence` containing `Pitch` values.
     public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
         self.array = Array(sequence)
     }
@@ -78,24 +72,8 @@ extension PitchClassCollection: ExpressibleByArrayLiteral {
     
     // MARK: - `ExpressibleByArrayLiteral`
     
-    /**
-     Create a `PitchClassSequence` with an array literal.
-     */
+    /// Create a `PitchClassSequence` with an array literal.
     public init(arrayLiteral elements: PitchClass...) {
         self.array = elements
-    }
-}
-
-public func == (lhs: PitchClassCollection, rhs: PitchClassCollection) -> Bool {
-    return lhs.sequence == rhs.sequence
-}
-
-extension PitchClassCollection: Sequence {
-    
-    public func makeIterator() -> AnyIterator<PitchClass> {
-        var iterator = array.makeIterator()
-        return AnyIterator {
-            return iterator.next()
-        }
     }
 }

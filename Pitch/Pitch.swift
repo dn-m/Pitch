@@ -8,9 +8,7 @@
 
 import ArithmeticTools
 
-/**
- The quality of a sound governed by the rate of vibrations producing it.
- */
+/// The quality of a sound governed by the rate of vibrations producing it.
 public struct Pitch: NoteNumberRepresentable {
     
     // MARK: - Type Properties
@@ -38,7 +36,7 @@ public struct Pitch: NoteNumberRepresentable {
     /// `Frequency` representation of `Pitch`.
     public let frequency: Frequency
     
-    /// Modulo 12 representation of `NoteNumber` representation of `Pitch`.
+    /// Modulo-12 representation of `NoteNumber` representation of `Pitch`.
     public var pitchClass: PitchClass {
         return PitchClass(self)
     }
@@ -74,11 +72,9 @@ public struct Pitch: NoteNumberRepresentable {
 
 extension Pitch: PitchConvertible {
     
-    // MARK: - PitchConvertible
+    // MARK: - `PitchConvertible`
     
-    /**
-     Create a `Pitch` with another `Pitch`.
-     */
+    /// Create a `Pitch` with another `Pitch`.
     public init(_ pitch: Pitch) {
         self.frequency = pitch.frequency
         self.noteNumber = NoteNumber(pitch.frequency)
@@ -89,9 +85,7 @@ extension Pitch: ExpressibleByFloatLiteral {
     
     // MARK: - `ExpressibleByFloatLiteral`
     
-    /**
-     Create a `Pitch` with a `FloatLiteral`. This value is the `NoteNumber` value.
-     */
+    /// Create a `Pitch` with a `FloatLiteral`. This value is the `NoteNumber` value.
     public init(floatLiteral value: Float) {
         self.init(noteNumber: NoteNumber(value))
     }
@@ -101,9 +95,7 @@ extension Pitch: ExpressibleByIntegerLiteral {
     
     // MARK: - `ExpressibleByIntegerLiteral`
     
-    /**
-     Create a `Pitch` with an `IntegerLiteral`. This value is the `NoteNumber` value.
-     */
+    /// Create a `Pitch` with an `IntegerLiteral`. This value is the `NoteNumber` value.
     public init(integerLiteral value: Int) {
         self.init(noteNumber: NoteNumber(Float(value)))
     }
@@ -111,27 +103,22 @@ extension Pitch: ExpressibleByIntegerLiteral {
 
 extension Pitch: Hashable {
     
-    // MARK: - Hashable
+    // MARK: - `Hashable`
 
     /// Hash value.
-    public var hashValue: Int { return noteNumber.hashValue }
+    public var hashValue: Int {
+        return noteNumber.hashValue
+    }
 }
 
 extension Pitch: CustomStringConvertible {
  
-    // MARK: - CustomStringConvertible
+    // MARK: - `CustomStringConvertible`
     
     /// Printed description.
-    public var description: String { return "\(noteNumber.value)" }
-    
-}
-
-public func == (lhs: Pitch, rhs: Pitch) -> Bool {
-    return lhs.noteNumber == rhs.noteNumber
-}
-
-public func < (lhs: Pitch, rhs: Pitch) -> Bool {
-    return lhs.noteNumber < rhs.noteNumber
+    public var description: String {
+        return "\(noteNumber.value)"
+    }
 }
 
 // MARK: - Transposition

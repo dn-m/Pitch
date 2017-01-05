@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "07CC265E1C94E0850099C21C"
-               BuildableName = "Pitch iOS.framework"
+               BuildableName = "Pitch.framework"
                BlueprintName = "Pitch iOS"
                ReferencedContainer = "container:Pitch.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07CC265E1C94E0850099C21C"
-            BuildableName = "Pitch iOS.framework"
+            BuildableName = "Pitch.framework"
             BlueprintName = "Pitch iOS"
             ReferencedContainer = "container:Pitch.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07CC265E1C94E0850099C21C"
-            BuildableName = "Pitch iOS.framework"
+            BuildableName = "Pitch.framework"
             BlueprintName = "Pitch iOS"
             ReferencedContainer = "container:Pitch.xcodeproj">
          </BuildableReference>
@@ -84,7 +84,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07CC265E1C94E0850099C21C"
-            BuildableName = "Pitch iOS.framework"
+            BuildableName = "Pitch.framework"
             BlueprintName = "Pitch iOS"
             ReferencedContainer = "container:Pitch.xcodeproj">
          </BuildableReference>

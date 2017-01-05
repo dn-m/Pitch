@@ -35,7 +35,7 @@ public struct Frequency: FloatWrapping {
 
 extension Frequency: ExpressibleByIntegerLiteral {
     
-    // MARK: - ExpressibleByIntegerLiteral
+    // MARK: - `ExpressibleByIntegerLiteral`
     
     /**
      Create a `Frequency` with an `IntegerLiteralType`.
@@ -53,7 +53,7 @@ extension Frequency: ExpressibleByIntegerLiteral {
 
 extension Frequency: ExpressibleByFloatLiteral {
     
-    // MARK: - FloatLiteralConvertible
+    // MARK: - `FloatLiteralConvertible`
     
     /**
      Create a `Frequency` with a `FloatLiteralType`.

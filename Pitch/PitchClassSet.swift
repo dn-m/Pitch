@@ -8,15 +8,15 @@
 
 import Collections
 
-/**
- Unordered set of unique `PitchClass` values.
- */
+/// Unordered set of unique `PitchClass` values.
 public struct PitchClassSet: NoteNumberRepresentableSet {
     
     // MARK: - Associated Types
     
+    /// Type of pairs of `Element` values contained herein.
     public typealias Dyad = PitchClassDyad
     
+    /// Type of interval between two `Element` values contained herein.
     public typealias Interval = PitchClassInterval
     
     /// `PitchConvertible` type contained herein.
@@ -40,7 +40,7 @@ public struct PitchClassSet: NoteNumberRepresentableSet {
 
 extension PitchClassSet: AnySequenceWrapping {
     
-    // MARK: - AnySequenceWrapping
+    // MARK: - `AnySequenceWrapping`
     
     /**
      Create an `AnySequenceWrapping` with a `Sequence` of any type.
@@ -57,9 +57,7 @@ extension PitchClassSet: ExpressibleByArrayLiteral {
     
     // MARK: - `ExpressibleByArrayLiteral`
     
-    /**
-     Create a `PitchClassSequence` with an array literal.
-     */
+    /// Create a `PitchClassSequence` with an array literal.
     public init(arrayLiteral elements: Element...) {
         self.set = Set(elements)
     }

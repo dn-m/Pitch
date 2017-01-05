@@ -12,46 +12,38 @@ import XCTest
 class PitchSetTests: XCTestCase {
 
     func testDyads() {
-        var set = PitchSet(
-            [
-                Pitch(noteNumber: 60),
-                Pitch(noteNumber: 61),
-                Pitch(noteNumber: 62),
-                Pitch(noteNumber: 63)
-            ]
-        )
+        var set: PitchSet = [60, 61, 62, 63]
         XCTAssertEqual(set.dyads.count, 6)
     }
     
     func testIsMonadic() {
-        let pitchSet: PitchSet = [Pitch(60)]
+        let pitchSet: PitchSet = [60]
         XCTAssert(pitchSet.isMonadic)
     }
     
     func testPitchClassSet() {
-        let pitchSet: PitchSet = [Pitch(63.5), Pitch(69.25)]
+        let pitchSet: PitchSet = [63.5, 69.25]
         let pcs = pitchSet.pitchClassSet
         let pcs2: PitchClassSet = [3.5,9.25]
         XCTAssertEqual(pcs.set, pcs2.set)
     }
     
     func testInitPitchSetUnion() {
-        let pitchSet1: PitchSet = [Pitch(60), Pitch(61)]
-        let pitchSet2: PitchSet = [Pitch(62), Pitch(63)]
+        let pitchSet1: PitchSet = [60, 61]
+        let pitchSet2: PitchSet = [62, 63]
         let new = PitchSet(pitchSet1, pitchSet2)
-        XCTAssert(new == [Pitch(60), Pitch(61), Pitch(62), Pitch(63)])
-        
+        XCTAssertEqual(new, [60, 61, 62, 63])
     }
     
     func testFormUnion() {
-        let pitchSet1: PitchSet = [Pitch(60), Pitch(61)]
-        let pitchSet2: PitchSet = [Pitch(62), Pitch(63)]
+        let pitchSet1: PitchSet = [60, 61]
+        let pitchSet2: PitchSet = [62, 63]
         let new = pitchSet1.formUnion(with: pitchSet2)
-        XCTAssert(new == [Pitch(60), Pitch(61), Pitch(62), Pitch(63)])
+        XCTAssertEqual(new, [60, 61, 62, 63])
     }
     
     func testArrayLiteralConvertible() {
-        let _: PitchSet = [Pitch(noteNumber: 60.0), Pitch(noteNumber: 61.0)]
+        let _: PitchSet = [60.0, 61.0]
     }
     
     func testInitWithPitchSetsEmpty() {
