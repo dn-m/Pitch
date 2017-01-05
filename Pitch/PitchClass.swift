@@ -8,9 +8,7 @@
 
 import ArithmeticTools
 
-/**
- Modulo 12 representation of `noteNumber` of `Pitch`.
- */
+/// Modulo 12 representation of `noteNumber` of `Pitch`.
 public struct PitchClass: NoteNumberRepresentable {
     
     // MARK: - Instance Properties
