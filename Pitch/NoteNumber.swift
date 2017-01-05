@@ -93,7 +93,6 @@ extension NoteNumber: ExpressibleByFloatLiteral {
     }
 }
 
-
 /// - returns: The difference between two `NoteNumber` values.
 public func - (lhs: NoteNumber, rhs: NoteNumber) -> NoteNumber {
     return NoteNumber(lhs.value - rhs.value)
