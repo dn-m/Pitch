@@ -32,7 +32,7 @@ public struct PitchClassCollection: NoteNumberRepresentableCollection {
     ///
     /// - TODO: Move up `OrderedNoteNumberRespresentableSetType` protocol hierarchy.
     public var retrograde: PitchClassCollection {
-        return PitchClassCollection(array.reversed())
+        return PitchClassCollection(reversed())
     }
     
     /// `PitchClassSequence` with `PitchClass` values inverted around `0`.
