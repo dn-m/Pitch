@@ -37,8 +37,8 @@ class PitchClassCollectionTests: XCTestCase {
     func testIterator() {
         let pcs = PitchClassSequence([60.0, 62.0, 64.0])
         let pcc = PitchClassCollection(pcs)
-        let ite = pcc.makeIterator()
-        XCTAssertEqual(ite.next(), 0)
+        let iterator = pcc.makeIterator()
+        XCTAssertEqual(iterator.next(), 0)
     }
     
     func testInitArrayliteral() {
@@ -52,7 +52,8 @@ class PitchClassCollectionTests: XCTestCase {
     
     func testRetrograde() {
         let pcc: PitchClassCollection = [6,7,8,9,2]
-        XCTAssertEqual(pcc.retrograde, [2,9,8,7,6])
+        let expected: PitchClassCollection = [2,9,8,7,6]
+        XCTAssertEqual(pcc.retrograde, expected)
     }
     
     func testInversion() {

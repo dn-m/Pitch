@@ -14,6 +14,9 @@ public struct PitchClassCollection: NoteNumberRepresentableCollection {
 
     // MARK: - Associated Types
     
+    /// `PitchConvertible`-conforming type contained herein.
+    public typealias Element = PitchClass
+    
     /// `NoteNumberRepresentableDyad` type.
     public typealias Dyad = PitchClassDyad
     
@@ -29,7 +32,7 @@ public struct PitchClassCollection: NoteNumberRepresentableCollection {
     ///
     /// - TODO: Move up `OrderedNoteNumberRespresentableSetType` protocol hierarchy.
     public var retrograde: PitchClassCollection {
-        return PitchClassCollection(reversed())
+        return PitchClassCollection(array.reversed())
     }
     
     /// `PitchClassSequence` with `PitchClass` values inverted around `0`.
@@ -57,15 +60,32 @@ public struct PitchClassCollection: NoteNumberRepresentableCollection {
 
 extension PitchClassCollection: AnySequenceWrapping {
     
-    // MARK: - `AnySequenceWrapping`
+    // MARK: - `PitchCollection`
     
-    /// `PitchConvertible`-conforming type contained herein.
-    public typealias Element = PitchClass
-    
-    /// Create a `PitchClassCollection` with `Sequence` containing `Pitch` values.
+    /// Create a `PitchCollection` with `SequenceType` containing `Pitch` values.
     public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
         self.array = Array(sequence)
     }
+}
+
+extension PitchClassCollection: Collection {
+        
+    // MARK: - `Collection`
+    
+    /// Start index
+    public var startIndex: Int { return 0 }
+    
+    /// End index
+    public var endIndex: Int { return array.count }
+    
+    /// Index after the given `i`.
+    public func index(after i: Int) -> Int {
+        guard i != endIndex else { fatalError("Cannot increment endIndex") }
+        return i + 1
+    }
+    
+    /// - returns: Value at the given `index`.
+    public subscript(index: Int) -> PitchClass { return array[index] }
 }
 
 extension PitchClassCollection: ExpressibleByArrayLiteral {
