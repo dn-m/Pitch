@@ -65,7 +65,9 @@ extension NoteNumberRepresentableCollection {
     }
     
     /// - returns: Value at the given `index`.
-    public subscript(index: Int) -> Element { return array[index] }
+    public subscript(index: Int) -> Element {
+        return array[index]
+    }
 }
 
 extension NoteNumberRepresentableCollection {
@@ -74,6 +76,6 @@ extension NoteNumberRepresentableCollection {
     
     /// Printed description of `PitchConvertibleCollectionType`.
     public var description: String {
-        return "〈\(map{ "\($0)" }.joined(separator: ","))〉"
+        return "〈\(map { "\($0)" }.joined(separator: ","))〉"
     }
 }
