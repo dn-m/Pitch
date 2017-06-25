@@ -45,7 +45,7 @@ public struct PitchClassCollection: NoteNumberRepresentableCollection {
     /// - TODO: Refactor up the `NoteNumberRepresentableCollection` protocol hierarchy
     public lazy var intervals: PitchClassIntervalCollection = {
         return PitchClassIntervalCollection(
-            self.array.adjacentPairs?.map(PitchClassInterval.init) ?? []
+            self.array.adjacentPairs().map(PitchClassInterval.init)
         )
     }()
     
