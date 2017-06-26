@@ -29,7 +29,7 @@ public struct PitchCollection: NoteNumberRepresentableCollection {
 
     /// Collection of `PitchInterval` values between adjacent values contained herein.
     public var intervals: PitchIntervalCollection {
-        return PitchIntervalCollection(array.adjacentPairs?.map(PitchInterval.init) ?? [])
+        return PitchIntervalCollection(array.adjacentPairs().map(PitchInterval.init))
     }
 }
 
