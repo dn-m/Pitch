@@ -12,9 +12,7 @@ import XCTest
 class PitchClassIntervalTests: XCTestCase {
     
     func testInit() {
-        let interval = PitchInterval(noteNumber: 2.0)
-        let _ = PitchClassInterval(interval)
-        let _: PitchClassInterval = 2
-        let _: PitchClassInterval = 2.0
+        let _: UnorderedInterval<Pitch.Class> = 2
+        let _: OrderedInterval<Pitch.Class> = 2.0
     }
 }

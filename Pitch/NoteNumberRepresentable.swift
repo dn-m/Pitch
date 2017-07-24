@@ -9,7 +9,12 @@
 import ArithmeticTools
 
 /// Protocol defining values representable by a `NoteNumber`.
-public protocol NoteNumberRepresentable: Comparable, Hashable {
+public protocol NoteNumberRepresentable:
+    Comparable,
+    Hashable,
+    ExpressibleByFloatLiteral,
+    ExpressibleByIntegerLiteral
+{
     
     // MARK: - Instance Properties
     
@@ -50,6 +55,24 @@ extension NoteNumberRepresentable {
     /// - returns: `true` if the first value is less than the second value. Otherwise, `false`.
     public static func < (lhs: Self, rhs: Self) -> Bool {
         return lhs.noteNumber < rhs.noteNumber
+    }
+}
+
+extension NoteNumberRepresentable {
+
+    // MARK: - ExpressibleByFloatLiteral
+
+    public init(floatLiteral value: Double) {
+        self.init(noteNumber: NoteNumber(value))
+    }
+}
+
+extension NoteNumberRepresentable {
+
+    // MARK: - ExpressibleByIntegerLiteral
+
+    public init(integerLiteral value: Int) {
+        self.init(noteNumber: NoteNumber(Double(value)))
     }
 }
 

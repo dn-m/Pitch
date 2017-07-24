@@ -11,44 +11,6 @@ import ArithmeticTools
 /// The quality of a sound governed by the rate of vibrations producing it.
 public struct Pitch: NoteNumberRepresentable {
 
-    public struct Class: NoteNumberRepresentable, PitchConvertible {
-
-        // MARK: - Instance Properties
-
-        /// Inversion of `Pitch.Class`.
-        public var inversion: Pitch.Class {
-            return Pitch.Class(12 - noteNumber.value)
-        }
-
-        /// Value of `Pitch.Class`.
-        public var noteNumber: NoteNumber
-
-        // MARK: - Initializers
-
-        //// Create a `Pitch.Class` with a given `noteNumber`.
-        public init(noteNumber: NoteNumber) {
-            self.noteNumber = noteNumber
-        }
-
-        // MARK: - `PitchConvertible`
-
-        /**
-         Create a `Pitch.Class` with a `Pitch` object.
-
-         **Example:**
-
-         ```
-         let pitch = Pitch(noteNumber: 65.5)
-         Pitch.Class(pitch) // => 5.5
-         ```
-         */
-        public init(_ pitch: Pitch) {
-            self.noteNumber = NoteNumber(
-                pitch.noteNumber.value.truncatingRemainder(dividingBy: 12.0)
-            )
-        }
-    }
-    
     // MARK: - Type Properties
     
     /// Middle C.
@@ -65,6 +27,11 @@ public struct Pitch: NoteNumberRepresentable {
     public static func random(resolution: Double = 1) -> Pitch {
         return Pitch(noteNumber: NoteNumber.random(resolution: resolution))
     }
+
+    /// Modulo-12 representation of `NoteNumber` representation of `Pitch`.
+    public var `class`: Pitch.Class {
+        return Pitch.Class(self)
+    }
     
     // MARK: - Instance Properties
     
@@ -73,11 +40,6 @@ public struct Pitch: NoteNumberRepresentable {
     
     /// `Frequency` representation of `Pitch`.
     public let frequency: Frequency
-    
-    /// Modulo-12 representation of `NoteNumber` representation of `Pitch`.
-    public var `class`: Pitch.Class {
-        return Pitch.Class(self)
-    }
     
     // MARK: - Initializers
     

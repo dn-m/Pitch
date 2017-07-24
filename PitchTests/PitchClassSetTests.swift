@@ -12,8 +12,8 @@ import XCTest
 class PitchClassSetTests: XCTestCase {
     
     func testEquality() {
-        let pcSet1: PitchClassSet = [0,1,6]
-        let pcSet2: PitchClassSet = [0,1,6]
+        let pcSet1: Set<Pitch.Class> = [0,1,6]
+        let pcSet2: Set<Pitch.Class> = [0,1,6]
         XCTAssert(pcSet1 == pcSet2)
     }
 }

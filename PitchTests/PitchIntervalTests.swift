@@ -12,21 +12,14 @@ import XCTest
 class PitchIntervalTests: XCTestCase {
     
     func testInit() {
-        let _ = PitchInterval(noteNumber: 12.0)
-        let _: PitchInterval = 12
-        let _: PitchInterval = 12.0
-    }
-    
-    func testInitWithDyad() {
-        let _ = PitchInterval(Pitch(60.0), Pitch(62.0))
-        let dyad = PitchDyad(Pitch(60.0), Pitch(62.0))
-        let interval = PitchInterval(dyad: dyad)
-        XCTAssertEqual(interval, 2.0)
+        let _ = UnorderedInterval<Pitch>(noteNumber: 12.0)
+        let _: UnorderedInterval<Pitch> = 12
+        let _: UnorderedInterval<Pitch> = 12.0
     }
     
     func testEquatable() {
-        let a: PitchInterval = .init(48, 51)
-        let b: PitchInterval = .init(48, 51)
+        let a: UnorderedInterval<Pitch> = .init(48, 51)
+        let b: UnorderedInterval<Pitch> = .init(48, 51)
         XCTAssertEqual(a, b)
     }
 }

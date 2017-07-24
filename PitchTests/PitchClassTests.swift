@@ -14,7 +14,7 @@ class PitchClassTests: XCTestCase {
 
     func testPitchClass() {
         let pitch = Pitch(noteNumber: 60.0)
-        XCTAssertEqual(pitch.pitchClass, 0.0)
+        XCTAssertEqual(pitch.class, 0.0)
     }
     
     func testPitchClassInitFloatLessThan12() {
