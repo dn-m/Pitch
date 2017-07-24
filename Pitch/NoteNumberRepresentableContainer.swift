@@ -9,7 +9,7 @@
 import Collections
 
 /// Protocol defining types containing `NoteNumberRepresentable` values.
-public protocol NoteNumberRepresentableContainer: AnySequenceWrapping, Equatable {
+public protocol NoteNumberRepresentableContainer: SequenceWrapping, Equatable {
     
     /// The types contained herein.
     associatedtype Element: NoteNumberRepresentable
@@ -21,7 +21,9 @@ public protocol NoteNumberRepresentableContainer: AnySequenceWrapping, Equatable
     associatedtype Interval: NoteNumberRepresentableInterval
     
     /// Backing store of values contained herein.
-    var sequence: AnySequence<Element> { get }
+    var base: AnySequence<Element> { get }
+
+    init <S> (_: S) where S: Sequence, S.Iterator.Element == Element
 }
 
 // MARK: - Equatable

@@ -9,7 +9,7 @@
 import Collections
 
 /// Ordered collection of non-unique `Pitch` values.
-public struct PitchCollection: NoteNumberRepresentableCollection {
+public struct PitchCollection: CollectionWrapping/*: NoteNumberRepresentableCollection*/ {
 
     // MARK: - Associated Types
     
@@ -25,41 +25,14 @@ public struct PitchCollection: NoteNumberRepresentableCollection {
     // MARK: - Instance Properties
     
     /// Array of the `Pitch` values contained herein.
-    public let array: Array<Pitch>
+    public let base: Array<Pitch>
+
+    public init <S> (_ sequence: S) where S: Sequence, S.Iterator.Element == Pitch {
+        self.base = Array(sequence)
+    }
 
     /// Collection of `PitchInterval` values between adjacent values contained herein.
     public var intervals: PitchIntervalCollection {
-        return PitchIntervalCollection(array.adjacentPairs().map(PitchInterval.init))
-    }
-}
-
-extension PitchCollection: AnySequenceWrapping {
-    
-    // MARK: - `PitchCollection`
-    
-    /// Create a `PitchCollection` with `SequenceType` containing `Pitch` values.
-    public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
-        self.array = Array(sequence)
-    }
-}
-
-extension PitchCollection: ExpressibleByArrayLiteral {
-    
-    // MARK: - `ExpressibleByArrayLiteral`
-    
-    /// Create a `PitchCollection` with an array literal.
-    public init(arrayLiteral elements: Element...) {
-        self.array = elements
-    }
-}
-
-extension PitchCollection: Sequence {
-    
-    // MARK: - `Sequence`
-    
-    /// Make iterator for `PitchCollection`.
-    public func makeIterator() -> AnyIterator<Pitch> {
-        var iterator = array.makeIterator()
-        return AnyIterator { iterator.next() }
+        return PitchIntervalCollection(base.pairs.map(PitchInterval.init))
     }
 }

@@ -9,7 +9,7 @@
 import Collections
 
 /// Unordered set of unique `PitchClass` values.
-public struct PitchClassSet: NoteNumberRepresentableSet {
+public struct PitchClassSet/*: NoteNumberRepresentableSet*/ {
     
     // MARK: - Associated Types
     
@@ -21,44 +21,23 @@ public struct PitchClassSet: NoteNumberRepresentableSet {
     
     /// `PitchConvertible` type contained herein.
     public typealias Element = PitchClass
+
+    /// Array of `PitchClassDyads` comprising this `PitchClassSet`.
+    public var dyads: [PitchClassDyad] {
+        return Array(base)
+            .subsets(cardinality: 2)
+            .map { PitchClassDyad($0[0], $0[1]) }
+    }
     
     // MARK: - Instance Properties
     
     /// `Set` holding `PitchClass` values.
-    public let set: Set<Element>
+    public let base: Set<Element>
     
-    /// Array of `PitchClassDyads` comprising this `PitchClassSet`.
-    public lazy var dyads: [PitchClassDyad] = {
-        Array(self.set)
-            .subsets(cardinality: 2)
-            .map { PitchClassDyad($0[0], $0[1]) }
-    }()
+    public init <S> (_ sequence: S) where S: Sequence, S.Iterator.Element == PitchClass {
+        self.base = Set(sequence)
+    }
     
     // TODO: normal form
     // TODO: prime form
-}
-
-extension PitchClassSet: AnySequenceWrapping {
-    
-    // MARK: - `AnySequenceWrapping`
-    
-    /**
-     Create an `AnySequenceWrapping` with a `Sequence` of any type.
-     
-     In the `init` method of the conforming `struct`, set the value of this private `var` with
-     the given `sequence.
-     */
-    public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
-        self.set = Set(sequence)
-    }
-}
-
-extension PitchClassSet: ExpressibleByArrayLiteral {
-    
-    // MARK: - `ExpressibleByArrayLiteral`
-    
-    /// Create a `PitchClassSequence` with an array literal.
-    public init(arrayLiteral elements: Element...) {
-        self.set = Set(elements)
-    }
 }

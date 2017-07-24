@@ -10,12 +10,12 @@ import Foundation
 import ArithmeticTools
 
 /// Periodic vibration in Hertz.
-public struct Frequency: FloatWrapping {
+public struct Frequency: DoubleWrapping {
 
     // MARK: - Instance Properties
     
     /// Value of this `Frequency` in Hertz.
-    public var value: Float
+    public var value: Double
     
     // MARK: - Initializers
     
@@ -47,7 +47,7 @@ extension Frequency: ExpressibleByIntegerLiteral {
      ```
      */
     public init(integerLiteral value: Int) {
-        self.value = Float(value)
+        self.value = Double(value)
     }
 }
 
@@ -64,7 +64,7 @@ extension Frequency: ExpressibleByFloatLiteral {
      let freq: Frequency = 440.0 // => A below middle c
      ```
      */
-    public init(floatLiteral value: Float) {
+    public init(floatLiteral value: Double) {
         self.value = value
     }
 }

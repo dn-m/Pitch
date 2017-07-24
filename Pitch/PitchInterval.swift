@@ -38,27 +38,3 @@ public struct PitchInterval: NoteNumberRepresentableInterval {
         self.init(dyad: PitchDyad(a,b))
     }
 }
-
-extension PitchInterval: ExpressibleByIntegerLiteral {
-    
-    // MARK: - `ExpressibleByIntegerLiteral`
-    
-    /**
-     Create an `PitchInterval` with an `IntegerLiteral`.
-     */
-    public init(integerLiteral value: Int) {
-        self.init(noteNumber: NoteNumber(Float(value)))
-    }
-}
-
-extension PitchInterval: ExpressibleByFloatLiteral {
-    
-    // MARK: - `ExpressibleByFloatLiteral`
-    
-    /**
-     Create an `PitchInterval` with a `FloatLiteral`.
-     */
-    public init(floatLiteral value: Float) {
-        self.init(noteNumber: NoteNumber(value))
-    }
-}

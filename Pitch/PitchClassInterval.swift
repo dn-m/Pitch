@@ -43,23 +43,23 @@ public struct PitchClassInterval: NoteNumberRepresentableInterval {
         self.init(dyad: PitchClassDyad(a,b))
     }
 }
-
-extension PitchClassInterval: ExpressibleByIntegerLiteral {
-    
-    // MARK: - `ExpressibleByIntegerLiteral`
-    
-    /// Create an `IntervalClass` with an `IntegerLiteral`.
-    public init(integerLiteral value: Int) {
-        self.init(noteNumber: NoteNumber(Float(value)))
-    }
-}
-
-extension PitchClassInterval: ExpressibleByFloatLiteral {
-    
-    // MARK: - `ExpressibleByFloatLiteral`
-    
-    /// Create an `IntervalClass` with a `FloatLiteral`.
-    public init(floatLiteral value: Float) {
-        self.init(noteNumber: NoteNumber(value))
-    }
-}
+//
+//extension PitchClassInterval: ExpressibleByIntegerLiteral {
+//    
+//    // MARK: - `ExpressibleByIntegerLiteral`
+//    
+//    /// Create an `IntervalClass` with an `IntegerLiteral`.
+//    public init(integerLiteral value: Int) {
+//        self.init(noteNumber: NoteNumber(Float(value)))
+//    }
+//}
+//
+//extension PitchClassInterval: ExpressibleByFloatLiteral {
+//    
+//    // MARK: - `ExpressibleByFloatLiteral`
+//    
+//    /// Create an `IntervalClass` with a `FloatLiteral`.
+//    public init(floatLiteral value: Float) {
+//        self.init(noteNumber: NoteNumber(value))
+//    }
+//}

@@ -14,5 +14,5 @@ public protocol PitchConvertible {
     // MARK: - Initializers
 
     /// Initialize with a `Pitch` value.
-    init(_ pitch: Pitch)
+    init(_: Pitch)
 }

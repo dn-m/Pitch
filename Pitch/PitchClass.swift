@@ -29,43 +29,45 @@ public struct PitchClass: NoteNumberRepresentable {
     }
 }
 
-extension PitchClass: ExpressibleByIntegerLiteral {
-    
-    // MARK: - `ExpressibleByIntegerLiteral`
-    
-    /**
-     Create a `PitchClass` with an `IntegerLiteralType`.
-     
-     **Example:**
-     
-     ```
-     let pitchClass = 49 // => 1.0
-     ```
-     */
-    public init(integerLiteral value: Int) {
-        let newValue = Float(value).truncatingRemainder(dividingBy: 12.0)
-        self.init(noteNumber: NoteNumber(newValue))
-    }
-}
+// FIXME: Override arithmetic to add mod 12
 
-extension PitchClass: ExpressibleByFloatLiteral {
-    
-    // MARK: - `ExpressibleByFloatLiteral`
-    
-    /**
-     Create a `PitchClass` with a `FloatLiteralType`.
-     
-     **Example:**
-     
-     ```
-     let pitchClass = 49.5 // => 1.5
-     ```
-     */
-    public init(floatLiteral value: Float) {
-        let newValue = value.truncatingRemainder(dividingBy: 12.0)
-        self.init(noteNumber: NoteNumber(newValue))
-    }
-}
+//extension PitchClass: ExpressibleByIntegerLiteral {
+//    
+//    // MARK: - `ExpressibleByIntegerLiteral`
+//    
+//    /**
+//     Create a `PitchClass` with an `IntegerLiteralType`.
+//     
+//     **Example:**
+//     
+//     ```
+//     let pitchClass = 49 // => 1.0
+//     ```
+//     */
+//    public init(integerLiteral value: Int) {
+//        let newValue = Double(value).truncatingRemainder(dividingBy: 12.0)
+//        self.init(noteNumber: NoteNumber(newValue))
+//    }
+//}
+//
+//extension PitchClass: ExpressibleByFloatLiteral {
+//    
+//    // MARK: - `ExpressibleByFloatLiteral`
+//    
+//    /**
+//     Create a `PitchClass` with a `FloatLiteralType`.
+//     
+//     **Example:**
+//     
+//     ```
+//     let pitchClass = 49.5 // => 1.5
+//     ```
+//     */
+//    public init(floatLiteral value: Double) {
+//        let newValue = value.truncatingRemainder(dividingBy: 12.0)
+//        self.init(noteNumber: NoteNumber(newValue))
+//    }
+//}
 
 extension PitchClass: PitchConvertible {
     

@@ -11,7 +11,7 @@ import Collections
 /**
  Unordered set of unique `Pitch` values.
  */
-public struct PitchSet: NoteNumberRepresentableSet {
+public struct PitchSet: CollectionWrapping /*: NoteNumberRepresentableSet*/ {
     
     // MARK: - Associated Types
     
@@ -27,8 +27,12 @@ public struct PitchSet: NoteNumberRepresentableSet {
     // MARK: - Instance Properties
     
     /// Backing store for elements contained herein.
-    public let set: Set<Element>
-    
+    public let base: Set<Element>
+
+    public init <S> (_ sequence: S) where S: Sequence, S.Iterator.Element == Pitch {
+        self.base = Set(sequence)
+    }
+
     /**
      All unique dyads that comprise a `PitchSet`.
      
@@ -51,11 +55,11 @@ public struct PitchSet: NoteNumberRepresentableSet {
      ]
      ```
      */
-    public lazy var dyads: [Dyad] = {
-        Array(self.set)
+    public var dyads: [Dyad] {
+        return Array(base)
             .subsets(cardinality: 2)
             .map { Dyad($0[0], $0[1]) }
-    }()
+    }
     
     /**
      Set of `PitchClass` representations of `PitchSet`.
@@ -81,57 +85,18 @@ public struct PitchSet: NoteNumberRepresentableSet {
      */
     public init<S: Sequence>(_ pitchSets: S) where S.Iterator.Element == PitchSet {
         if let (head, tail) = Array(pitchSets).destructured {
-            self.set = tail.reduce(head.set) { $0.union($1.set) }
+            self.base = tail.reduce(head.base) { $0.union($1.base) }
         } else {
-            self.set = []
+            self.base = []
         }
     }
-    
+
     /**
      - TODO: Move up the `PitchConvertibleSetType` protocol hierarchy.
      
      - returns: `PitchSet` with the union of this and the given `pitchSet`.
      */
     public func formUnion(with pitchSet: PitchSet) -> PitchSet {
-        return PitchSet(set.union(pitchSet))
-    }
-}
-
-extension PitchSet: AnySequenceWrapping {
-    
-    // MARK: - AnySequenceWrapping
-    
-    /**
-     Create a `PitchSet` with a sequence of `Pitch` values.
-     */
-    public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
-        self.set = Set(sequence)
-    }
-}
-
-extension PitchSet: ExpressibleByArrayLiteral {
-    
-    // MARK: - `ExpressibleByArrayLiteral`
-    
-    /**
-     Create a `PitchClassSequence` with an array literal.
-     */
-    public init(arrayLiteral elements: Element...) {
-        self.set = Set(elements)
-    }
-}
-
-//extension PitchSet: Equatable {
-//
-//}
-//
-//public func == (lhs: PitchSet, rhs: PitchSet) -> Bool {
-//    return lhs.set == rhs.set
-//}
-
-extension PitchSet: CustomStringConvertible {
-    
-    public var description: String {
-        return "\(set.map { "\($0)" })"
+        return PitchSet(base.union(pitchSet))
     }
 }

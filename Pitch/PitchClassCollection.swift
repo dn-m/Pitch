@@ -10,7 +10,7 @@ import Collections
 import ArithmeticTools
 
 /// Ordered collection of `PitchClass` values.
-public struct PitchClassCollection: NoteNumberRepresentableCollection {
+public struct PitchClassCollection: CollectionWrapping/*: NoteNumberRepresentableCollection*/ {
 
     // MARK: - Associated Types
     
@@ -26,7 +26,11 @@ public struct PitchClassCollection: NoteNumberRepresentableCollection {
     // MARK: - Instance Properties
     
     /// Array of the `PitchClass` values contained herein.
-    public let array: Array<PitchClass>
+    public let base: Array<PitchClass>
+
+    public init <S> (_ sequence: S) where S: Sequence, S.Iterator.Element == PitchClass {
+        self.base = Array(sequence)
+    }
     
     /// `PitchClassSequence` with `PitchClass` values in reverse order.
     ///
@@ -43,57 +47,16 @@ public struct PitchClassCollection: NoteNumberRepresentableCollection {
     /// Array of `IntervalClass` values between each adjacent `PitchClass` herein.
     ///
     /// - TODO: Refactor up the `NoteNumberRepresentableCollection` protocol hierarchy
-    public lazy var intervals: PitchClassIntervalCollection = {
+    public var intervals: PitchClassIntervalCollection {
         return PitchClassIntervalCollection(
-            self.array.adjacentPairs().map(PitchClassInterval.init)
+            base: self.base.pairs.map(PitchClassInterval.init)
         )
-    }()
+    }
     
     /// Array of `PitchClassDyad` values between each combination (choose 2) herein.
-    public lazy var dyads: [PitchClassDyad] = {
-        
-        return self.array
+    public var dyads: [PitchClassDyad] {
+        return self.base
             .subsets(cardinality: 2)
             .map { PitchClassDyad($0[0], $0[1]) }
-    }()
-}
-
-extension PitchClassCollection: AnySequenceWrapping {
-    
-    // MARK: - `PitchCollection`
-    
-    /// Create a `PitchCollection` with `SequenceType` containing `Pitch` values.
-    public init<S: Sequence>(_ sequence: S) where S.Iterator.Element == Element {
-        self.array = Array(sequence)
-    }
-}
-
-extension PitchClassCollection: Collection {
-        
-    // MARK: - `Collection`
-    
-    /// Start index
-    public var startIndex: Int { return 0 }
-    
-    /// End index
-    public var endIndex: Int { return array.count }
-    
-    /// Index after the given `i`.
-    public func index(after i: Int) -> Int {
-        guard i != endIndex else { fatalError("Cannot increment endIndex") }
-        return i + 1
-    }
-    
-    /// - returns: Value at the given `index`.
-    public subscript(index: Int) -> PitchClass { return array[index] }
-}
-
-extension PitchClassCollection: ExpressibleByArrayLiteral {
-    
-    // MARK: - `ExpressibleByArrayLiteral`
-    
-    /// Create a `PitchClassSequence` with an array literal.
-    public init(arrayLiteral elements: PitchClass...) {
-        self.array = elements
     }
 }

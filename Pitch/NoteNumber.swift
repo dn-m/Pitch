@@ -6,13 +6,13 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-import Foundation
+import Darwin
 import ArithmeticTools
 
 /**
  MIDI NoteNumber.
  */
-public struct NoteNumber: FloatWrapping {
+public struct NoteNumber: DoubleWrapping {
     
     // MARK: - Type Methods
     
@@ -21,14 +21,14 @@ public struct NoteNumber: FloatWrapping {
      
      - TODO: Implement `inRange: _` or similar.
      */
-    public static func random(resolution: Float = 1) -> NoteNumber {
-        return NoteNumber(Float.random(min: 60, max: 72))
+    public static func random(resolution: Double = 1) -> NoteNumber {
+        return NoteNumber(Double.random(min: 60, max: 72))
     }
     
     // MARK: - Instance Properties
     
     /// Value of this `NoteNumber`.
-    public var value: Float
+    public var value: Double
     
     // MARK: - Initializers
     
@@ -52,7 +52,7 @@ public struct NoteNumber: FloatWrapping {
      
      - returns: `NoteNumber` that is quantized to the desired `resolution`.
      */
-    public func quantized(to resolution: Float) -> NoteNumber {
+    public func quantized(to resolution: Double) -> NoteNumber {
         return NoteNumber(floatLiteral: round(value / resolution) * resolution)
     }
 }
@@ -71,16 +71,16 @@ extension NoteNumber: ExpressibleByIntegerLiteral {
      ```
      */
     public init(integerLiteral value: Int) {
-        self.value = Float(value)
+        self.value = Double(value)
     }
 }
 
 extension NoteNumber: ExpressibleByFloatLiteral {
     
-    // MARK: `ExpressibleByFloatLiteral`
+    // MARK: `ExpressibleByDoubleLiteral`
     
     /**
-     Create a `NoteNumber` with a `FloatLiteralType`.
+     Create a `NoteNumber` with a `DoubleLiteralType`.
      
      **Example:**
      
@@ -88,7 +88,7 @@ extension NoteNumber: ExpressibleByFloatLiteral {
      let nn: NoteNumber = 65.5 // => F quarter sharp above middle C
      ```
      */
-    public init(floatLiteral value: Float) {
+    public init(floatLiteral value: Double) {
         self.value = value
     }
 }
