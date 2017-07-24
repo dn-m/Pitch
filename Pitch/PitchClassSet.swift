@@ -8,7 +8,7 @@
 
 import Collections
 
-/// Unordered set of unique `PitchClass` values.
+/// Unordered set of unique `Pitch.Class` values.
 public struct PitchClassSet/*: NoteNumberRepresentableSet*/ {
     
     // MARK: - Associated Types
@@ -20,7 +20,7 @@ public struct PitchClassSet/*: NoteNumberRepresentableSet*/ {
     public typealias Interval = PitchClassInterval
     
     /// `PitchConvertible` type contained herein.
-    public typealias Element = PitchClass
+    public typealias Element = Pitch.Class
 
     /// Array of `PitchClassDyads` comprising this `PitchClassSet`.
     public var dyads: [PitchClassDyad] {
@@ -31,10 +31,10 @@ public struct PitchClassSet/*: NoteNumberRepresentableSet*/ {
     
     // MARK: - Instance Properties
     
-    /// `Set` holding `PitchClass` values.
+    /// `Set` holding `Pitch.Class` values.
     public let base: Set<Element>
     
-    public init <S> (_ sequence: S) where S: Sequence, S.Iterator.Element == PitchClass {
+    public init <S> (_ sequence: S) where S: Sequence, S.Iterator.Element == Pitch.Class {
         self.base = Set(sequence)
     }
     

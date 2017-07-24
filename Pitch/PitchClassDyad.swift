@@ -8,25 +8,25 @@
 
 import func ArithmeticTools.ordered
 
-/// Ordered pair of `PitchClass` values.
+/// Ordered pair of `Pitch.Class` values.
 public struct PitchClassDyad: NoteNumberRepresentableDyad {
     
     // MARK: - Associated Types
     
     /// Type of `NoteNumberRepresentable` value contained herein.
-    public typealias Element = PitchClass
+    public typealias Element = Pitch.Class
     
     // MARK: - Instance Properties
     
-    /// Interval between the two `PitchClass` values contained herein.
+    /// Interval between the two `Pitch.Class` values contained herein.
     var interval: PitchInterval {
         return PitchInterval(noteNumber: higher.noteNumber - lower.noteNumber)
     }
     
-    /// Lower of two `PitchClass` values contained herein.
+    /// Lower of two `Pitch.Class` values contained herein.
     public let lower: Element
     
-    /// Higher of two `PitchClass` values contained herein.
+    /// Higher of two `Pitch.Class` values contained herein.
     public let higher: Element
     
     // MARK: - Initializers

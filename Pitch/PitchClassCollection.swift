@@ -9,13 +9,13 @@
 import Collections
 import ArithmeticTools
 
-/// Ordered collection of `PitchClass` values.
+/// Ordered collection of `Pitch.Class` values.
 public struct PitchClassCollection: CollectionWrapping/*: NoteNumberRepresentableCollection*/ {
 
     // MARK: - Associated Types
     
     /// `PitchConvertible`-conforming type contained herein.
-    public typealias Element = PitchClass
+    public typealias Element = Pitch.Class
     
     /// `NoteNumberRepresentableDyad` type.
     public typealias Dyad = PitchClassDyad
@@ -25,26 +25,26 @@ public struct PitchClassCollection: CollectionWrapping/*: NoteNumberRepresentabl
     
     // MARK: - Instance Properties
     
-    /// Array of the `PitchClass` values contained herein.
-    public let base: Array<PitchClass>
+    /// Array of the `Pitch.Class` values contained herein.
+    public let base: Array<Pitch.Class>
 
-    public init <S> (_ sequence: S) where S: Sequence, S.Iterator.Element == PitchClass {
+    public init <S> (_ sequence: S) where S: Sequence, S.Iterator.Element == Pitch.Class {
         self.base = Array(sequence)
     }
     
-    /// `PitchClassSequence` with `PitchClass` values in reverse order.
+    /// `PitchClassSequence` with `Pitch.Class` values in reverse order.
     ///
     /// - TODO: Move up `OrderedNoteNumberRespresentableSetType` protocol hierarchy.
     public var retrograde: PitchClassCollection {
         return PitchClassCollection(reversed())
     }
     
-    /// `PitchClassSequence` with `PitchClass` values inverted around `0`.
+    /// `PitchClassSequence` with `Pitch.Class` values inverted around `0`.
     public var inversion: PitchClassCollection {
         return PitchClassCollection(map { $0.inversion })
     }
     
-    /// Array of `IntervalClass` values between each adjacent `PitchClass` herein.
+    /// Array of `IntervalClass` values between each adjacent `Pitch.Class` herein.
     ///
     /// - TODO: Refactor up the `NoteNumberRepresentableCollection` protocol hierarchy
     public var intervals: PitchClassIntervalCollection {

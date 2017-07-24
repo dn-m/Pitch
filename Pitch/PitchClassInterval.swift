@@ -6,13 +6,13 @@
 //  Copyright © 2016 James Bean. All rights reserved.
 //
 
-/// Interval between two `PitchClass` values.
+/// Interval between two `Pitch.Class` values.
 public struct PitchClassInterval: NoteNumberRepresentableInterval {
     
     // MARK: - Associated Types
     
     /// `NoteNumberRepresentable` type of values between which this interval lies.
-    public typealias Element = PitchClass
+    public typealias Element = Pitch.Class
     
     // MARK: - Instance Properties
     
@@ -38,8 +38,8 @@ public struct PitchClassInterval: NoteNumberRepresentableInterval {
         self.noteNumber = dyad.higher.noteNumber - dyad.lower.noteNumber
     }
     
-    /// Create a `PitchClassInterval` with two `PitchClass` types.
-    public init(_ a: PitchClass, _ b: PitchClass) {
+    /// Create a `PitchClassInterval` with two `Pitch.Class` types.
+    public init(_ a: Pitch.Class, _ b: Pitch.Class) {
         self.init(dyad: PitchClassDyad(a,b))
     }
 }

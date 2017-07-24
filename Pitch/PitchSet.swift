@@ -62,7 +62,7 @@ public struct PitchSet: CollectionWrapping /*: NoteNumberRepresentableSet*/ {
     }
     
     /**
-     Set of `PitchClass` representations of `PitchSet`.
+     Set of `Pitch.Class` representations of `PitchSet`.
      
      **Example:**
      

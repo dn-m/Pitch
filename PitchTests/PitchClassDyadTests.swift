@@ -12,7 +12,7 @@ import XCTest
 class PitchClassDyadTests: XCTestCase {
 
     func testInterval() {
-        let pcDyad = PitchClassDyad(PitchClass(3.0), PitchClass(7.0))
+        let pcDyad = PitchClassDyad(Pitch.Class(3.0), Pitch.Class(7.0))
         XCTAssertEqual(pcDyad.interval, 4.0)
     }
     

@@ -18,24 +18,24 @@ class PitchClassTests: XCTestCase {
     }
     
     func testPitchClassInitFloatLessThan12() {
-        let _: PitchClass = 3.0
+        let _: Pitch.Class = 3.0
     }
     
     func testPitchClassInitFloatGreaterThan12() {
-        let pc: PitchClass = 13.5
+        let pc: Pitch.Class = 13.5
         XCTAssertEqual(pc, 1.5)
     }
     
     func testPitchClassInitIntLessThan12() {
-        let _: PitchClass = 6
+        let _: Pitch.Class = 6
     }
     
     func testPitchClassInitIntGreaterThan12() {
-        let pc: PitchClass = 15
+        let pc: Pitch.Class = 15
         XCTAssertEqual(pc, 3)
     }
     
     func testPitchClassInitWithFloat() {
-        let _: PitchClass = 15.0
+        let _: Pitch.Class = 15.0
     }
 }

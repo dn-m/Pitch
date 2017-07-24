@@ -14,10 +14,10 @@ class PitchClassCollectionTests: XCTestCase {
 
     struct PitchClassSequence: AnySequenceWrapping {
         
-        typealias Element = PitchClass
-        let array: [PitchClass]
+        typealias Element = Pitch.Class
+        let array: [Pitch.Class]
         
-        var sequence: AnySequence<PitchClass> {
+        var sequence: AnySequence<Pitch.Class> {
             return AnySequence(array)
         }
         
@@ -25,7 +25,7 @@ class PitchClassCollectionTests: XCTestCase {
             self.array = Array(sequence)
         }
         
-        init(arrayLiteral elements: PitchClass...) {
+        init(arrayLiteral elements: Pitch.Class...) {
             self.array = Array(elements)
         }
     }
