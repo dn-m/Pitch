@@ -10,7 +10,7 @@ import ArithmeticTools
 
 /// The quality of a sound governed by the rate of vibrations producing it.
 public struct Pitch: NoteNumberRepresentable {
-    
+
     // MARK: - Type Properties
     
     /// Middle C.
@@ -24,8 +24,13 @@ public struct Pitch: NoteNumberRepresentable {
      
      - TODO: Add `inRange: _` or similar.
      */
-    public static func random(resolution: Float = 1) -> Pitch {
+    public static func random(resolution: Double = 1) -> Pitch {
         return Pitch(noteNumber: NoteNumber.random(resolution: resolution))
+    }
+
+    /// Modulo-12 representation of `NoteNumber` representation of `Pitch`.
+    public var `class`: Pitch.Class {
+        return Pitch.Class(self)
     }
     
     // MARK: - Instance Properties
@@ -35,11 +40,6 @@ public struct Pitch: NoteNumberRepresentable {
     
     /// `Frequency` representation of `Pitch`.
     public let frequency: Frequency
-    
-    /// Modulo-12 representation of `NoteNumber` representation of `Pitch`.
-    public var pitchClass: PitchClass {
-        return PitchClass(self)
-    }
     
     // MARK: - Initializers
     
@@ -86,7 +86,7 @@ extension Pitch: ExpressibleByFloatLiteral {
     // MARK: - `ExpressibleByFloatLiteral`
     
     /// Create a `Pitch` with a `FloatLiteral`. This value is the `NoteNumber` value.
-    public init(floatLiteral value: Float) {
+    public init(floatLiteral value: Double) {
         self.init(noteNumber: NoteNumber(value))
     }
 }
@@ -97,7 +97,7 @@ extension Pitch: ExpressibleByIntegerLiteral {
     
     /// Create a `Pitch` with an `IntegerLiteral`. This value is the `NoteNumber` value.
     public init(integerLiteral value: Int) {
-        self.init(noteNumber: NoteNumber(Float(value)))
+        self.init(noteNumber: NoteNumber(Double(value)))
     }
 }
 
@@ -123,19 +123,19 @@ extension Pitch: CustomStringConvertible {
 
 // MARK: - Transposition
 
-func + (lhs: Pitch, rhs: Float) -> Pitch {
+func + (lhs: Pitch, rhs: Double) -> Pitch {
     return Pitch(noteNumber: NoteNumber(lhs.noteNumber.value + rhs))
 }
 
-func + (lhs: Float, rhs: Pitch) -> Pitch {
+func + (lhs: Double, rhs: Pitch) -> Pitch {
     return Pitch(noteNumber: NoteNumber(lhs + rhs.noteNumber.value))
 }
 
-func - (lhs: Pitch, rhs: Float) -> Pitch {
+func - (lhs: Pitch, rhs: Double) -> Pitch {
     return Pitch(noteNumber: NoteNumber(lhs.noteNumber.value - rhs))
 }
 
-func - (lhs: Float, rhs: Pitch) -> Pitch {
+func - (lhs: Double, rhs: Pitch) -> Pitch {
     return Pitch(noteNumber: NoteNumber(lhs - rhs.noteNumber.value))
 }
 

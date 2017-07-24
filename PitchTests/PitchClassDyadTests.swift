@@ -11,20 +11,24 @@ import XCTest
 
 class PitchClassDyadTests: XCTestCase {
 
-    func testInterval() {
-        let pcDyad = PitchClassDyad(PitchClass(3.0), PitchClass(7.0))
+    func testOrderedIntervalEasy() {
+        let pcDyad = Dyad<Pitch.Class>(Pitch.Class(3.0), Pitch.Class(7.0))
         XCTAssertEqual(pcDyad.interval, 4.0)
     }
-    
+
+    func testOrderedIntervalCrossOver() {
+        let dyad = Dyad<Pitch.Class>(Pitch.Class(3.0), Pitch.Class(7.0))
+    }
+
     func testEquality() {
-        let a = PitchClassDyad(3,7)
-        let b = PitchClassDyad(3,7)
+        let a: Dyad<Pitch.Class> = Dyad(3,7)
+        let b: Dyad<Pitch.Class> = Dyad(3,7)
         XCTAssertEqual(a, b)
     }
     
     func testEqualityNotEqual() {
-        let a = PitchClassDyad(3,7)
-        let b = PitchClassDyad(2,9)
+        let a = Dyad<Pitch.Class>(3,7)
+        let b = Dyad<Pitch.Class>(2,9)
         XCTAssertNotEqual(a, b)
     }
 }

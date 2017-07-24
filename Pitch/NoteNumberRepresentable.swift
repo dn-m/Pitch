@@ -9,7 +9,12 @@
 import ArithmeticTools
 
 /// Protocol defining values representable by a `NoteNumber`.
-public protocol NoteNumberRepresentable: Comparable, Hashable {
+public protocol NoteNumberRepresentable:
+    Comparable,
+    Hashable,
+    ExpressibleByFloatLiteral,
+    ExpressibleByIntegerLiteral
+{
     
     // MARK: - Instance Properties
     
@@ -53,6 +58,24 @@ extension NoteNumberRepresentable {
     }
 }
 
+extension NoteNumberRepresentable {
+
+    // MARK: - ExpressibleByFloatLiteral
+
+    public init(floatLiteral value: Double) {
+        self.init(noteNumber: NoteNumber(value))
+    }
+}
+
+extension NoteNumberRepresentable {
+
+    // MARK: - ExpressibleByIntegerLiteral
+
+    public init(integerLiteral value: Int) {
+        self.init(noteNumber: NoteNumber(Double(value)))
+    }
+}
+
 // MARK: - Transposition
 
 /// - returns: A `NoteNumberRepresentable` value that is the difference between the two given
@@ -60,3 +83,4 @@ extension NoteNumberRepresentable {
 public func - <T: NoteNumberRepresentable> (lhs: T, rhs: T) -> T {
     return T(noteNumber: NoteNumber(lhs.noteNumber.value - rhs.noteNumber.value))
 }
+

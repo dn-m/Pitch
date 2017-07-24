@@ -15,5 +15,4 @@ class FrequencyTests: XCTestCase {
     func testInitIntLiteral() {
         let _: Frequency = 440
     }
-    
 }
