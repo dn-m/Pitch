@@ -75,7 +75,7 @@ public struct Pitch: NoteNumberRepresentable {
     public let frequency: Frequency
     
     /// Modulo-12 representation of `NoteNumber` representation of `Pitch`.
-    public var pitchClass: Pitch.Class {
+    public var `class`: Pitch.Class {
         return Pitch.Class(self)
     }
     

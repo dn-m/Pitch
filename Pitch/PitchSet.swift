@@ -72,7 +72,7 @@ public struct PitchSet: CollectionWrapping /*: NoteNumberRepresentableSet*/ {
      ```
      */
     public var pitchClassSet: PitchClassSet {
-        return PitchClassSet(map { $0.pitchClass })
+        return PitchClassSet(map { $0.class })
     }
     
     /// Create a `PitchSet` by creating a union of multiple `PitchSet` values.
